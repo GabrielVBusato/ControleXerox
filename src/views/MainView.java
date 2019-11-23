@@ -68,14 +68,14 @@ public class MainView extends javax.swing.JFrame {
         txtPais = new javax.swing.JTextField();
         txtUf = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        btnCancelar = new javax.swing.JToggleButton();
         btnSalvar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         JMenu = new javax.swing.JPanel();
-        btnTiragem = new javax.swing.JButton();
-        btnEncomenda = new javax.swing.JButton();
-        btnAddFuncionario = new javax.swing.JButton();
-        btnProfessor = new javax.swing.JButton();
+        btnTiragem = new javax.swing.JToggleButton();
+        btnProfessor = new javax.swing.JToggleButton();
+        btnAddFuncionario = new javax.swing.JToggleButton();
+        btnEncomenda1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -196,13 +196,6 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel16.setText("Pais");
 
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-
         btnSalvar.setText("Salvar");
 
         btnLimpar.setText("Limpar");
@@ -212,74 +205,79 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnAddFuncionarioLayout = new javax.swing.GroupLayout(pnAddFuncionario);
         pnAddFuncionario.setLayout(pnAddFuncionarioLayout);
         pnAddFuncionarioLayout.setHorizontalGroup(
             pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                            .addGap(114, 114, 114)
-                            .addComponent(jLabel1))
-                        .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                            .addGap(66, 66, 66)
-                            .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9)
-                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtRua, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnLimpar))
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmail)
-                                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel7)
-                                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel1))
+                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtRua, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnLimpar))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtEmail)
                                 .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel10)
-                                        .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(33, 33, 33)
+                                        .addComponent(jLabel7)
+                                        .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel11)
-                                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
-                                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel12)
-                                            .addComponent(txtNomeCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(30, 30, 30)
-                                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel13)
-                                            .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
-                                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtNomeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel14))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel15))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                                .addComponent(jLabel16)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addComponent(txtPais)))))))
-                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSalvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCancelar)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                                        .addComponent(jLabel8)
+                                        .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
+                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel12)
+                                        .addComponent(txtNomeCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(30, 30, 30)
+                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel13)
+                                        .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
+                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtNomeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel14))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel15))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                            .addComponent(jLabel16)
+                                            .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(txtPais)))
+                                .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                    .addComponent(btnSalvar)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnCancelar))))))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         pnAddFuncionarioLayout.setVerticalGroup(
             pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,8 +345,8 @@ public class MainView extends javax.swing.JFrame {
                         .addGap(26, 26, 26)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelar)
-                    .addComponent(btnSalvar))
+                    .addComponent(btnSalvar)
+                    .addComponent(btnCancelar))
                 .addContainerGap())
         );
 
@@ -360,53 +358,33 @@ public class MainView extends javax.swing.JFrame {
 
         JMenu.setLayout(null);
 
-        btnTiragem.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnTiragem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnTiragem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-impressora-de-porta-aberta-40.png"))); // NOI18N
-        btnTiragem.setText("  TIRAGEM");
-        btnTiragem.setFocusPainted(false);
-        btnTiragem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTiragemActionPerformed(evt);
-            }
-        });
+        btnTiragem.setText("  Tiragem");
         JMenu.add(btnTiragem);
-        btnTiragem.setBounds(10, 70, 171, 48);
+        btnTiragem.setBounds(10, 90, 160, 50);
 
-        btnEncomenda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnEncomenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-histórico-de-encomendas-40.png"))); // NOI18N
-        btnEncomenda.setText("  ENCOMENDA");
-        btnEncomenda.setFocusCycleRoot(true);
-        btnEncomenda.setFocusPainted(false);
-        btnEncomenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEncomendaActionPerformed(evt);
-            }
-        });
-        JMenu.add(btnEncomenda);
-        btnEncomenda.setBounds(10, 130, 170, 48);
-
-        btnAddFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-adicionar-usuário-masculino-48.png"))); // NOI18N
-        btnAddFuncionario.setToolTipText("Adicionar novo funcionário");
-        btnAddFuncionario.setFocusPainted(false);
-        btnAddFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddFuncionarioActionPerformed(evt);
-            }
-        });
-        JMenu.add(btnAddFuncionario);
-        btnAddFuncionario.setBounds(10, 400, 67, 52);
-
-        btnProfessor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnProfessor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnProfessor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-live-folder-40.png"))); // NOI18N
-        btnProfessor.setText("  PROFESSOR");
-        btnProfessor.setFocusPainted(false);
-        btnProfessor.addActionListener(new java.awt.event.ActionListener() {
+        btnProfessor.setText("  Professor");
+        JMenu.add(btnProfessor);
+        btnProfessor.setBounds(10, 20, 160, 50);
+
+        btnAddFuncionario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnAddFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-adicionar-usuário-masculino-48.png"))); // NOI18N
+        JMenu.add(btnAddFuncionario);
+        btnAddFuncionario.setBounds(10, 380, 60, 60);
+
+        btnEncomenda1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnEncomenda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-histórico-de-encomendas-40.png"))); // NOI18N
+        btnEncomenda1.setText("  Encomenda");
+        btnEncomenda1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfessorActionPerformed(evt);
+                btnEncomenda1ActionPerformed(evt);
             }
         });
-        JMenu.add(btnProfessor);
-        btnProfessor.setBounds(10, 10, 170, 48);
+        JMenu.add(btnEncomenda1);
+        btnEncomenda1.setBounds(10, 160, 160, 50);
 
         getContentPane().add(JMenu);
         JMenu.setBounds(0, 0, 192, 560);
@@ -414,22 +392,6 @@ public class MainView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(694, 498));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnTiragemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiragemActionPerformed
-        
-    }//GEN-LAST:event_btnTiragemActionPerformed
-
-    private void btnEncomendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncomendaActionPerformed
-        
-    }//GEN-LAST:event_btnEncomendaActionPerformed
-
-    private void btnAddFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddFuncionarioActionPerformed
-      
-    }//GEN-LAST:event_btnAddFuncionarioActionPerformed
-
-    private void btnProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfessorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProfessorActionPerformed
 
     private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
@@ -439,13 +401,17 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUfActionPerformed
 
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimparActionPerformed
+
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+    private void btnEncomenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncomenda1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLimparActionPerformed
+    }//GEN-LAST:event_btnEncomenda1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -487,13 +453,13 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JMenu;
-    private javax.swing.JButton btnAddFuncionario;
-    private javax.swing.JToggleButton btnCancelar;
-    private javax.swing.JButton btnEncomenda;
+    private javax.swing.JToggleButton btnAddFuncionario;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JToggleButton btnEncomenda1;
     private javax.swing.JButton btnLimpar;
-    private javax.swing.JButton btnProfessor;
+    private javax.swing.JToggleButton btnProfessor;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton btnTiragem;
+    private javax.swing.JToggleButton btnTiragem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -529,19 +495,19 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField txtUf;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBtnAddFuncionario() {
+    public JToggleButton getBtnAddFuncionario() {
         return btnAddFuncionario;
     }
 
-    public JButton getBtnEncomenda() {
-        return btnEncomenda;
+    public JToggleButton getBtnEncomenda() {
+        return btnAddFuncionario;
     }
 
-    public JButton getBtnProfessor() {
+    public JToggleButton getBtnProfessor() {
         return btnProfessor;
     }
 
-    public JButton getBtnTiragem() {
+    public JToggleButton getBtnTiragem() {
         return btnTiragem;
     }
 
@@ -613,7 +579,7 @@ public class MainView extends javax.swing.JFrame {
         return txtUf;
     }
 
-    public JToggleButton getBtnCancelar() {
+    public JButton getBtnCancelar() {
         return btnCancelar;
     }
 
