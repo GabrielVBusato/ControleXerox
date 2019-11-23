@@ -317,7 +317,6 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(pnPrincipal);
         pnPrincipal.setBounds(208, 11, 470, 448);
 
-        JMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         JMenu.setLayout(null);
 
         btnTiragem.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
@@ -350,7 +349,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
         JMenu.add(btnAddFuncionario);
-        btnAddFuncionario.setBounds(60, 310, 67, 52);
+        btnAddFuncionario.setBounds(10, 380, 67, 52);
 
         btnProfessor.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         btnProfessor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-live-folder-40.png"))); // NOI18N
