@@ -5,9 +5,11 @@
  */
 package views;
 
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.MatteBorder;
 
 /**
  *
@@ -20,6 +22,7 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
+        JMenu.setBorder( new MatteBorder(0, 0, 0, 1, Color.gray));
     }
 
     /**
@@ -317,10 +320,9 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(pnPrincipal);
         pnPrincipal.setBounds(208, 11, 470, 448);
 
-        JMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         JMenu.setLayout(null);
 
-        btnTiragem.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
+        btnTiragem.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnTiragem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-impressora-de-porta-aberta-40.png"))); // NOI18N
         btnTiragem.setText("  TIRAGEM");
         btnTiragem.setFocusPainted(false);
@@ -332,7 +334,7 @@ public class MainView extends javax.swing.JFrame {
         JMenu.add(btnTiragem);
         btnTiragem.setBounds(10, 70, 171, 48);
 
-        btnEncomenda.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
+        btnEncomenda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnEncomenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-histórico-de-encomendas-40.png"))); // NOI18N
         btnEncomenda.setText("  ENCOMENDA");
         btnEncomenda.setFocusCycleRoot(true);
@@ -356,7 +358,7 @@ public class MainView extends javax.swing.JFrame {
         JMenu.add(btnAddFuncionario);
         btnAddFuncionario.setBounds(10, 400, 67, 52);
 
-        btnProfessor.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
+        btnProfessor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnProfessor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-live-folder-40.png"))); // NOI18N
         btnProfessor.setText("  PROFESSOR");
         btnProfessor.setFocusPainted(false);
@@ -369,7 +371,7 @@ public class MainView extends javax.swing.JFrame {
         btnProfessor.setBounds(10, 10, 170, 48);
 
         getContentPane().add(JMenu);
-        JMenu.setBounds(0, 0, 192, 470);
+        JMenu.setBounds(0, 0, 192, 560);
 
         setSize(new java.awt.Dimension(694, 498));
         setLocationRelativeTo(null);
