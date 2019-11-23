@@ -8,6 +8,7 @@ package presenters;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.dao.PaisDao;
+import utils.JFrameUtils;
 import views.MainView;
 
 /**
@@ -39,10 +40,6 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(false);
                 view.getPnEncomenda().setVisible(false);
                 view.getPnAddFuncionario().setVisible(false);
-                view.getBtnProfessor().setEnabled(false);
-                view.getBtnTiragem().setEnabled(true);
-                view.getBtnEncomenda().setEnabled(true);
-                view.getBtnAddFuncionario().setEnabled(true);
             }
         });
 
@@ -55,10 +52,6 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(true);
                 view.getPnEncomenda().setVisible(false);
                 view.getPnAddFuncionario().setVisible(false);
-                view.getBtnProfessor().setEnabled(true);
-                view.getBtnTiragem().setEnabled(false);
-                view.getBtnEncomenda().setEnabled(true);
-                view.getBtnAddFuncionario().setEnabled(true);
             }
         });
 
@@ -71,10 +64,6 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(false);
                 view.getPnEncomenda().setVisible(true);
                 view.getPnAddFuncionario().setVisible(false);
-                view.getBtnProfessor().setEnabled(true);
-                view.getBtnTiragem().setEnabled(true);
-                view.getBtnEncomenda().setEnabled(false);
-                view.getBtnAddFuncionario().setEnabled(true);
             }
         });
 
@@ -87,10 +76,13 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(false);
                 view.getPnEncomenda().setVisible(false);
                 view.getPnAddFuncionario().setVisible(true);
-                view.getBtnProfessor().setEnabled(true);
-                view.getBtnTiragem().setEnabled(true);
-                view.getBtnEncomenda().setEnabled(true);
-                view.getBtnAddFuncionario().setEnabled(false);
+            }
+        });
+
+        view.getBtnLimpar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrameUtils.cleanTextField(view.getPnAddFuncionario().getComponents());
             }
         });
     }
