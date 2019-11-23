@@ -87,18 +87,18 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(pnTiragemLayout.createSequentialGroup()
                 .addGap(192, 192, 192)
                 .addComponent(jLabel3)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
         pnTiragemLayout.setVerticalGroup(
             pnTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnTiragemLayout.createSequentialGroup()
                 .addGap(203, 203, 203)
                 .addComponent(jLabel3)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
 
         pnPrincipal.add(pnTiragem);
-        pnTiragem.setBounds(0, 0, 472, 435);
+        pnTiragem.setBounds(-18, -15, 490, 460);
 
         pnEncomenda.setPreferredSize(new java.awt.Dimension(472, 435));
 
@@ -111,18 +111,18 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(pnEncomendaLayout.createSequentialGroup()
                 .addGap(177, 177, 177)
                 .addComponent(jLabel2)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
         pnEncomendaLayout.setVerticalGroup(
             pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnEncomendaLayout.createSequentialGroup()
                 .addGap(203, 203, 203)
                 .addComponent(jLabel2)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
 
         pnPrincipal.add(pnEncomenda);
-        pnEncomenda.setBounds(0, 0, 472, 435);
+        pnEncomenda.setBounds(-18, -15, 490, 460);
 
         pnProfessor.setPreferredSize(new java.awt.Dimension(472, 435));
 
@@ -135,18 +135,18 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(pnProfessorLayout.createSequentialGroup()
                 .addGap(220, 220, 220)
                 .addComponent(jLabel4)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         pnProfessorLayout.setVerticalGroup(
             pnProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnProfessorLayout.createSequentialGroup()
                 .addGap(232, 232, 232)
                 .addComponent(jLabel4)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
         pnPrincipal.add(pnProfessor);
-        pnProfessor.setBounds(0, 0, 472, 435);
+        pnProfessor.setBounds(-18, -15, 490, 460);
 
         pnAddFuncionario.setPreferredSize(new java.awt.Dimension(472, 435));
 
@@ -247,7 +247,7 @@ public class MainView extends javax.swing.JFrame {
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel13)
                                         .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         pnAddFuncionarioLayout.setVerticalGroup(
             pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,62 +308,68 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(jLabel15)
                             .addComponent(jLabel16))
                         .addGap(26, 26, 26)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pnPrincipal.add(pnAddFuncionario);
-        pnAddFuncionario.setBounds(6, 0, 470, 448);
+        pnAddFuncionario.setBounds(-14, -12, 490, 460);
 
         getContentPane().add(pnPrincipal);
         pnPrincipal.setBounds(208, 11, 470, 448);
 
+        JMenu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         JMenu.setLayout(null);
 
         btnTiragem.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         btnTiragem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-impressora-de-porta-aberta-40.png"))); // NOI18N
         btnTiragem.setText("  TIRAGEM");
+        btnTiragem.setFocusPainted(false);
         btnTiragem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTiragemActionPerformed(evt);
             }
         });
         JMenu.add(btnTiragem);
-        btnTiragem.setBounds(10, 150, 171, 49);
+        btnTiragem.setBounds(10, 70, 171, 48);
 
         btnEncomenda.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         btnEncomenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-histórico-de-encomendas-40.png"))); // NOI18N
         btnEncomenda.setText("  ENCOMENDA");
+        btnEncomenda.setFocusCycleRoot(true);
+        btnEncomenda.setFocusPainted(false);
         btnEncomenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEncomendaActionPerformed(evt);
             }
         });
         JMenu.add(btnEncomenda);
-        btnEncomenda.setBounds(10, 230, 171, 49);
+        btnEncomenda.setBounds(10, 130, 170, 48);
 
         btnAddFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-adicionar-usuário-masculino-48.png"))); // NOI18N
         btnAddFuncionario.setToolTipText("Adicionar novo funcionário");
+        btnAddFuncionario.setFocusPainted(false);
         btnAddFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddFuncionarioActionPerformed(evt);
             }
         });
         JMenu.add(btnAddFuncionario);
-        btnAddFuncionario.setBounds(10, 380, 67, 52);
+        btnAddFuncionario.setBounds(10, 400, 67, 52);
 
         btnProfessor.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         btnProfessor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-live-folder-40.png"))); // NOI18N
         btnProfessor.setText("  PROFESSOR");
+        btnProfessor.setFocusPainted(false);
         btnProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProfessorActionPerformed(evt);
             }
         });
         JMenu.add(btnProfessor);
-        btnProfessor.setBounds(10, 70, 171, 49);
+        btnProfessor.setBounds(10, 10, 170, 48);
 
         getContentPane().add(JMenu);
-        JMenu.setBounds(10, 11, 192, 440);
+        JMenu.setBounds(0, 0, 192, 470);
 
         setSize(new java.awt.Dimension(694, 498));
         setLocationRelativeTo(null);
