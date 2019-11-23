@@ -10,27 +10,30 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import model.bean.Pais;
+import model.bean.Endereco;
 
 /**
  *
  * @author Gabriel
  */
-public class PaisDao {
-    public static int inserir(Pais p) throws Exception {
-        int lastkey =0;
+public class EnderecoDao {
+    public static int inserir(Endereco end) throws Exception {
+        int lastkey = 0;
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
-        String sql = "INSERT INTO pais(nome) values (?)";
+        String sql = "INSERT INTO endereco(rua, bairro, numero, idCidade) values (?, ?, ?, ?)";
         //Preparando statement e retornando a ultima chave primaria inserida
         stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
         //Setando os valores
-        stmt.setString(1, p.getNome());
+        stmt.setString(1, end.getRua());
+        stmt.setString(2, end.getBairro());
+        stmt.setString(3, end.getNumero());
+        stmt.setInt(4, end.getIdCidade());
 
         //Execuntando comando de inserção no banco
         stmt.executeUpdate();
-        
+
         //Pegando as chaves
         ResultSet rs = stmt.getGeneratedKeys();
 
@@ -38,10 +41,8 @@ public class PaisDao {
         if (rs.next()) {
             lastkey = rs.getInt(1);
         }
-        
+
         ConnectionFactory.closeConnection(con, stmt);
-        
         return lastkey;
     }
-
 }

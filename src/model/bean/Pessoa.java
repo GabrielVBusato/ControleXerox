@@ -11,6 +11,7 @@ package model.bean;
  */
 public class Pessoa {
     private int idPessoa;
+    private String nome;
     private String cpf;
     private String email;
     private String telefone;
@@ -19,6 +20,16 @@ public class Pessoa {
     public int getIdPessoa() {
         return idPessoa;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    
 
     public void setIdPessoa(int idPessoa) {
         this.idPessoa = idPessoa;

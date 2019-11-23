@@ -10,23 +10,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import model.bean.Pais;
+import model.bean.Funcionario;
 
 /**
  *
  * @author Gabriel
  */
-public class PaisDao {
-    public static int inserir(Pais p) throws Exception {
+public class FuncionarioDao {
+    public static int inserir(Funcionario f) throws Exception {
         int lastkey =0;
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
-        String sql = "INSERT INTO pais(nome) values (?)";
+        String sql = "INSERT INTO funcionario(idPessoa) values (?)";
         //Preparando statement e retornando a ultima chave primaria inserida
         stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
         //Setando os valores
-        stmt.setString(1, p.getNome());
+        stmt.setInt(1, f.getIdPessoa());
 
         //Execuntando comando de inserção no banco
         stmt.executeUpdate();
@@ -43,5 +43,4 @@ public class PaisDao {
         
         return lastkey;
     }
-
 }
