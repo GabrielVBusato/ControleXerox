@@ -39,6 +39,10 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(false);
                 view.getPnEncomenda().setVisible(false);
                 view.getPnAddFuncionario().setVisible(false);
+                view.getBtnProfessor().setEnabled(false);
+                view.getBtnTiragem().setEnabled(true);
+                view.getBtnEncomenda().setEnabled(true);
+                view.getBtnAddFuncionario().setEnabled(true);
             }
         });
 
@@ -51,6 +55,10 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(true);
                 view.getPnEncomenda().setVisible(false);
                 view.getPnAddFuncionario().setVisible(false);
+                view.getBtnProfessor().setEnabled(true);
+                view.getBtnTiragem().setEnabled(false);
+                view.getBtnEncomenda().setEnabled(true);
+                view.getBtnAddFuncionario().setEnabled(true);
             }
         });
 
@@ -63,6 +71,10 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(false);
                 view.getPnEncomenda().setVisible(true);
                 view.getPnAddFuncionario().setVisible(false);
+                view.getBtnProfessor().setEnabled(true);
+                view.getBtnTiragem().setEnabled(true);
+                view.getBtnEncomenda().setEnabled(false);
+                view.getBtnAddFuncionario().setEnabled(true);
             }
         });
 
@@ -75,6 +87,10 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(false);
                 view.getPnEncomenda().setVisible(false);
                 view.getPnAddFuncionario().setVisible(true);
+                view.getBtnProfessor().setEnabled(true);
+                view.getBtnTiragem().setEnabled(true);
+                view.getBtnEncomenda().setEnabled(true);
+                view.getBtnAddFuncionario().setEnabled(false);
             }
         });
     }
