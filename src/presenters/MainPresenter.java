@@ -28,10 +28,12 @@ public class MainPresenter {
         view.getPnTiragem().setVisible(false);
         view.getPnEncomenda().setVisible(false);
         view.getPnAddFuncionario().setVisible(false);
+        view.getPnInfoEncomenda().setVisible(false);
         view.getPnProfessor().setName("pnProfessor");
         view.getPnTiragem().setName("pnTiragem");
         view.getPnEncomenda().setName("pnEncomenda");
         view.getPnAddFuncionario().setName("pnAddFuncionario");
+        view.getPnInfoEncomenda().setName("pnInfoEncomenda");
         view.getBtnProfessor().setName("btnProfessor");
         view.getBtnTiragem().setName("btnTiragem");
         view.getBtnEncomenda().setName("btnEncomenda");
@@ -89,6 +91,24 @@ public class MainPresenter {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.checagem(view.getPnAddFuncionario().getComponents());
+            }
+        });
+        
+        view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnEncomenda().setVisible(false);
+                view.getPnInfoEncomenda().setVisible(true);
+                view.getPnAvisaEncomendaSalva().setVisible(false);
+            }
+        });
+        
+        view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnAvisaEncomendaSalva().setVisible(true);
             }
         });
     }
