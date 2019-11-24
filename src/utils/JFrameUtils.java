@@ -22,4 +22,14 @@ public class JFrameUtils {
         }
     }
     
+    public static boolean checagem(Component[] components){
+        for (Component c: components) {
+            if (c instanceof JTextField) {
+                System.out.println(c);
+            }
+        }
+        
+        return true;
+    }
+    
 }

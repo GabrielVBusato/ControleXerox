@@ -16,10 +16,10 @@ import views.MainView;
  * @author Maurício
  */
 public class MainPresenter {
-
+    
     private static MainPresenter instance;
     private static MainView view;
-
+    
     private MainPresenter() {
         view = new MainView();
         view.getPnProfessor().setVisible(false);
@@ -28,12 +28,12 @@ public class MainPresenter {
         view.getPnAddFuncionario().setVisible(false);
         iniciarView();
     }
-
+    
     private void iniciarView() {
 
         //Botão professor
         view.getBtnProfessor().addActionListener(new ActionListener() {
-
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 view.getPnProfessor().setVisible(true);
@@ -45,7 +45,7 @@ public class MainPresenter {
 
         //Botão tiragem
         view.getBtnTiragem().addActionListener(new ActionListener() {
-
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 view.getPnProfessor().setVisible(false);
@@ -57,7 +57,7 @@ public class MainPresenter {
 
         //Botão encomenda
         view.getBtnEncomenda().addActionListener(new ActionListener() {
-
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 view.getPnProfessor().setVisible(false);
@@ -69,7 +69,7 @@ public class MainPresenter {
 
         //Botão add novo funcionário
         view.getBtnAddFuncionario().addActionListener(new ActionListener() {
-
+            
             @Override
             public void actionPerformed(ActionEvent e) {
                 view.getPnProfessor().setVisible(false);
@@ -78,15 +78,23 @@ public class MainPresenter {
                 view.getPnAddFuncionario().setVisible(true);
             }
         });
-
+        
         view.getBtnLimpar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.cleanTextField(view.getPnAddFuncionario().getComponents());
             }
         });
+        
+        view.getBtnSalvar().addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrameUtils.checagem(view.getPnAddFuncionario().getComponents());
+            }
+        });
     }
-
+    
     public static MainPresenter getInstance() {
         if (instance == null) {
             instance = new MainPresenter();
