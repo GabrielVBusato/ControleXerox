@@ -341,7 +341,7 @@
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -453,11 +453,13 @@
             <Component class="javax.swing.JButton" name="btnSalvar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salvar"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnLimpar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limpar"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparActionPerformed"/>
@@ -466,6 +468,7 @@
             <Component class="javax.swing.JButton" name="btnCancelar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
@@ -475,7 +478,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="JMenu">
+    <Container class="javax.swing.JPanel" name="pnMenu">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="192" height="560"/>
@@ -486,23 +489,26 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JToggleButton" name="btnTiragem">
+        <Component class="javax.swing.JButton" name="btnAddFuncionario">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/icons8-impressora-de-porta-aberta-40.png"/>
+              <Image iconType="3" name="/images/icons8-adicionar-usu&#xe1;rio-masculino-48.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="  Tiragem"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddFuncionarioActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="90" width="160" height="50"/>
+              <AbsoluteConstraints x="10" y="390" width="70" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="btnProfessor">
+        <Component class="javax.swing.JButton" name="btnProfessor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
@@ -511,29 +517,38 @@
               <Image iconType="3" name="/images/icons8-live-folder-40.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="  Professor"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProfessorActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="20" width="160" height="50"/>
+              <AbsoluteConstraints x="10" y="40" width="170" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="btnAddFuncionario">
+        <Component class="javax.swing.JButton" name="btnTiragem">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/icons8-adicionar-usu&#xe1;rio-masculino-48.png"/>
+              <Image iconType="3" name="/images/icons8-impressora-de-porta-aberta-40.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="  Tiragem"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTiragemActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="380" width="60" height="60"/>
+              <AbsoluteConstraints x="10" y="120" width="170" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="btnEncomenda1">
+        <Component class="javax.swing.JButton" name="btnEncomenda">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
@@ -542,13 +557,14 @@
               <Image iconType="3" name="/images/icons8-hist&#xf3;rico-de-encomendas-40.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="  Encomenda"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEncomenda1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEncomendaActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="160" width="160" height="50"/>
+              <AbsoluteConstraints x="10" y="200" width="170" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
