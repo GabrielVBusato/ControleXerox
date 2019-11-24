@@ -5,10 +5,22 @@
  */
 package utils;
 
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
+import javax.swing.text.MaskFormatter;
 import views.MainView;
 
 /**
@@ -25,17 +37,75 @@ public class JFrameUtils {
         }
     }
 
-    
-    public static boolean checagem(Component[] components){
-        for (Component c: components) {
-            if (c instanceof JTextField) {
-                System.out.println(c);
+    public static boolean checagemFuncionario(JTextField[] txts, JFormattedTextField cpf) {
+        //Check nome
+        txts[0].addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                txts[0].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
             }
-        }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (txts[0].getText().toLowerCase().equals("") || !txts[0].getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("O nome inserido está incorreto!");
+                    }
+                } catch (Exception ex) {
+                    txts[0].setBorder(new LineBorder(Color.red, 1));
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+
+        txts[1].addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                txts[1].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+                    Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+                    Matcher matcher = pattern.matcher(txts[1].getText());
+                    if (!(matcher.matches() && !txts[1].getText().equals(""))) {
+                        throw new Exception("O Email inserido está incorreto!");
+                    }
+                } catch (Exception ex) {
+
+                    txts[1].setBorder(new LineBorder(Color.red, 1));
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+
         
+        
+        cpf.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                cpf.setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (cpf.getText().contains(" ")) {
+                        
+                        throw new Exception("CPF inserido é invalido!");
+                    }
+                } catch (Exception ex) {
+                    cpf.setBorder(new LineBorder(Color.red, 1));
+                    cpf.setValue("");
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+
         return true;
     }
-    
 
     public static void visibilidade(MainView view, String painel, String botao) {
 

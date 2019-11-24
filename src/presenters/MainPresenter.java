@@ -5,10 +5,17 @@
  */
 package presenters;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
 import model.dao.PaisDao;
 import utils.JFrameUtils;
 import views.MainView;
@@ -18,10 +25,10 @@ import views.MainView;
  * @author Maurício
  */
 public class MainPresenter {
-    
+
     private static MainPresenter instance;
     private static MainView view;
-    
+
     private MainPresenter() {
         view = new MainView();
         view.getPnProfessor().setVisible(false);
@@ -38,12 +45,16 @@ public class MainPresenter {
         view.getBtnAddFuncionario().setName("btnAddFuncionario");
         iniciarView();
     }
-    
+
     private void iniciarView() {
+        
+        JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
+        view.getTxtNumero(), view.getTxtBairro(), view.getTxtTelefone(), view.getTxtCep(), view.getTxtNomeCidade(),
+        view.getTxtNomeCidade(), view.getTxtNomeEstado(), view.getTxtPais(), view.getTxtRua(), view.getTxtUf()}, view.getTxtCpf());
 
         //Botão professor
         view.getBtnProfessor().addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.visibilidade(view, "pnProfessor", "btnProfessor");
@@ -52,7 +63,7 @@ public class MainPresenter {
 
         //Botão tiragem
         view.getBtnTiragem().addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.visibilidade(view, "pnTiragem", "btnTiragem");
@@ -61,7 +72,7 @@ public class MainPresenter {
 
         //Botão encomenda
         view.getBtnEncomenda().addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.visibilidade(view, "pnEncomenda", "btnEncomenda");
@@ -70,29 +81,30 @@ public class MainPresenter {
 
         //Botão add novo funcionário
         view.getBtnAddFuncionario().addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.visibilidade(view, "pnAddFuncionario", "btnAddFuncionario");
             }
         });
-        
+
         view.getBtnLimpar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.cleanTextField(view.getPnAddFuncionario().getComponents());
             }
         });
-        
+
+
         view.getBtnSalvar().addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrameUtils.checagem(view.getPnAddFuncionario().getComponents());
+                
             }
         });
     }
-    
+
     public static MainPresenter getInstance() {
         if (instance == null) {
             instance = new MainPresenter();
