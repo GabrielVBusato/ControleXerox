@@ -37,10 +37,48 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         pnPrincipal = new javax.swing.JPanel();
+        pnInfoEncomenda = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        txtNomeEncomenda = new javax.swing.JTextField();
+        btnSalvarEncomenda = new javax.swing.JButton();
+        pnAvisaEncomendaSalva = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
         pnTiragem = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         pnEncomenda = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        txtBairroCliente = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtNumeroCliente = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        txtNomeCidadeCliente = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txtCepCliente = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        txtNomeEstadoCliente = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txtPaisCliente = new javax.swing.JTextField();
+        txtNomeCliente = new javax.swing.JTextField();
+        txtUfCliente = new javax.swing.JTextField();
+        txtEmailCliente = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        txtCpfCliente = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        txtTelefoneCliente = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        btnProximoPanelCliente = new javax.swing.JButton();
+        txtRuaCliente = new javax.swing.JTextField();
+        btnLimparCliente = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        btnCancelarCliente = new javax.swing.JButton();
         pnProfessor = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         pnAddFuncionario = new javax.swing.JPanel();
@@ -84,6 +122,114 @@ public class MainView extends javax.swing.JFrame {
 
         pnPrincipal.setLayout(null);
 
+        pnInfoEncomenda.setPreferredSize(new java.awt.Dimension(359, 359));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("INFORMAÇÕES DA ENCOMENDA");
+
+        jLabel30.setText("Nome da encomenda");
+
+        txtNomeEncomenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeEncomendaActionPerformed(evt);
+            }
+        });
+
+        btnSalvarEncomenda.setText("Salvar encomenda");
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel32.setText("Pronto! A encomenda foi salva com sucesso");
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel31.setText("Agora vá em ");
+
+        jLabel33.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel33.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-impressora-de-porta-aberta-40.png"))); // NOI18N
+        jLabel33.setText("  Tiragem");
+        jLabel33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel34.setText(" e faça as tiragens relacionadas");
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel35.setText("a esta encomenda.");
+
+        javax.swing.GroupLayout pnAvisaEncomendaSalvaLayout = new javax.swing.GroupLayout(pnAvisaEncomendaSalva);
+        pnAvisaEncomendaSalva.setLayout(pnAvisaEncomendaSalvaLayout);
+        pnAvisaEncomendaSalvaLayout.setHorizontalGroup(
+            pnAvisaEncomendaSalvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnAvisaEncomendaSalvaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnAvisaEncomendaSalvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel35)
+                    .addGroup(pnAvisaEncomendaSalvaLayout.createSequentialGroup()
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel34)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnAvisaEncomendaSalvaLayout.setVerticalGroup(
+            pnAvisaEncomendaSalvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnAvisaEncomendaSalvaLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel32)
+                .addGap(18, 18, 18)
+                .addGroup(pnAvisaEncomendaSalvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel35)
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnInfoEncomendaLayout = new javax.swing.GroupLayout(pnInfoEncomenda);
+        pnInfoEncomenda.setLayout(pnInfoEncomendaLayout);
+        pnInfoEncomendaLayout.setHorizontalGroup(
+            pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnInfoEncomendaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(121, 121, 121))
+            .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(pnAvisaEncomendaSalva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
+                .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
+                        .addGap(342, 342, 342)
+                        .addComponent(btnSalvarEncomenda))
+                    .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30)
+                            .addComponent(txtNomeEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        pnInfoEncomendaLayout.setVerticalGroup(
+            pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNomeEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btnSalvarEncomenda)
+                .addGap(53, 53, 53)
+                .addComponent(pnAvisaEncomendaSalva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+
+        pnPrincipal.add(pnInfoEncomenda);
+        pnInfoEncomenda.setBounds(-18, -15, 490, 460);
+
         pnTiragem.setPreferredSize(new java.awt.Dimension(359, 359));
 
         jLabel3.setText("painel de tiragem");
@@ -110,23 +256,199 @@ public class MainView extends javax.swing.JFrame {
 
         pnEncomenda.setPreferredSize(new java.awt.Dimension(472, 435));
 
-        jLabel2.setText("painel de encomenda");
+        jLabel17.setText("Número");
+
+        jLabel18.setText("Cidade");
+
+        jLabel19.setText("CEP");
+
+        jLabel20.setText("Estado");
+
+        jLabel21.setText("UF");
+
+        jLabel22.setText("Nome");
+
+        txtUfCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUfClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("Pais");
+
+        jLabel24.setText("Email");
+
+        txtCpfCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCpfClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setText("CPF");
+
+        jLabel26.setText("Telefone");
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel27.setText("CADASTRAR NOVO CLIENTE");
+
+        jLabel28.setText("Rua");
+
+        btnProximoPanelCliente.setText("Próximo");
+        btnProximoPanelCliente.setFocusPainted(false);
+
+        btnLimparCliente.setText("Limpar");
+        btnLimparCliente.setFocusPainted(false);
+        btnLimparCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("Bairro");
+
+        btnCancelarCliente.setText("Cancelar");
+        btnCancelarCliente.setFocusPainted(false);
+        btnCancelarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnEncomendaLayout = new javax.swing.GroupLayout(pnEncomenda);
         pnEncomenda.setLayout(pnEncomendaLayout);
         pnEncomendaLayout.setHorizontalGroup(
             pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnEncomendaLayout.createSequentialGroup()
-                .addGap(177, 177, 177)
-                .addComponent(jLabel2)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnEncomendaLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel27))
+                    .addComponent(jLabel28)
+                    .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtRuaCliente, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEncomendaLayout.createSequentialGroup()
+                            .addComponent(jLabel22)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnLimparCliente))
+                        .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtEmailCliente)
+                        .addGroup(pnEncomendaLayout.createSequentialGroup()
+                            .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel25)
+                                .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel26)
+                                .addComponent(txtTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNomeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnEncomendaLayout.createSequentialGroup()
+                        .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addComponent(txtBairroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(txtNumeroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pnEncomendaLayout.createSequentialGroup()
+                            .addComponent(btnProximoPanelCliente)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnCancelarCliente))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEncomendaLayout.createSequentialGroup()
+                            .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEncomendaLayout.createSequentialGroup()
+                                    .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel18)
+                                        .addComponent(txtNomeCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(30, 30, 30)
+                                    .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel19)
+                                        .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEncomendaLayout.createSequentialGroup()
+                                    .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtNomeEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel20))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtUfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel21))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel23)
+                                        .addComponent(txtPaisCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         pnEncomendaLayout.setVerticalGroup(
             pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnEncomendaLayout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(jLabel2)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel27)
+                .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnEncomendaLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel22))
+                    .addGroup(pnEncomendaLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimparCliente)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnEncomendaLayout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEmailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel26))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnEncomendaLayout.createSequentialGroup()
+                                .addComponent(jLabel28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtRuaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtBairroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNumeroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnEncomendaLayout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addGap(26, 26, 26)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNomeCidadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnEncomendaLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(26, 26, 26))))
+                    .addComponent(txtCepCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnEncomendaLayout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(26, 26, 26)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtNomeEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtUfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPaisCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnEncomendaLayout.createSequentialGroup()
+                        .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel23))
+                        .addGap(26, 26, 26)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnProximoPanelCliente)
+                    .addComponent(btnCancelarCliente))
+                .addContainerGap())
         );
 
         pnPrincipal.add(pnEncomenda);
@@ -446,6 +768,26 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEncomendaActionPerformed
 
+    private void txtUfClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUfClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUfClienteActionPerformed
+
+    private void txtCpfClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCpfClienteActionPerformed
+
+    private void btnLimparClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimparClienteActionPerformed
+
+    private void btnCancelarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarClienteActionPerformed
+
+    private void txtNomeEncomendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeEncomendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeEncomendaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -487,10 +829,14 @@ public class MainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddFuncionario;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnEncomenda;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnLimparCliente;
     private javax.swing.JButton btnProfessor;
+    private javax.swing.JButton btnProximoPanelCliente;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnSalvarEncomenda;
     private javax.swing.JButton btnTiragem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -500,8 +846,27 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -509,23 +874,38 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel pnAddFuncionario;
+    private javax.swing.JPanel pnAvisaEncomendaSalva;
     private javax.swing.JPanel pnEncomenda;
+    private javax.swing.JPanel pnInfoEncomenda;
     private javax.swing.JPanel pnMenu;
     private javax.swing.JPanel pnPrincipal;
     private javax.swing.JPanel pnProfessor;
     private javax.swing.JPanel pnTiragem;
     private javax.swing.JTextField txtBairro;
+    private javax.swing.JTextField txtBairroCliente;
     private javax.swing.JTextField txtCep;
     private javax.swing.JFormattedTextField txtCpf;
+    private javax.swing.JTextField txtCepCliente;
+    private javax.swing.JTextField txtCpfCliente;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmailCliente;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNomeCidade;
+    private javax.swing.JTextField txtNomeCidadeCliente;
+    private javax.swing.JTextField txtNomeCliente;
+    private javax.swing.JTextField txtNomeEncomenda;
     private javax.swing.JTextField txtNomeEstado;
+    private javax.swing.JTextField txtNomeEstadoCliente;
     private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtNumeroCliente;
     private javax.swing.JTextField txtPais;
+    private javax.swing.JTextField txtPaisCliente;
     private javax.swing.JTextField txtRua;
+    private javax.swing.JTextField txtRuaCliente;
     private javax.swing.JTextField txtTelefone;
+    private javax.swing.JTextField txtTelefoneCliente;
     private javax.swing.JTextField txtUf;
+    private javax.swing.JTextField txtUfCliente;
     // End of variables declaration//GEN-END:variables
 
     public JButton getBtnAddFuncionario() {
@@ -628,7 +1008,81 @@ public class MainView extends javax.swing.JFrame {
         return pnMenu;
     }
 
+    public JButton getBtnCancelarCliente() {
+        return btnCancelarCliente;
+    }
 
+    public JButton getBtnLimparCliente() {
+        return btnLimparCliente;
+    }
+
+    public JButton getBtnProximoPanelCliente() {
+        return btnProximoPanelCliente;
+    }
+
+    public JPanel getPnInfoEncomenda() {
+        return pnInfoEncomenda;
+    }
+
+    public JTextField getTxtBairroCliente() {
+        return txtBairroCliente;
+    }
+
+    public JTextField getTxtCepCliente() {
+        return txtCepCliente;
+    }
+
+    public JTextField getTxtCpfCliente() {
+        return txtCpfCliente;
+    }
+
+    public JTextField getTxtEmailCliente() {
+        return txtEmailCliente;
+    }
+
+    public JTextField getTxtNomeCidadeCliente() {
+        return txtNomeCidadeCliente;
+    }
+
+    public JTextField getTxtNomeCliente() {
+        return txtNomeCliente;
+    }
+
+    public JTextField getTxtNomeEstadoCliente() {
+        return txtNomeEstadoCliente;
+    }
+
+    public JTextField getTxtNumeroCliente() {
+        return txtNumeroCliente;
+    }
+
+    public JTextField getTxtPaisCliente() {
+        return txtPaisCliente;
+    }
+
+    public JTextField getTxtRuaCliente() {
+        return txtRuaCliente;
+    }
+
+    public JTextField getTxtTelefoneCliente() {
+        return txtTelefoneCliente;
+    }
+
+    public JTextField getTxtUfCliente() {
+        return txtUfCliente;
+    }
+
+    public JButton getBtnSalvarEncomenda() {
+        return btnSalvarEncomenda;
+    }
+
+    public JTextField getTxtNomeEncomenda() {
+        return txtNomeEncomenda;
+    }   
+
+    public JPanel getPnAvisaEncomendaSalva() {
+        return pnAvisaEncomendaSalva;
+    }
     
     
 }
