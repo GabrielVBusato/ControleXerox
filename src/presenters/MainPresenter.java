@@ -5,8 +5,10 @@
  */
 package presenters;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JPanel;
 import model.dao.PaisDao;
 import utils.JFrameUtils;
 import views.MainView;
@@ -26,6 +28,14 @@ public class MainPresenter {
         view.getPnTiragem().setVisible(false);
         view.getPnEncomenda().setVisible(false);
         view.getPnAddFuncionario().setVisible(false);
+        view.getPnProfessor().setName("pnProfessor");
+        view.getPnTiragem().setName("pnTiragem");
+        view.getPnEncomenda().setName("pnEncomenda");
+        view.getPnAddFuncionario().setName("pnAddFuncionario");
+        view.getBtnProfessor().setName("btnProfessor");
+        view.getBtnTiragem().setName("btnTiragem");
+        view.getBtnEncomenda().setName("btnEncomenda");
+        view.getBtnAddFuncionario().setName("btnAddFuncionario");
         iniciarView();
     }
 
@@ -36,10 +46,7 @@ public class MainPresenter {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getPnProfessor().setVisible(true);
-                view.getPnTiragem().setVisible(false);
-                view.getPnEncomenda().setVisible(false);
-                view.getPnAddFuncionario().setVisible(false);
+                JFrameUtils.visibilidade(view, "pnProfessor", "btnProfessor");
             }
         });
 
@@ -48,10 +55,7 @@ public class MainPresenter {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getPnProfessor().setVisible(false);
-                view.getPnTiragem().setVisible(true);
-                view.getPnEncomenda().setVisible(false);
-                view.getPnAddFuncionario().setVisible(false);
+                JFrameUtils.visibilidade(view, "pnTiragem", "btnTiragem");
             }
         });
 
@@ -60,10 +64,7 @@ public class MainPresenter {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getPnProfessor().setVisible(false);
-                view.getPnTiragem().setVisible(false);
-                view.getPnEncomenda().setVisible(true);
-                view.getPnAddFuncionario().setVisible(false);
+                JFrameUtils.visibilidade(view, "pnEncomenda", "btnEncomenda");
             }
         });
 
@@ -72,10 +73,7 @@ public class MainPresenter {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getPnProfessor().setVisible(false);
-                view.getPnTiragem().setVisible(false);
-                view.getPnEncomenda().setVisible(false);
-                view.getPnAddFuncionario().setVisible(true);
+                JFrameUtils.visibilidade(view, "pnAddFuncionario", "btnAddFuncionario");
             }
         });
 
@@ -86,7 +84,7 @@ public class MainPresenter {
             }
         });
     }
-
+    
     public static MainPresenter getInstance() {
         if (instance == null) {
             instance = new MainPresenter();

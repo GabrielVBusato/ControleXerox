@@ -23,7 +23,7 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
-        JMenu.setBorder( new MatteBorder(0, 0, 0, 1, Color.gray));
+        pnMenu.setBorder( new MatteBorder(0, 0, 0, 1, Color.gray));
     }
 
     /**
@@ -71,11 +71,11 @@ public class MainView extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        JMenu = new javax.swing.JPanel();
-        btnTiragem = new javax.swing.JToggleButton();
-        btnProfessor = new javax.swing.JToggleButton();
-        btnAddFuncionario = new javax.swing.JToggleButton();
-        btnEncomenda1 = new javax.swing.JToggleButton();
+        pnMenu = new javax.swing.JPanel();
+        btnAddFuncionario = new javax.swing.JButton();
+        btnProfessor = new javax.swing.JButton();
+        btnTiragem = new javax.swing.JButton();
+        btnEncomenda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -197,8 +197,10 @@ public class MainView extends javax.swing.JFrame {
         jLabel16.setText("Pais");
 
         btnSalvar.setText("Salvar");
+        btnSalvar.setFocusPainted(false);
 
         btnLimpar.setText("Limpar");
+        btnLimpar.setFocusPainted(false);
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparActionPerformed(evt);
@@ -206,6 +208,7 @@ public class MainView extends javax.swing.JFrame {
         });
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.setFocusPainted(false);
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
@@ -343,7 +346,7 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(jLabel15)
                             .addComponent(jLabel16))
                         .addGap(26, 26, 26)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnCancelar))
@@ -356,38 +359,57 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(pnPrincipal);
         pnPrincipal.setBounds(208, 11, 470, 448);
 
-        JMenu.setLayout(null);
+        pnMenu.setLayout(null);
 
-        btnTiragem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnTiragem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-impressora-de-porta-aberta-40.png"))); // NOI18N
-        btnTiragem.setText("  Tiragem");
-        JMenu.add(btnTiragem);
-        btnTiragem.setBounds(10, 90, 160, 50);
+        btnAddFuncionario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnAddFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-adicionar-usuário-masculino-48.png"))); // NOI18N
+        btnAddFuncionario.setFocusPainted(false);
+        btnAddFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddFuncionarioActionPerformed(evt);
+            }
+        });
+        pnMenu.add(btnAddFuncionario);
+        btnAddFuncionario.setBounds(10, 390, 70, 60);
 
         btnProfessor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnProfessor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-live-folder-40.png"))); // NOI18N
         btnProfessor.setText("  Professor");
-        JMenu.add(btnProfessor);
-        btnProfessor.setBounds(10, 20, 160, 50);
-
-        btnAddFuncionario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnAddFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-adicionar-usuário-masculino-48.png"))); // NOI18N
-        JMenu.add(btnAddFuncionario);
-        btnAddFuncionario.setBounds(10, 380, 60, 60);
-
-        btnEncomenda1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnEncomenda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-histórico-de-encomendas-40.png"))); // NOI18N
-        btnEncomenda1.setText("  Encomenda");
-        btnEncomenda1.addActionListener(new java.awt.event.ActionListener() {
+        btnProfessor.setFocusPainted(false);
+        btnProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEncomenda1ActionPerformed(evt);
+                btnProfessorActionPerformed(evt);
             }
         });
-        JMenu.add(btnEncomenda1);
-        btnEncomenda1.setBounds(10, 160, 160, 50);
+        pnMenu.add(btnProfessor);
+        btnProfessor.setBounds(10, 40, 170, 60);
 
-        getContentPane().add(JMenu);
-        JMenu.setBounds(0, 0, 192, 560);
+        btnTiragem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnTiragem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-impressora-de-porta-aberta-40.png"))); // NOI18N
+        btnTiragem.setText("  Tiragem");
+        btnTiragem.setFocusPainted(false);
+        btnTiragem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTiragemActionPerformed(evt);
+            }
+        });
+        pnMenu.add(btnTiragem);
+        btnTiragem.setBounds(10, 120, 170, 60);
+
+        btnEncomenda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnEncomenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-histórico-de-encomendas-40.png"))); // NOI18N
+        btnEncomenda.setText("  Encomenda");
+        btnEncomenda.setFocusPainted(false);
+        btnEncomenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEncomendaActionPerformed(evt);
+            }
+        });
+        pnMenu.add(btnEncomenda);
+        btnEncomenda.setBounds(10, 200, 170, 60);
+
+        getContentPane().add(pnMenu);
+        pnMenu.setBounds(0, 0, 192, 560);
 
         setSize(new java.awt.Dimension(694, 498));
         setLocationRelativeTo(null);
@@ -409,9 +431,21 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void btnEncomenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncomenda1ActionPerformed
+    private void btnAddFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddFuncionarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEncomenda1ActionPerformed
+    }//GEN-LAST:event_btnAddFuncionarioActionPerformed
+
+    private void btnProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfessorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProfessorActionPerformed
+
+    private void btnTiragemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiragemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTiragemActionPerformed
+
+    private void btnEncomendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncomendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEncomendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -452,14 +486,13 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel JMenu;
-    private javax.swing.JToggleButton btnAddFuncionario;
+    private javax.swing.JButton btnAddFuncionario;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JToggleButton btnEncomenda1;
+    private javax.swing.JButton btnEncomenda;
     private javax.swing.JButton btnLimpar;
-    private javax.swing.JToggleButton btnProfessor;
+    private javax.swing.JButton btnProfessor;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JToggleButton btnTiragem;
+    private javax.swing.JButton btnTiragem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -478,6 +511,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel pnAddFuncionario;
     private javax.swing.JPanel pnEncomenda;
+    private javax.swing.JPanel pnMenu;
     private javax.swing.JPanel pnPrincipal;
     private javax.swing.JPanel pnProfessor;
     private javax.swing.JPanel pnTiragem;
@@ -495,19 +529,19 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField txtUf;
     // End of variables declaration//GEN-END:variables
 
-    public JToggleButton getBtnAddFuncionario() {
+    public JButton getBtnAddFuncionario() {
         return btnAddFuncionario;
     }
 
-    public JToggleButton getBtnEncomenda() {
-        return btnAddFuncionario;
+    public JButton getBtnEncomenda() {
+        return btnEncomenda;
     }
 
-    public JToggleButton getBtnProfessor() {
+    public JButton getBtnProfessor() {
         return btnProfessor;
     }
 
-    public JToggleButton getBtnTiragem() {
+    public JButton getBtnTiragem() {
         return btnTiragem;
     }
 
@@ -590,4 +624,9 @@ public class MainView extends javax.swing.JFrame {
     public JButton getBtnSalvar() {
         return btnSalvar;
     }
+
+    public JPanel getPnMenu() {
+        return pnMenu;
+    }
+    
 }
