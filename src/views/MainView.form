@@ -819,27 +819,27 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblRuaFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="txtRua" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblNomeFuncionario" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="btnLimpar" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblEmailFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtEmail" max="32767" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
-                                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblCpfFuncionario" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
                                               <Component id="txtCpf" pref="158" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblTelefoneFuncionario" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtTelefone" min="-2" pref="156" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -847,41 +847,41 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblBairroFuncionario" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtBairro" min="-2" pref="204" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblNumeroFuncionario" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtNumero" min="-2" pref="95" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblCidadeFuncionario" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtNomeCidade" min="-2" pref="145" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblCepFuncionario" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtCep" min="-2" pref="157" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="txtNomeEstado" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                              <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblEstadoFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="txtUf" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                                              <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblUfFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblPaisFuncionario" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
                                               <Component id="txtPais" max="32767" attributes="0"/>
@@ -896,7 +896,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="92" max="32767" attributes="0"/>
+                      <EmptySpace pref="74" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -908,7 +908,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNomeFuncionario" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -920,13 +920,13 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEmailFuncionario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtEmail" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCpfFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTelefoneFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -936,17 +936,17 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblRuaFuncionario" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtRua" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblBairroFuncionario" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtBairro" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtNumero" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblNumeroFuncionario" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -954,14 +954,14 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="txtNomeCidade" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCidadeFuncionario" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Component id="txtCep" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblCepFuncionario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -974,14 +974,14 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEstadoFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblUfFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblPaisFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -992,7 +992,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="lblNomeFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nome"/>
               </Properties>
@@ -1001,19 +1001,19 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmail">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="lblEmailFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="lblCpfFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CPF"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTelefone">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="lblTelefoneFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Telefone"/>
               </Properties>
@@ -1026,49 +1026,49 @@
                 <Property name="text" type="java.lang.String" value="CADASTRAR NOVO FUNCION&#xc1;RIO"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
+            <Component class="javax.swing.JLabel" name="lblRuaFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Rua"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRua">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
+            <Component class="javax.swing.JLabel" name="lblBairroFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Bairro"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtBairro">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
+            <Component class="javax.swing.JLabel" name="lblNumeroFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNumero">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
+            <Component class="javax.swing.JLabel" name="lblCidadeFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cidade"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeCidade">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
+            <Component class="javax.swing.JLabel" name="lblCepFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CEP"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCep">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
+            <Component class="javax.swing.JLabel" name="lblEstadoFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estado"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeEstado">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel15">
+            <Component class="javax.swing.JLabel" name="lblUfFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="UF"/>
               </Properties>
@@ -1080,7 +1080,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUfActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel16">
+            <Component class="javax.swing.JLabel" name="lblPaisFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pais"/>
               </Properties>

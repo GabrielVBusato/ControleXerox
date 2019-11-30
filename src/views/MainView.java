@@ -8,6 +8,7 @@ package views;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
@@ -96,30 +97,30 @@ public class MainView extends javax.swing.JFrame {
         pnProfessor = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         pnAddFuncionario = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        lblNomeFuncionario = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblEmailFuncionario = new javax.swing.JLabel();
+        lblCpfFuncionario = new javax.swing.JLabel();
         txtTelefone = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        lblTelefoneFuncionario = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblRuaFuncionario = new javax.swing.JLabel();
         txtRua = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        lblBairroFuncionario = new javax.swing.JLabel();
         txtBairro = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
+        lblNumeroFuncionario = new javax.swing.JLabel();
         txtNumero = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
+        lblCidadeFuncionario = new javax.swing.JLabel();
         txtNomeCidade = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        lblCepFuncionario = new javax.swing.JLabel();
         txtCep = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
+        lblEstadoFuncionario = new javax.swing.JLabel();
         txtNomeEstado = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
+        lblUfFuncionario = new javax.swing.JLabel();
         txtPais = new javax.swing.JTextField();
         txtUf = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
+        lblPaisFuncionario = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
@@ -554,30 +555,30 @@ public class MainView extends javax.swing.JFrame {
 
         pnAddFuncionario.setPreferredSize(new java.awt.Dimension(472, 435));
 
-        jLabel5.setText("Nome");
+        lblNomeFuncionario.setText("Nome");
 
-        jLabel6.setText("Email");
+        lblEmailFuncionario.setText("Email");
 
-        jLabel7.setText("CPF");
+        lblCpfFuncionario.setText("CPF");
 
-        jLabel8.setText("Telefone");
+        lblTelefoneFuncionario.setText("Telefone");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("CADASTRAR NOVO FUNCIONÁRIO");
 
-        jLabel9.setText("Rua");
+        lblRuaFuncionario.setText("Rua");
 
-        jLabel10.setText("Bairro");
+        lblBairroFuncionario.setText("Bairro");
 
-        jLabel11.setText("Número");
+        lblNumeroFuncionario.setText("Número");
 
-        jLabel12.setText("Cidade");
+        lblCidadeFuncionario.setText("Cidade");
 
-        jLabel13.setText("CEP");
+        lblCepFuncionario.setText("CEP");
 
-        jLabel14.setText("Estado");
+        lblEstadoFuncionario.setText("Estado");
 
-        jLabel15.setText("UF");
+        lblUfFuncionario.setText("UF");
 
         txtUf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -585,7 +586,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setText("Pais");
+        lblPaisFuncionario.setText("Pais");
 
         btnSalvar.setText("Salvar");
         btnSalvar.setFocusPainted(false);
@@ -624,62 +625,62 @@ public class MainView extends javax.swing.JFrame {
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
+                            .addComponent(lblRuaFuncionario)
                             .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(txtRua, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
-                                    .addComponent(jLabel5)
+                                    .addComponent(lblNomeFuncionario)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnLimpar))
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblEmailFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtEmail)
                                 .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                            .addComponent(jLabel7)
+                                            .addComponent(lblCpfFuncionario)
                                             .addGap(0, 0, Short.MAX_VALUE))
                                         .addComponent(txtCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
                                     .addGap(18, 18, 18)
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel8)
+                                        .addComponent(lblTelefoneFuncionario)
                                         .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
+                                    .addComponent(lblBairroFuncionario)
                                     .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(33, 33, 33)
                                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
+                                    .addComponent(lblNumeroFuncionario)
                                     .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel12)
+                                        .addComponent(lblCidadeFuncionario)
                                         .addComponent(txtNomeCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(30, 30, 30)
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel13)
+                                        .addComponent(lblCepFuncionario)
                                         .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtNomeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel14))
+                                        .addComponent(lblEstadoFuncionario))
                                     .addGap(18, 18, 18)
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel15))
+                                        .addComponent(lblUfFuncionario))
                                     .addGap(18, 18, 18)
                                     .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                            .addComponent(jLabel16)
+                                            .addComponent(lblPaisFuncionario)
                                             .addGap(0, 0, Short.MAX_VALUE))
                                         .addComponent(txtPais)))
                                 .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                                     .addComponent(btnSalvar)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(btnCancelar))))))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         pnAddFuncionarioLayout.setVerticalGroup(
             pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -689,7 +690,7 @@ public class MainView extends javax.swing.JFrame {
                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(jLabel5))
+                        .addComponent(lblNomeFuncionario))
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(btnLimpar)))
@@ -698,13 +699,13 @@ public class MainView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                        .addComponent(lblEmailFuncionario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
+                            .addComponent(lblCpfFuncionario)
+                            .addComponent(lblTelefoneFuncionario))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -712,26 +713,26 @@ public class MainView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
+                                .addComponent(lblRuaFuncionario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10)
+                                .addComponent(lblBairroFuncionario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
+                                .addComponent(lblNumeroFuncionario)
                                 .addGap(26, 26, 26)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtNomeCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                .addComponent(jLabel12)
+                                .addComponent(lblCidadeFuncionario)
                                 .addGap(26, 26, 26))))
                     .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
+                        .addComponent(lblCepFuncionario)
                         .addGap(26, 26, 26)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -741,11 +742,11 @@ public class MainView extends javax.swing.JFrame {
                         .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                         .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16))
+                            .addComponent(lblEstadoFuncionario)
+                            .addComponent(lblUfFuncionario)
+                            .addComponent(lblPaisFuncionario))
                         .addGap(26, 26, 26)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnCancelar))
@@ -916,13 +917,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarTiragem;
     private javax.swing.JButton btnTiragem;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -949,15 +943,22 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox jcbSelecioneFuncionario;
     private javax.swing.JRadioButton jrbTiragemAvulsa;
     private javax.swing.JRadioButton jrbTiragemEncomendada;
+    private javax.swing.JLabel lblBairroFuncionario;
+    private javax.swing.JLabel lblCepFuncionario;
+    private javax.swing.JLabel lblCidadeFuncionario;
+    private javax.swing.JLabel lblCpfFuncionario;
+    private javax.swing.JLabel lblEmailFuncionario;
+    private javax.swing.JLabel lblEstadoFuncionario;
+    private javax.swing.JLabel lblNomeFuncionario;
+    private javax.swing.JLabel lblNumeroFuncionario;
+    private javax.swing.JLabel lblPaisFuncionario;
+    private javax.swing.JLabel lblRuaFuncionario;
+    private javax.swing.JLabel lblTelefoneFuncionario;
+    private javax.swing.JLabel lblUfFuncionario;
     private javax.swing.JPanel pnAddFuncionario;
     private javax.swing.JPanel pnAvisaEncomendaSalva;
     private javax.swing.JPanel pnEncomenda;
@@ -1171,6 +1172,103 @@ public class MainView extends javax.swing.JFrame {
     public JPanel getPnAvisaEncomendaSalva() {
         return pnAvisaEncomendaSalva;
     }
+
+    public JLabel getLblBairroFuncionario() {
+        return lblBairroFuncionario;
+    }
+
+    public void setLblBairroFuncionario(JLabel lblBairroFuncionario) {
+        this.lblBairroFuncionario = lblBairroFuncionario;
+    }
+
+    public JLabel getLblCepFuncionario() {
+        return lblCepFuncionario;
+    }
+
+    public void setLblCepFuncionario(JLabel lblCepFuncionario) {
+        this.lblCepFuncionario = lblCepFuncionario;
+    }
+
+    public JLabel getLblCidadeFuncionario() {
+        return lblCidadeFuncionario;
+    }
+
+    public void setLblCidadeFuncionario(JLabel lblCidadeFuncionario) {
+        this.lblCidadeFuncionario = lblCidadeFuncionario;
+    }
+
+    public JLabel getLblCpfFuncionario() {
+        return lblCpfFuncionario;
+    }
+
+    public void setLblCpfFuncionario(JLabel lblCpfFuncionario) {
+        this.lblCpfFuncionario = lblCpfFuncionario;
+    }
+
+    public JLabel getLblEmailFuncionario() {
+        return lblEmailFuncionario;
+    }
+
+    public void setLblEmailFuncionario(JLabel lblEmailFuncionario) {
+        this.lblEmailFuncionario = lblEmailFuncionario;
+    }
+
+    public JLabel getLblEstadoFuncionario() {
+        return lblEstadoFuncionario;
+    }
+
+    public void setLblEstadoFuncionario(JLabel lblEstadoFuncionario) {
+        this.lblEstadoFuncionario = lblEstadoFuncionario;
+    }
+
+    public JLabel getLblNomeFuncionario() {
+        return lblNomeFuncionario;
+    }
+
+    public void setLblNomeFuncionario(JLabel lblNomeFuncionario) {
+        this.lblNomeFuncionario = lblNomeFuncionario;
+    }
+
+    public JLabel getLblNumeroFuncionario() {
+        return lblNumeroFuncionario;
+    }
+
+    public void setLblNumeroFuncionario(JLabel lblNumeroFuncionario) {
+        this.lblNumeroFuncionario = lblNumeroFuncionario;
+    }
+
+    public JLabel getLblPaisFuncionario() {
+        return lblPaisFuncionario;
+    }
+
+    public void setLblPaisFuncionario(JLabel lblPaisFuncionario) {
+        this.lblPaisFuncionario = lblPaisFuncionario;
+    }
+
+    public JLabel getLblRuaFuncionario() {
+        return lblRuaFuncionario;
+    }
+
+    public void setLblRuaFuncionario(JLabel lblRuaFuncionario) {
+        this.lblRuaFuncionario = lblRuaFuncionario;
+    }
+
+    public JLabel getLblTelefoneFuncionario() {
+        return lblTelefoneFuncionario;
+    }
+
+    public void setLblTelefoneFuncionario(JLabel lblTelefoneFuncionario) {
+        this.lblTelefoneFuncionario = lblTelefoneFuncionario;
+    }
+
+    public JLabel getLblUfFuncionario() {
+        return lblUfFuncionario;
+    }
+
+    public void setLblUfFuncionario(JLabel lblUfFuncionario) {
+        this.lblUfFuncionario = lblUfFuncionario;
+    }
+    
     
     
 }
