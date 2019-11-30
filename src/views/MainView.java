@@ -105,7 +105,6 @@ public class MainView extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         lblEmailFuncionario = new javax.swing.JLabel();
         lblCpfFuncionario = new javax.swing.JLabel();
-        txtTelefone = new javax.swing.JTextField();
         lblTelefoneFuncionario = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         lblRuaFuncionario = new javax.swing.JLabel();
@@ -117,17 +116,18 @@ public class MainView extends javax.swing.JFrame {
         lblCidadeFuncionario = new javax.swing.JLabel();
         txtNomeCidade = new javax.swing.JTextField();
         lblCepFuncionario = new javax.swing.JLabel();
-        txtCep = new javax.swing.JTextField();
         lblEstadoFuncionario = new javax.swing.JLabel();
         txtNomeEstado = new javax.swing.JTextField();
         lblUfFuncionario = new javax.swing.JLabel();
         txtPais = new javax.swing.JTextField();
-        txtUf = new javax.swing.JTextField();
         lblPaisFuncionario = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         txtCpf = new javax.swing.JFormattedTextField();
+        txtTelefone = new javax.swing.JFormattedTextField();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        txtUf = new javax.swing.JFormattedTextField();
         pnMenu = new javax.swing.JPanel();
         btnAddFuncionario = new javax.swing.JButton();
         btnProfessor = new javax.swing.JButton();
@@ -558,38 +558,32 @@ public class MainView extends javax.swing.JFrame {
 
         pnAddFuncionario.setPreferredSize(new java.awt.Dimension(472, 435));
 
-        lblNomeFuncionario.setText("Nome");
+        lblNomeFuncionario.setText("Nome*");
 
-        lblEmailFuncionario.setText("Email");
+        lblEmailFuncionario.setText("Email*");
 
-        lblCpfFuncionario.setText("CPF");
+        lblCpfFuncionario.setText("CPF*");
 
-        lblTelefoneFuncionario.setText("Telefone");
+        lblTelefoneFuncionario.setText("Telefone*");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("CADASTRAR NOVO FUNCIONÁRIO");
 
-        lblRuaFuncionario.setText("Rua");
+        lblRuaFuncionario.setText("Rua*");
 
-        lblBairroFuncionario.setText("Bairro");
+        lblBairroFuncionario.setText("Bairro*");
 
-        lblNumeroFuncionario.setText("Número");
+        lblNumeroFuncionario.setText("Número*");
 
-        lblCidadeFuncionario.setText("Cidade");
+        lblCidadeFuncionario.setText("Cidade*");
 
-        lblCepFuncionario.setText("CEP");
+        lblCepFuncionario.setText("CEP*");
 
-        lblEstadoFuncionario.setText("Estado");
+        lblEstadoFuncionario.setText("Estado*");
 
-        lblUfFuncionario.setText("UF");
+        lblUfFuncionario.setText("UF*");
 
-        txtUf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUfActionPerformed(evt);
-            }
-        });
-
-        lblPaisFuncionario.setText("Pais");
+        lblPaisFuncionario.setText("Pais*");
 
         btnSalvar.setText("Salvar");
         btnSalvar.setFocusPainted(false);
@@ -616,6 +610,24 @@ public class MainView extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        try {
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txtUf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout pnAddFuncionarioLayout = new javax.swing.GroupLayout(pnAddFuncionario);
         pnAddFuncionario.setLayout(pnAddFuncionarioLayout);
         pnAddFuncionarioLayout.setHorizontalGroup(
@@ -628,62 +640,70 @@ public class MainView extends javax.swing.JFrame {
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRuaFuncionario)
-                            .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtRua, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
-                                    .addComponent(lblNomeFuncionario)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnLimpar))
-                                .addComponent(lblEmailFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtEmail)
-                                .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                            .addComponent(lblCpfFuncionario)
-                                            .addGap(0, 0, Short.MAX_VALUE))
-                                        .addComponent(txtCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtRua)
+                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                .addComponent(lblNomeFuncionario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnLimpar))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnAddFuncionarioLayout.createSequentialGroup()
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                        .addComponent(lblCpfFuncionario)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(txtCpf))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                                         .addComponent(lblTelefoneFuncionario)
-                                        .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(114, 114, 114))
+                                    .addComponent(txtTelefone)))
+                            .addComponent(txtNome)
+                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                        .addComponent(lblEstadoFuncionario)
+                                        .addGap(68, 68, 68))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnAddFuncionarioLayout.createSequentialGroup()
+                                        .addComponent(txtNomeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)))
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblUfFuncionario)
+                                    .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                        .addComponent(lblPaisFuncionario)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtPais)))
                             .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblBairroFuncionario)
-                                    .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(33, 33, 33)
+                                    .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblCidadeFuncionario))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNumeroFuncionario)
-                                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
-                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblCidadeFuncionario)
-                                        .addComponent(txtNomeCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(30, 30, 30)
-                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblCepFuncionario)
-                                        .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
-                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtNomeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblEstadoFuncionario))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblUfFuncionario))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                            .addComponent(lblPaisFuncionario)
-                                            .addGap(0, 0, Short.MAX_VALUE))
-                                        .addComponent(txtPais)))
-                                .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                    .addComponent(btnSalvar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnCancelar))))))
-                .addContainerGap(74, Short.MAX_VALUE))
+                                    .addComponent(txtNumero)
+                                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblCepFuncionario)
+                                            .addComponent(lblNumeroFuncionario))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnAddFuncionarioLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnSalvar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCancelar))
+                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblRuaFuncionario)
+                                    .addComponent(lblEmailFuncionario)
+                                    .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                        .addComponent(txtNomeCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(82, 82, 82))
         );
         pnAddFuncionarioLayout.setVerticalGroup(
             pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -710,9 +730,9 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(lblCpfFuncionario)
                             .addComponent(lblTelefoneFuncionario))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
@@ -720,40 +740,43 @@ public class MainView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblBairroFuncionario)
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblBairroFuncionario)
+                                    .addComponent(lblNumeroFuncionario))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                .addComponent(lblNumeroFuncionario)
-                                .addGap(26, 26, 26)))
+                            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblCidadeFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNomeCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                                .addComponent(lblCidadeFuncionario)
-                                .addGap(26, 26, 26))))
-                    .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
                         .addComponent(lblCepFuncionario)
                         .addGap(26, 26, 26)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNomeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAddFuncionarioLayout.createSequentialGroup()
+                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUfFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEstadoFuncionario, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap())
                     .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
-                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblEstadoFuncionario)
-                            .addComponent(lblUfFuncionario)
-                            .addComponent(lblPaisFuncionario))
-                        .addGap(26, 26, 26)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvar)
-                    .addComponent(btnCancelar))
-                .addContainerGap())
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnSalvar)
+                                    .addComponent(btnCancelar))
+                                .addContainerGap())
+                            .addGroup(pnAddFuncionarioLayout.createSequentialGroup()
+                                .addComponent(lblPaisFuncionario)
+                                .addGap(18, 18, 18)
+                                .addGroup(pnAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtNomeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(55, 55, 55))))))
         );
 
         pnPrincipal.add(pnAddFuncionario);
@@ -817,10 +840,6 @@ public class MainView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(694, 498));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtUfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUfActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         // TODO add your handling code here:
@@ -920,6 +939,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarEncomenda;
     private javax.swing.JButton btnSalvarTiragem;
     private javax.swing.JButton btnTiragem;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -974,7 +994,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel pnTiragem;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtBairroCliente;
-    private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCepCliente;
     private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JTextField txtCpfCliente;
@@ -995,9 +1014,9 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField txtQtdTiragem;
     private javax.swing.JTextField txtRua;
     private javax.swing.JTextField txtRuaCliente;
-    private javax.swing.JTextField txtTelefone;
+    private javax.swing.JFormattedTextField txtTelefone;
     private javax.swing.JTextField txtTelefoneCliente;
-    private javax.swing.JTextField txtUf;
+    private javax.swing.JFormattedTextField txtUf;
     private javax.swing.JTextField txtUfCliente;
     // End of variables declaration//GEN-END:variables
 
@@ -1041,8 +1060,8 @@ public class MainView extends javax.swing.JFrame {
         return txtBairro;
     }
 
-    public JTextField getTxtCep() {
-        return txtCep;
+    public JFormattedTextField getTxtCep() {
+        return jFormattedTextField1;
     }
 
     public JFormattedTextField getTxtCpf() {
@@ -1077,11 +1096,11 @@ public class MainView extends javax.swing.JFrame {
         return txtRua;
     }
 
-    public JTextField getTxtTelefone() {
+    public JFormattedTextField getTxtTelefone() {
         return txtTelefone;
     }
 
-    public JTextField getTxtUf() {
+    public JFormattedTextField getTxtUf() {
         return txtUf;
     }
 

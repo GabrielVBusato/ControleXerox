@@ -823,84 +823,95 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblRuaFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="txtRua" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblNomeFuncionario" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="btnLimpar" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="lblEmailFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtEmail" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="lblCpfFuncionario" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Component id="txtCpf" pref="158" max="32767" attributes="0"/>
+                                  <Component id="txtRua" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblNomeFuncionario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnLimpar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtEmail" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblCpfFuncionario" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtCpf" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <Component id="lblTelefoneFuncionario" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtTelefone" min="-2" pref="156" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="txtTelefone" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblEstadoFuncionario" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="txtNomeEstado" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblUfFuncionario" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtUf" min="-2" pref="97" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblPaisFuncionario" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="txtPais" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblBairroFuncionario" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtBairro" min="-2" pref="204" max="-2" attributes="0"/>
+                                          <Component id="lblCidadeFuncionario" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblNumeroFuncionario" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtNumero" min="-2" pref="95" max="-2" attributes="0"/>
+                                          <Component id="txtNumero" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lblCepFuncionario" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblNumeroFuncionario" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblCidadeFuncionario" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtNomeCidade" min="-2" pref="145" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblCepFuncionario" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtCep" min="-2" pref="157" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtNomeEstado" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                              <Component id="lblEstadoFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtUf" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                                              <Component id="lblUfFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblPaisFuncionario" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Component id="txtPais" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblRuaFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblEmailFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="txtNomeCidade" min="-2" pref="204" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jFormattedTextField1" min="-2" pref="172" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="74" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -923,7 +934,7 @@
                       <Component id="txtNome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="lblEmailFuncionario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtEmail" min="-2" max="-2" attributes="0"/>
@@ -933,9 +944,9 @@
                                   <Component id="lblTelefoneFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="txtTelefone" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtCpf" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -944,53 +955,59 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtRua" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="lblBairroFuncionario" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblBairroFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblNumeroFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtBairro" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtNumero" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblNumeroFuncionario" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="txtNomeCidade" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblCidadeFuncionario" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  </Group>
+                              <Component id="lblCidadeFuncionario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtNomeCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jFormattedTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="txtCep" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="lblCepFuncionario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="txtNomeEstado" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtUf" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtPais" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblEstadoFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblUfFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblPaisFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblUfFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEstadoFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="btnSalvar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lblPaisFuncionario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="txtNomeEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtPais" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtUf" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -998,7 +1015,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lblNomeFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nome"/>
+                <Property name="text" type="java.lang.String" value="Nome*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNome">
@@ -1007,19 +1024,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblEmailFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Email"/>
+                <Property name="text" type="java.lang.String" value="Email*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCpfFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="CPF"/>
+                <Property name="text" type="java.lang.String" value="CPF*"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtTelefone">
             </Component>
             <Component class="javax.swing.JLabel" name="lblTelefoneFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Telefone"/>
+                <Property name="text" type="java.lang.String" value="Telefone*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
@@ -1032,61 +1047,54 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblRuaFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Rua"/>
+                <Property name="text" type="java.lang.String" value="Rua*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRua">
             </Component>
             <Component class="javax.swing.JLabel" name="lblBairroFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Bairro"/>
+                <Property name="text" type="java.lang.String" value="Bairro*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtBairro">
             </Component>
             <Component class="javax.swing.JLabel" name="lblNumeroFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
+                <Property name="text" type="java.lang.String" value="N&#xfa;mero*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNumero">
             </Component>
             <Component class="javax.swing.JLabel" name="lblCidadeFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cidade"/>
+                <Property name="text" type="java.lang.String" value="Cidade*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeCidade">
             </Component>
             <Component class="javax.swing.JLabel" name="lblCepFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="CEP"/>
+                <Property name="text" type="java.lang.String" value="CEP*"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtCep">
             </Component>
             <Component class="javax.swing.JLabel" name="lblEstadoFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Estado"/>
+                <Property name="text" type="java.lang.String" value="Estado*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeEstado">
             </Component>
             <Component class="javax.swing.JLabel" name="lblUfFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="UF"/>
+                <Property name="text" type="java.lang.String" value="UF*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtPais">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtUf">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUfActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="lblPaisFuncionario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Pais"/>
+                <Property name="text" type="java.lang.String" value="Pais*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnSalvar">
@@ -1117,6 +1125,27 @@
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                   <Format format="###.###.###-##" subtype="-1" type="5"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtTelefone">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                  <Format format="(##) #####-####" subtype="-1" type="5"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                  <Format format="##.###-###" subtype="-1" type="5"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtUf">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                  <Format format="UU" subtype="-1" type="5"/>
                 </Property>
               </Properties>
             </Component>
