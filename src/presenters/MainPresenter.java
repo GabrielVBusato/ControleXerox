@@ -58,7 +58,6 @@ public class MainPresenter {
 
         //Botão professor
         view.getBtnProfessor().addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.visibilidade(view, "pnProfessor", "btnProfessor");

@@ -86,7 +86,6 @@ public class MainView extends javax.swing.JFrame {
         txtEmailCliente = new javax.swing.JTextField();
         lblPaisCliente = new javax.swing.JLabel();
         lblEmailCliente = new javax.swing.JLabel();
-        txtCpfCliente = new javax.swing.JTextField();
         lblCpfCliente = new javax.swing.JLabel();
         txtTelefoneCliente = new javax.swing.JTextField();
         lblTelefoneCliente = new javax.swing.JLabel();
@@ -97,6 +96,7 @@ public class MainView extends javax.swing.JFrame {
         btnLimparCliente = new javax.swing.JButton();
         lblBairroCliente = new javax.swing.JLabel();
         btnCancelarCliente = new javax.swing.JButton();
+        txtCpfCliente = new javax.swing.JFormattedTextField();
         pnProfessor = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         pnAddFuncionario = new javax.swing.JPanel();
@@ -356,12 +356,6 @@ public class MainView extends javax.swing.JFrame {
 
         lblEmailCliente.setText("Email");
 
-        txtCpfCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCpfClienteActionPerformed(evt);
-            }
-        });
-
         lblCpfCliente.setText("CPF");
 
         lblTelefoneCliente.setText("Telefone");
@@ -392,6 +386,12 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        try {
+            txtCpfCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout pnEncomendaLayout = new javax.swing.GroupLayout(pnEncomenda);
         pnEncomenda.setLayout(pnEncomendaLayout);
         pnEncomendaLayout.setHorizontalGroup(
@@ -414,7 +414,7 @@ public class MainView extends javax.swing.JFrame {
                         .addGroup(pnEncomendaLayout.createSequentialGroup()
                             .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblCpfCliente)
-                                .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblTelefoneCliente)
@@ -484,8 +484,8 @@ public class MainView extends javax.swing.JFrame {
                             .addComponent(lblTelefoneCliente))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(pnEncomendaLayout.createSequentialGroup()
@@ -850,10 +850,6 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUfClienteActionPerformed
 
-    private void txtCpfClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCpfClienteActionPerformed
-
     private void btnLimparClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLimparClienteActionPerformed
@@ -977,7 +973,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCepCliente;
     private javax.swing.JFormattedTextField txtCpf;
-    private javax.swing.JTextField txtCpfCliente;
+    private javax.swing.JFormattedTextField txtCpfCliente;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmailCliente;
     private javax.swing.JTextField txtNome;
@@ -1125,7 +1121,7 @@ public class MainView extends javax.swing.JFrame {
         return txtCepCliente;
     }
 
-    public JTextField getTxtCpfCliente() {
+    public JFormattedTextField getTxtCpfCliente() {
         return txtCpfCliente;
     }
 
