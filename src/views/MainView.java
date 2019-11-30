@@ -26,6 +26,8 @@ public class MainView extends javax.swing.JFrame {
     public MainView() {
         initComponents();
         pnMenu.setBorder( new MatteBorder(0, 0, 0, 1, Color.gray));
+        btnGroup.add(jrbTiragemAvulsa);
+        btnGroup.add(jrbTiragemEncomendada);
     }
 
     /**
@@ -37,6 +39,7 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGroup = new javax.swing.ButtonGroup();
         pnPrincipal = new javax.swing.JPanel();
         pnInfoEncomenda = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -308,13 +311,13 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel38.setText("Nome da tiragem");
         pnTiragem.add(jLabel38);
-        jLabel38.setBounds(20, 310, 90, 14);
+        jLabel38.setBounds(20, 310, 110, 14);
         pnTiragem.add(txtNomeTiragem);
         txtNomeTiragem.setBounds(20, 330, 200, 20);
 
         jLabel39.setText("Quantidade de tiragens");
         pnTiragem.add(jLabel39);
-        jLabel39.setBounds(20, 370, 120, 14);
+        jLabel39.setBounds(20, 370, 140, 14);
         pnTiragem.add(txtQtdTiragem);
         txtQtdTiragem.setBounds(20, 390, 60, 20);
 
@@ -908,6 +911,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnCancelarTiragem;
     private javax.swing.JButton btnEncomenda;
+    private javax.swing.ButtonGroup btnGroup;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnLimparCliente;
     private javax.swing.JButton btnProfessor;
