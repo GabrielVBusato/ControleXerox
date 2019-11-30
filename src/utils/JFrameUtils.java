@@ -52,7 +52,7 @@ public class JFrameUtils {
             @Override
             public void focusLost(FocusEvent e) {
                 try {
-                    if (txts[0].getText().toLowerCase().equals("")){
+                    if (txts[0].getText().toLowerCase().equals("")) {
                         throw new Exception("Campo obrigatório!");
                     }
                     if (!txts[0].getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
@@ -61,7 +61,7 @@ public class JFrameUtils {
                 } catch (Exception ex) {
                     txts[0].setBorder(new LineBorder(Color.red, 1));
                     view.getLblNomeFuncionario().setForeground(Color.red);
-                    view.getLblNomeFuncionario().setText("Nome " + "("+ ex.getMessage() + ")");
+                    view.getLblNomeFuncionario().setText("Nome " + "(" + ex.getMessage() + ")");
                 }
             }
         });
@@ -85,6 +85,85 @@ public class JFrameUtils {
 
                     txts[1].setBorder(new LineBorder(Color.red, 1));
                     JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+
+        cpf.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                cpf.setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (cpf.getText().contains(" ")) {
+
+                        throw new Exception("CPF inserido é invalido!");
+                    }
+                } catch (Exception ex) {
+                    cpf.setBorder(new LineBorder(Color.red, 1));
+                    cpf.setValue("");
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+
+        return true;
+    }
+
+    public static boolean checagemCliente() {
+        MainView view = MainPresenter.getView();
+        
+        //Check nome
+        view.getTxtNomeCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtNomeCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblNomeFuncionario().setForeground(Color.black);
+                view.getLblNomeFuncionario().setText("Nome");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtNomeCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo obrigatório!");
+                    }
+                    if (!view.getTxtNomeCliente().getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("O nome inserido está incorreto!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtNomeCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblNomeFuncionario().setForeground(Color.red);
+                    view.getLblNomeFuncionario().setText("Nome " + "(" + ex.getMessage() + ")");
+                }
+            }
+        });
+
+        txts[0].addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                txts[0].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblNomeFuncionario().setForeground(Color.black);
+                view.getLblNomeFuncionario().setText("Nome");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (txts[0].getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo obrigatório!");
+                    }
+                    if (!txts[0].getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("O nome inserido está incorreto!");
+                    }
+                } catch (Exception ex) {
+                    txts[0].setBorder(new LineBorder(Color.red, 1));
+                    view.getLblNomeFuncionario().setForeground(Color.red);
+                    view.getLblNomeFuncionario().setText("Nome " + "(" + ex.getMessage() + ")");
                 }
             }
         });

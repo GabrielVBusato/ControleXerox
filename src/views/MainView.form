@@ -465,24 +465,24 @@
                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                               <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRuaCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Component id="txtRuaCliente" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNomeCliente" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnLimparCliente" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEmailCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="txtEmailCliente" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCpfCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtCpfCliente" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblTelefoneCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtTelefoneCliente" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -490,12 +490,12 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblBairroCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtBairroCliente" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNumeroCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtNumeroCliente" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -509,28 +509,28 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblCidadeCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtNomeCidadeCliente" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblCepCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtCepCliente" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="txtNomeEstadoCliente" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                              <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblEstadoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="txtUfCliente" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                                              <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblUfCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblPaisCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtPaisCliente" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -551,7 +551,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNomeCliente" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -563,13 +563,13 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEmailCliente" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtEmailCliente" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCpfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTelefoneCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -579,17 +579,17 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblRuaCliente" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtRuaCliente" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblBairroCliente" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtBairroCliente" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtNumeroCliente" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblNumeroCliente" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -597,14 +597,14 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="txtNomeCidadeCliente" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCidadeCliente" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Component id="txtCepCliente" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblCepCliente" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -617,9 +617,9 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEstadoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblUfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblPaisCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
@@ -637,40 +637,40 @@
           <SubComponents>
             <Component class="javax.swing.JTextField" name="txtBairroCliente">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel17">
+            <Component class="javax.swing.JLabel" name="lblNumeroCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNumeroCliente">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel18">
+            <Component class="javax.swing.JLabel" name="lblCidadeCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cidade"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeCidadeCliente">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel19">
+            <Component class="javax.swing.JLabel" name="lblCepCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CEP"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCepCliente">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel20">
+            <Component class="javax.swing.JLabel" name="lblEstadoCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estado"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeEstadoCliente">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel21">
+            <Component class="javax.swing.JLabel" name="lblUfCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="UF"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel22">
+            <Component class="javax.swing.JLabel" name="lblNomeCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nome"/>
               </Properties>
@@ -686,12 +686,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmailCliente">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel23">
+            <Component class="javax.swing.JLabel" name="lblPaisCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pais"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel24">
+            <Component class="javax.swing.JLabel" name="lblEmailCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
@@ -701,14 +701,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCpfClienteActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel25">
+            <Component class="javax.swing.JLabel" name="lblCpfCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CPF"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTelefoneCliente">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel26">
+            <Component class="javax.swing.JLabel" name="lblTelefoneCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Telefone"/>
               </Properties>
@@ -721,7 +721,7 @@
                 <Property name="text" type="java.lang.String" value="CADASTRAR NOVO CLIENTE"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel28">
+            <Component class="javax.swing.JLabel" name="lblRuaCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Rua"/>
               </Properties>
@@ -743,7 +743,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparClienteActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel29">
+            <Component class="javax.swing.JLabel" name="lblBairroCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Bairro"/>
               </Properties>
