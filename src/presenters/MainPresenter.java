@@ -132,4 +132,11 @@ public class MainPresenter {
         view.setVisible(true);
         return instance;
     }
+    
+    public static MainView getView(){
+        if (!(view == null)){
+            return view;
+        }
+        return null;
+    }
 }

@@ -21,6 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
+import presenters.MainPresenter;
 import views.MainView;
 
 /**
@@ -38,22 +39,29 @@ public class JFrameUtils {
     }
 
     public static boolean checagemFuncionario(JTextField[] txts, JFormattedTextField cpf) {
+        MainView view = MainPresenter.getView();
         //Check nome
         txts[0].addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
                 txts[0].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblNomeFuncionario().setForeground(Color.black);
+                view.getLblNomeFuncionario().setText("Nome");
             }
 
             @Override
             public void focusLost(FocusEvent e) {
                 try {
-                    if (txts[0].getText().toLowerCase().equals("") || !txts[0].getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (txts[0].getText().toLowerCase().equals("")){
+                        throw new Exception("Campo obrigatório!");
+                    }
+                    if (!txts[0].getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
                         throw new Exception("O nome inserido está incorreto!");
                     }
                 } catch (Exception ex) {
                     txts[0].setBorder(new LineBorder(Color.red, 1));
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    view.getLblNomeFuncionario().setForeground(Color.red);
+                    view.getLblNomeFuncionario().setText("Nome " + "("+ ex.getMessage() + ")");
                 }
             }
         });
@@ -81,8 +89,6 @@ public class JFrameUtils {
             }
         });
 
-        
-        
         cpf.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -93,7 +99,7 @@ public class JFrameUtils {
             public void focusLost(FocusEvent e) {
                 try {
                     if (cpf.getText().contains(" ")) {
-                        
+
                         throw new Exception("CPF inserido é invalido!");
                     }
                 } catch (Exception ex) {
