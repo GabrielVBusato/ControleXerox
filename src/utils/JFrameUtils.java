@@ -323,6 +323,176 @@ public class JFrameUtils {
         return true;
     }
 
+    public static boolean checagemCliente() {
+        MainView view = MainPresenter.getView();
+        
+        //Check nome
+        view.getTxtNomeCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtNomeCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblNomeFuncionario().setForeground(Color.black);
+                view.getLblNomeFuncionario().setText("Nome");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtNomeCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo obrigatório!");
+                    }
+                    if (!view.getTxtNomeCliente().getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("O nome inserido está incorreto!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtNomeCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblNomeCliente().setForeground(Color.red);
+                    view.getLblNomeCliente().setText("Nome " + "(" + ex.getMessage() + ")");
+                }
+            }
+        });
+
+        
+
+        view.getTxtCpfCliente().addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtCpfCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblCpfCliente().setForeground(Color.black);
+                view.getLblCpfCliente().setText("CPF");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtCpfCliente().getText().contains(" ")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (FuncionarioDao.cpfExists(view.getTxtCpfCliente().getText())) {
+                        throw new Exception("Cpf existente!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtCpfCliente().setBorder(new LineBorder(Color.red, 1));
+                    if (!ex.getMessage().equals("Cpf existente!")) {
+                        view.getTxtCpfCliente().setValue("");
+                    }
+                    view.getLblCpfCliente().setForeground(Color.red);
+                    view.getLblCpfCliente().setText("CPF " + "( " + ex.getMessage() + " )");
+                }
+            }
+        });
+        
+        view.getTxtEmailCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtEmailCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblEmailCliente().setForeground(Color.black);
+                view.getLblEmailCliente().setText("Email");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+                    Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+                    Matcher matcher = pattern.matcher(view.getTxtEmailCliente().getText());
+                    if (view.getTxtEmailCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo obrigatório!");
+                    }
+                    if (!(matcher.matches())) {
+                        throw new Exception("O Email inserido está incorreto!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtEmailCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblEmailCliente().setForeground(Color.red);
+                    view.getLblEmailCliente().setText("Email " + "( " + ex.getMessage() + " )");
+                }
+            }
+        });
+        
+        view.getTxtTelefoneCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtTelefoneCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblTelefoneCliente().setForeground(Color.black);
+                view.getLblTelefoneCliente().setText("Telefone");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtTelefoneCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Obrigatório!");
+                    }
+                    if (!view.getTxtTelefoneCliente().getText().matches("^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$")) {
+                        throw new Exception("inválido!");
+                    }
+                }catch (Exception ex){
+                    view.getTxtTelefoneCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblTelefoneCliente().setForeground(Color.red);
+                    view.getLblTelefoneCliente().setText("Telefone "+ ex.getMessage() );
+                }
+            }
+        });
+        
+        view.getTxtRuaCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtRuaCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblRuaFuncionario().setForeground(Color.black);
+                view.getLblRuaFuncionario().setText("Rua");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtRuaCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtRuaCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválida!");
+                    }
+                }catch (Exception ex){
+                    view.getTxtRuaCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblRuaCliente().setForeground(Color.red);
+                    view.getLblRuaCliente().setText("Rua "+ ex.getMessage() );
+                }
+            }
+        });
+        
+        view.getTxtBairroCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtBairroCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblRuaFuncionario().setForeground(Color.black);
+                view.getLblRuaFuncionario().setText("Bairro");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtBairroCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtBairroCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                }catch (Exception ex){
+                    view.getTxtBairroCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblBairroCliente().setForeground(Color.red);
+                    view.getLblBairroCliente().setText("Bairro "+ ex.getMessage() );
+                }
+            }
+        });
+
+        return true;
+    }
+
     public static void visibilidade(MainView view, String painel, String botao) {
 
         Component[] paineis = view.getPnPrincipal().getComponents();

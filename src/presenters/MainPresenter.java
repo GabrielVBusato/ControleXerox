@@ -53,6 +53,8 @@ public class MainPresenter {
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
         view.getTxtNumero(), view.getTxtBairro(), view.getTxtTelefone(), view.getTxtCep(), view.getTxtNomeCidade(),
         view.getTxtNomeCidade(), view.getTxtNomeEstado(), view.getTxtPais(), view.getTxtRua(), view.getTxtUf()}, view.getTxtCpf());
+        
+        JFrameUtils.checagemCliente();
 
         //Botão professor
         view.getBtnProfessor().addActionListener(new ActionListener() {
