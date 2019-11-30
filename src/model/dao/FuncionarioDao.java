@@ -11,14 +11,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import model.bean.Funcionario;
+import model.bean.Pessoa;
 
 /**
  *
  * @author Gabriel
  */
 public class FuncionarioDao {
-    public static int inserir(Funcionario f) throws Exception {
-        int lastkey =0;
+
+    public static int inserir(Pessoa f) throws Exception {
+        int lastkey = 0;
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         String sql = "INSERT INTO funcionario(idPessoa) values (?)";
@@ -30,7 +32,7 @@ public class FuncionarioDao {
 
         //Execuntando comando de inserção no banco
         stmt.executeUpdate();
-        
+
         //Pegando as chaves
         ResultSet rs = stmt.getGeneratedKeys();
 
@@ -38,9 +40,26 @@ public class FuncionarioDao {
         if (rs.next()) {
             lastkey = rs.getInt(1);
         }
-        
+
         ConnectionFactory.closeConnection(con, stmt);
-        
+
         return lastkey;
+    }
+
+    public static boolean cpfExists(String cpf) {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        String sql = "SELECT * FROM pessoa WHERE cpf = " + "'" + cpf + "'";
+        try {
+            stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return true;
+            }
+            ConnectionFactory.closeConnection(con, stmt);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
     }
 }
