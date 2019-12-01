@@ -11,11 +11,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
+import model.bean.Pais;
 import model.dao.PaisDao;
 import utils.JFrameUtils;
 import views.MainView;
@@ -50,10 +55,16 @@ public class MainPresenter {
 
     private void iniciarView() {
         
+        for (Component c : view.getPnAddFuncionario().getComponents() ){
+            if (c instanceof JTextField || c instanceof JFormattedTextField){
+                ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
+            }
+        }
+
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
-        view.getTxtNumero(), view.getTxtBairro(), view.getTxtTelefone(), view.getTxtCep(), view.getTxtNomeCidade(),
-        view.getTxtNomeCidade(), view.getTxtNomeEstado(), view.getTxtPais(), view.getTxtRua(), view.getTxtUf()}, view.getTxtCpf());
-        
+            view.getTxtNumero(), view.getTxtBairro(), view.getTxtTelefone(), view.getTxtCep(), view.getTxtNomeCidade(),
+            view.getTxtNomeCidade(), view.getTxtNomeEstado(), view.getTxtPais(), view.getTxtRua(), view.getTxtUf()}, view.getTxtCpf());
+
         JFrameUtils.checagemCliente();
 
         //Botão professor
@@ -98,15 +109,40 @@ public class MainPresenter {
             }
         });
 
-
         view.getBtnSalvar().addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                boolean isValid = true;
+                Component[] components = view.getPnAddFuncionario().getComponents();
+                for (Component c : components) {
+                    if (c instanceof JTextField) {
+                        if (((JTextField) c).getText().equals("") || ((JTextField) c).getText().equals("  ") ||
+                                ((JTextField) c).getText().equals("(  )      -    ") || ((JTextField) c).getText().equals("  .   -   ")){
+                            isValid = false;
+                            break;
+                        }
+                        LineBorder border = (LineBorder) ((JTextField) c).getBorder();
+                        if (border.getLineColor().getRGB() == -65536) {
+                            isValid = false;
+                        }
+                    }
+                }
+
+                if (isValid) {
+                    Pais pais = new Pais();
+                    pais.setNome(view.getTxtPais().getText());
+                    try {
+                        pais.setIdPais(PaisDao.inserir(pais));
+                    } catch (Exception ex) {
+                        Logger.getLogger(MainPresenter.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios de forma correta.");
+                }
             }
         });
-        
+
         view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
 
             @Override
@@ -116,7 +152,7 @@ public class MainPresenter {
                 view.getPnAvisaEncomendaSalva().setVisible(false);
             }
         });
-        
+
         view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
 
             @Override
@@ -133,9 +169,9 @@ public class MainPresenter {
         view.setVisible(true);
         return instance;
     }
-    
-    public static MainView getView(){
-        if (!(view == null)){
+
+    public static MainView getView() {
+        if (!(view == null)) {
             return view;
         }
         return null;

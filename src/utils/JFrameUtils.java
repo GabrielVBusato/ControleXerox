@@ -12,6 +12,7 @@ import java.awt.event.FocusListener;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
@@ -29,6 +30,13 @@ public class JFrameUtils {
         for (Component c : components) {
             if (c instanceof JTextField) {
                 ((JTextField) c).setText("");
+                ((JTextField) c).setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+            }
+            if (c instanceof JLabel){
+                ((JLabel) c).setForeground(Color.black);
+                if (((JLabel) c).getText().equals("CPF* já existente!") ){
+                    ((JLabel) c).setText("CPF*");
+                }
             }
         }
     }
@@ -39,7 +47,7 @@ public class JFrameUtils {
         txts[0].addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                txts[0].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[0].setBorder(new LineBorder(Color.black, 1));
                 view.getLblNomeFuncionario().setForeground(Color.black);
             }
 
@@ -62,7 +70,7 @@ public class JFrameUtils {
         txts[1].addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                txts[1].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[1].setBorder(new LineBorder(Color.black, 1));
                 view.getLblEmailFuncionario().setForeground(Color.black);
             }
 
@@ -88,7 +96,7 @@ public class JFrameUtils {
         cpf.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                cpf.setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                cpf.setBorder(new LineBorder(Color.black, 1));
                 view.getLblCpfFuncionario().setForeground(Color.black);
                 view.getLblCpfFuncionario().setText("CPF*");
             }
@@ -117,7 +125,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                txts[4].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[4].setBorder(new LineBorder(Color.black, 1));
                 view.getLblTelefoneFuncionario().setForeground(Color.black);
             }
 
@@ -139,7 +147,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                txts[10].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[10].setBorder(new LineBorder(Color.black, 1));
                 view.getLblRuaFuncionario().setForeground(Color.black);
             }
 
@@ -163,7 +171,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                txts[3].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[3].setBorder(new LineBorder(Color.black, 1));
                 view.getLblBairroFuncionario().setForeground(Color.black);
             }
 
@@ -187,7 +195,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                txts[2].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[2].setBorder(new LineBorder(Color.black, 1));
                 view.getLblNumeroFuncionario().setForeground(Color.black);
             }
 
@@ -211,7 +219,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                txts[6].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[6].setBorder(new LineBorder(Color.black, 1));
                 view.getLblCidadeFuncionario().setForeground(Color.black);
             }
 
@@ -235,7 +243,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                txts[5].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[5].setBorder(new LineBorder(Color.black, 1));
                 view.getLblCepFuncionario().setForeground(Color.black);
             }
 
@@ -256,7 +264,7 @@ public class JFrameUtils {
         txts[8].addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                txts[8].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[8].setBorder(new LineBorder(Color.black, 1));
                 view.getLblEstadoFuncionario().setForeground(Color.black);
             }
 
@@ -279,7 +287,7 @@ public class JFrameUtils {
         txts[11].addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                txts[11].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[11].setBorder(new LineBorder(Color.black, 1));
                 view.getLblUfFuncionario().setForeground(Color.black);
             }
 
@@ -300,7 +308,7 @@ public class JFrameUtils {
         txts[9].addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                txts[9].setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                txts[9].setBorder(new LineBorder(Color.black, 1));
                 view.getLblPaisFuncionario().setForeground(Color.black);
             }
 

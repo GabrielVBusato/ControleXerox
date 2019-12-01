@@ -24,7 +24,8 @@ public class PaisDao {
         String sql = "INSERT INTO pais(nome) values (?)";
         //Preparando statement e retornando a ultima chave primaria inserida
         stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
+        
+        
         //Setando os valores
         stmt.setString(1, p.getNome());
 
