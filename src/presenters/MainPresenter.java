@@ -54,24 +54,27 @@ public class MainPresenter {
     }
 
     private void iniciarView() {
-        
-        for (Component c : view.getPnAddFuncionario().getComponents() ){
-            if (c instanceof JTextField || c instanceof JFormattedTextField){
+
+        for (Component c : view.getPnAddFuncionario().getComponents()) {
+            if (c instanceof JTextField || c instanceof JFormattedTextField) {
+                ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
+            }
+        }
+
+        for (Component c : view.getPnEncomenda().getComponents()) {
+            if (c instanceof JTextField || c instanceof JFormattedTextField) {
                 ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
             }
         }
         
-        for (Component c : view.getPnEncomenda().getComponents() ){
-            if (c instanceof JTextField || c instanceof JFormattedTextField){
-                ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
-            }
-        }
+        view.getBtnProximoPanelCliente().setEnabled(false);
 
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
             view.getTxtNumero(), view.getTxtBairro(), view.getTxtTelefone(), view.getTxtCep(), view.getTxtNomeCidade(),
             view.getTxtNomeCidade(), view.getTxtNomeEstado(), view.getTxtPais(), view.getTxtRua(), view.getTxtUf()}, view.getTxtCpf());
 
-        JFrameUtils.checagemCliente();
+        //Checagem de campos de cliente
+        JFrameUtils.checagemCliente(view);
 
         //Botão professor
         view.getBtnProfessor().addActionListener(new ActionListener() {
@@ -115,6 +118,23 @@ public class MainPresenter {
             }
         });
 
+        //Botão limpar cliente
+        view.getBtnLimparCliente().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
+            }
+        });
+
+        //Botão salvar cliente
+        view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+
         view.getBtnSalvar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -122,8 +142,8 @@ public class MainPresenter {
                 Component[] components = view.getPnAddFuncionario().getComponents();
                 for (Component c : components) {
                     if (c instanceof JTextField) {
-                        if (((JTextField) c).getText().equals("") || ((JTextField) c).getText().equals("  ") ||
-                                ((JTextField) c).getText().equals("(  )      -    ") || ((JTextField) c).getText().equals("  .   -   ")){
+                        if (((JTextField) c).getText().equals("") || ((JTextField) c).getText().equals("  ")
+                                || ((JTextField) c).getText().equals("(  )      -    ") || ((JTextField) c).getText().equals("  .   -   ")) {
                             isValid = false;
                             break;
                         }
