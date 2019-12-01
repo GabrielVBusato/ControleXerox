@@ -20,8 +20,18 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
+import model.bean.Cidade;
+import model.bean.Endereco;
+import model.bean.Estado;
+import model.bean.Funcionario;
 import model.bean.Pais;
+import model.bean.Pessoa;
+import model.dao.CidadeDao;
+import model.dao.EnderecoDao;
+import model.dao.EstadoDao;
+import model.dao.FuncionarioDao;
 import model.dao.PaisDao;
+import model.dao.PessoaDao;
 import utils.JFrameUtils;
 import views.MainView;
 
@@ -167,10 +177,51 @@ public class MainPresenter {
                 }
 
                 if (isValid) {
+                    //Declaração de variáveis
                     Pais pais = new Pais();
+                    Estado estado = new Estado();
+                    Cidade cidade = new Cidade();
+                    Endereco endereco = new Endereco();
+                    Pessoa pessoa = new Pessoa();
+                    Funcionario funcionario = new Funcionario();
+                    
+                    //Setando atributos do form
                     pais.setNome(view.getTxtPais().getText());
+                    
+                    estado.setNome(view.getTxtNomeEstado().getText());
+                    estado.setUf(view.getTxtUf().getText());
+                    
+                    cidade.setCep(view.getTxtCep().getText());
+                    cidade.setNome(view.getTxtNomeCidade().getText());
+                    
+                    endereco.setBairro(view.getTxtBairro().getText());
+                    endereco.setNumero(view.getTxtNumero().getText());
+                    endereco.setRua(view.getTxtRua().getText());
+                    
+                    pessoa.setCpf(view.getTxtCpf().getText());
+                    pessoa.setEmail(view.getTxtEmail().getText());
+                    pessoa.setNome(view.getTxtNome().getText());
+                    pessoa.setTelefone(view.getTxtTelefone().getText());
+                    
+                    
+                    //Set id
                     try {
                         pais.setIdPais(PaisDao.inserir(pais));
+                        
+                        estado.setIdPais(pais.getIdPais());
+                        estado.setIdEstado(EstadoDao.inserir(estado));
+                        
+                        cidade.setIdEstado(estado.getIdEstado());
+                        cidade.setIdCidade(CidadeDao.inserir(cidade));
+                        
+                        endereco.setIdCidade(cidade.getIdCidade());
+                        endereco.setIdEndereco(EnderecoDao.inserir(endereco));
+                        
+                        pessoa.setIdEndereco(endereco.getIdEndereco());
+                        pessoa.setIdPessoa(PessoaDao.inserir(pessoa));
+                        
+                        funcionario.setIdPessoa(pessoa.getIdPessoa());
+                        FuncionarioDao.inserir(funcionario);
                     } catch (Exception ex) {
                         Logger.getLogger(MainPresenter.class.getName()).log(Level.SEVERE, null, ex);
                     }

@@ -57,7 +57,7 @@ public class JFrameUtils {
                     if (txts[0].getText().toLowerCase().equals("")) {
                         throw new Exception("");
                     }
-                    if (!txts[0].getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!txts[0].getText().toLowerCase().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("O nome inserido está incorreto!");
                     }
                 } catch (Exception ex) {
@@ -157,7 +157,7 @@ public class JFrameUtils {
                     if (txts[10].getText().toLowerCase().equals("")) {
                         throw new Exception("");
                     }
-                    if (!txts[10].getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!txts[10].getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválida!");
                     }
                 } catch (Exception ex) {
@@ -181,7 +181,7 @@ public class JFrameUtils {
                     if (txts[3].getText().toLowerCase().equals("")) {
                         throw new Exception("");
                     }
-                    if (!txts[3].getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!txts[3].getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
@@ -229,7 +229,7 @@ public class JFrameUtils {
                     if (txts[6].getText().toLowerCase().equals("")) {
                         throw new Exception("");
                     }
-                    if (!txts[6].getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!txts[6].getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválida!");
                     }
                 } catch (Exception ex) {
@@ -274,7 +274,7 @@ public class JFrameUtils {
                     if (txts[8].getText().toLowerCase().equals("")) {
                         throw new Exception("");
                     }
-                    if (!txts[8].getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!txts[8].getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
@@ -318,7 +318,7 @@ public class JFrameUtils {
                     if (txts[9].getText().toLowerCase().equals("")) {
                         throw new Exception("");
                     }
-                    if (!txts[9].getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!txts[9].getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
@@ -349,7 +349,7 @@ public class JFrameUtils {
                     if (view.getTxtNomeCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo obrigatório!");
                     }
-                    if (!view.getTxtNomeCliente().getText().toLowerCase().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!view.getTxtNomeCliente().getText().toLowerCase().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("O nome inserido está incorreto!");
                     }
                 } catch (Exception ex) {
@@ -453,7 +453,7 @@ public class JFrameUtils {
                     if (view.getTxtRuaCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
                     }
-                    if (!view.getTxtRuaCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!view.getTxtRuaCliente().getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválida!");
                     }
                 } catch (Exception ex) {
@@ -478,7 +478,7 @@ public class JFrameUtils {
                     if (view.getTxtBairroCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
                     }
-                    if (!view.getTxtBairroCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!view.getTxtBairroCliente().getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
@@ -528,7 +528,7 @@ public class JFrameUtils {
                     if (view.getTxtNomeCidadeCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
                     }
-                    if (!view.getTxtNomeCidadeCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!view.getTxtNomeCidadeCliente().getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
@@ -552,7 +552,7 @@ public class JFrameUtils {
                     if (view.getTxtNomeEstadoCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
                     }
-                    if (!view.getTxtNomeEstadoCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!view.getTxtNomeEstadoCliente().getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
@@ -576,7 +576,7 @@ public class JFrameUtils {
                     if (view.getTxtPaisCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
                     }
-                    if (!view.getTxtPaisCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!view.getTxtPaisCliente().getText().matches("^^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
                         throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
