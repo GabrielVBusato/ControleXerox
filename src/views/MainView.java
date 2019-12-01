@@ -43,7 +43,7 @@ public class MainView extends javax.swing.JFrame {
         pnPrincipal = new javax.swing.JPanel();
         pnInfoEncomenda = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
+        lblNomeEncomenda = new javax.swing.JLabel();
         txtNomeEncomenda = new javax.swing.JTextField();
         btnSalvarEncomenda = new javax.swing.JButton();
         pnAvisaEncomendaSalva = new javax.swing.JPanel();
@@ -145,7 +145,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("INFORMAÇÕES DA ENCOMENDA");
 
-        jLabel30.setText("Nome da encomenda");
+        lblNomeEncomenda.setText("Nome da encomenda");
 
         txtNomeEncomenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,16 +218,13 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(pnAvisaEncomendaSalva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
-                .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
-                        .addGap(342, 342, 342)
-                        .addComponent(btnSalvarEncomenda))
-                    .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel30)
-                            .addComponent(txtNomeEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSalvarEncomenda)
+                    .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblNomeEncomenda)
+                        .addComponent(txtNomeEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         pnInfoEncomendaLayout.setVerticalGroup(
             pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,14 +232,14 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel30)
+                .addComponent(lblNomeEncomenda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNomeEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(btnSalvarEncomenda)
-                .addGap(53, 53, 53)
+                .addGap(63, 63, 63)
                 .addComponent(pnAvisaEncomendaSalva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         pnPrincipal.add(pnInfoEncomenda);
@@ -783,7 +780,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -811,6 +807,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel lblEstadoCliente;
     private javax.swing.JLabel lblEstadoFuncionario;
     private javax.swing.JLabel lblNomeCliente;
+    private javax.swing.JLabel lblNomeEncomenda;
     private javax.swing.JLabel lblNomeFuncionario;
     private javax.swing.JLabel lblNumeroCliente;
     private javax.swing.JLabel lblNumeroFuncionario;
@@ -1225,6 +1222,10 @@ public class MainView extends javax.swing.JFrame {
 
     public void setLblUfCliente(JLabel lblUfCliente) {
         this.lblUfCliente = lblUfCliente;
+    }
+
+    public JLabel getLblNomeEncomenda() {
+        return lblNomeEncomenda;
     }
     
     

@@ -126,12 +126,24 @@ public class MainPresenter {
                 JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
             }
         });
-
-        //Botão salvar cliente
-        view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
+        
+        //Botão cancelar cliente
+        view.getBtnCancelarCliente().addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
+                view.getPnEncomenda().setVisible(false);
+                view.getBtnEncomenda().setEnabled(true);
+            }
+        });
+        
+        //Botão salvar cliente
+        view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                /*if(view.getTxtNomeEncomenda().getText().equals("") || view.getTxtNomeEncomenda().getBorder())*/
             }
         });
 
