@@ -401,7 +401,7 @@ public class MainView extends javax.swing.JFrame {
         btnProximoPanelCliente.setText("Próximo");
         btnProximoPanelCliente.setFocusPainted(false);
         pnEncomenda.add(btnProximoPanelCliente);
-        btnProximoPanelCliente.setBounds(240, 400, 100, 22);
+        btnProximoPanelCliente.setBounds(230, 400, 100, 22);
         pnEncomenda.add(txtRuaCliente);
         txtRuaCliente.setBounds(40, 210, 390, 20);
 
@@ -427,7 +427,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
         pnEncomenda.add(btnCancelarCliente);
-        btnCancelarCliente.setBounds(350, 400, 80, 22);
+        btnCancelarCliente.setBounds(340, 400, 90, 22);
 
         try {
             txtCpfCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));

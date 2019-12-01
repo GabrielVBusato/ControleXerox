@@ -331,8 +331,7 @@ public class JFrameUtils {
         return true;
     }
 
-    public static boolean checagemCliente() {
-        MainView view = MainPresenter.getView();
+    public static void checagemCliente(MainView view) {
 
         //Check nome
         view.getTxtNomeCliente().addFocusListener(new FocusListener() {
@@ -340,11 +339,12 @@ public class JFrameUtils {
             @Override
             public void focusGained(FocusEvent e) {
                 view.getTxtNomeCliente().setBorder(new LineBorder(Color.black, 1));
-                view.getLblNomeFuncionario().setForeground(Color.black);
+                view.getLblNomeCliente().setForeground(Color.black);
             }
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     if (view.getTxtNomeCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo obrigatório!");
@@ -369,6 +369,7 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     if (view.getTxtCpfCliente().getText().contains(" ")) {
                         throw new Exception("");
@@ -397,6 +398,7 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
                     Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
@@ -424,12 +426,10 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
-                    if (view.getTxtTelefoneCliente().getText().toLowerCase().equals("")) {
+                    if (view.getTxtTelefoneCliente().getText().equals("(  )      -    ")) {
                         throw new Exception("Obrigatório!");
-                    }
-                    if (!view.getTxtTelefoneCliente().getText().matches("^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$")) {
-                        throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
                     view.getTxtTelefoneCliente().setBorder(new LineBorder(Color.red, 1));
@@ -443,11 +443,12 @@ public class JFrameUtils {
             @Override
             public void focusGained(FocusEvent e) {
                 view.getTxtRuaCliente().setBorder(new LineBorder(Color.black, 1));
-                view.getLblRuaFuncionario().setForeground(Color.black);
+                view.getLblRuaCliente().setForeground(Color.black);
             }
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     if (view.getTxtRuaCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
@@ -472,6 +473,7 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     if (view.getTxtBairroCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
@@ -496,11 +498,12 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     if (view.getTxtNumeroCliente().getText().toLowerCase().equals("")) {
-                        throw new Exception("Campo Obrigatório!");
+                        throw new Exception("");
                     }
-                    if (!view.getTxtNumeroCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                    if (!view.getTxtNumeroCliente().getText().matches("^[0-9]+$")) {
                         throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
@@ -520,6 +523,7 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     if (view.getTxtNomeCidadeCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
@@ -543,6 +547,7 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     if (view.getTxtNomeEstadoCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
@@ -566,6 +571,7 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
                     if (view.getTxtPaisCliente().getText().toLowerCase().equals("")) {
                         throw new Exception("Campo Obrigatório!");
@@ -585,18 +591,16 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                 view.getTxtCepCliente().setBorder(new LineBorder(Color.black, 1));
+                view.getTxtCepCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblCepCliente().setForeground(Color.black);
             }
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
-                    if (view.getTxtCepCliente().getText().toLowerCase().equals("")) {
+                    if (view.getTxtCepCliente().getText().toLowerCase().equals("     -   ")) {
                         throw new Exception("Campo Obrigatório!");
-                    }
-                    if (!view.getTxtCepCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
-                        throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
                     view.getTxtCepCliente().setBorder(new LineBorder(Color.red, 1));
@@ -615,12 +619,10 @@ public class JFrameUtils {
 
             @Override
             public void focusLost(FocusEvent e) {
+                liberaBotao(view);
                 try {
-                    if (view.getTxtUfCliente().getText().toLowerCase().equals("")) {
+                    if (view.getTxtUfCliente().getText().toLowerCase().equals("  ")) {
                         throw new Exception("Campo Obrigatório!");
-                    }
-                    if (!view.getTxtUfCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
-                        throw new Exception("inválido!");
                     }
                 } catch (Exception ex) {
                     view.getTxtUfCliente().setBorder(new LineBorder(Color.red, 1));
@@ -628,8 +630,6 @@ public class JFrameUtils {
                 }
             }
         });
-
-        return true;
     }
 
     public static void visibilidade(MainView view, String painel, String botao) {
@@ -654,5 +654,29 @@ public class JFrameUtils {
                 m.setEnabled(false);
             }
         }
+    }
+
+    public static void liberaBotao(MainView view) {
+        boolean isValid = true;
+        Component[] components = view.getPnEncomenda().getComponents();
+        for (Component c : components) {
+            if (c instanceof JTextField) {
+                if (((JTextField) c).getText().equals("") || ((JTextField) c).getText().equals("  ")
+                        || ((JTextField) c).getText().equals("(  )      -    ") || ((JTextField) c).getText().equals("  .   -   ")) {
+                    isValid = false;
+                    break;
+                }
+                LineBorder border = (LineBorder) ((JTextField) c).getBorder();
+                if (border.getLineColor().getRGB() == -65536) {
+                    isValid = false;
+                }
+            }
+        }
+        if (isValid) {
+            view.getBtnProximoPanelCliente().setEnabled(isValid);
+        } else {
+            view.getBtnProximoPanelCliente().setEnabled(false);
+        }
+
     }
 }
