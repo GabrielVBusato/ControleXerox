@@ -32,9 +32,9 @@ public class JFrameUtils {
                 ((JTextField) c).setText("");
                 ((JTextField) c).setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
             }
-            if (c instanceof JLabel){
+            if (c instanceof JLabel) {
                 ((JLabel) c).setForeground(Color.black);
-                if (((JLabel) c).getText().equals("CPF* já existente!") ){
+                if (((JLabel) c).getText().equals("CPF* já existente!")) {
                     ((JLabel) c).setText("CPF*");
                 }
             }
@@ -339,7 +339,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtNomeCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtNomeCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblNomeFuncionario().setForeground(Color.black);
             }
 
@@ -362,7 +362,7 @@ public class JFrameUtils {
         view.getTxtCpfCliente().addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtCpfCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtCpfCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblCpfCliente().setForeground(Color.black);
             }
 
@@ -389,7 +389,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtEmailCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtEmailCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblEmailCliente().setForeground(Color.black);
             }
 
@@ -416,7 +416,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtTelefoneCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtTelefoneCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblTelefoneCliente().setForeground(Color.black);
             }
 
@@ -440,7 +440,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtRuaCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtRuaCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblRuaFuncionario().setForeground(Color.black);
             }
 
@@ -464,7 +464,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtBairroCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtBairroCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblBairroCliente().setForeground(Color.black);
             }
 
@@ -488,7 +488,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtNumeroCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtNumeroCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblNumeroCliente().setForeground(Color.black);
             }
 
@@ -512,7 +512,7 @@ public class JFrameUtils {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtNomeCidadeCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtNomeCidadeCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblCidadeCliente().setForeground(Color.black);
             }
 
@@ -535,7 +535,7 @@ public class JFrameUtils {
         view.getTxtNomeEstadoCliente().addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtNomeEstadoCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtNomeEstadoCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblEstadoCliente().setForeground(Color.black);
             }
 
@@ -558,7 +558,7 @@ public class JFrameUtils {
         view.getTxtPaisCliente().addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtPaisCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtPaisCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblPaisCliente().setForeground(Color.black);
             }
 
@@ -578,12 +578,12 @@ public class JFrameUtils {
             }
 
         });
-        
+
         view.getTxtCepCliente().addFocusListener(new FocusListener() {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtCepCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                 view.getTxtCepCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblCepCliente().setForeground(Color.black);
             }
 
@@ -602,12 +602,12 @@ public class JFrameUtils {
                 }
             }
         });
-        
+
         view.getTxtUfCliente().addFocusListener(new FocusListener() {
 
             @Override
             public void focusGained(FocusEvent e) {
-                view.getTxtUfCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getTxtUfCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblUfCliente().setForeground(Color.black);
             }
 

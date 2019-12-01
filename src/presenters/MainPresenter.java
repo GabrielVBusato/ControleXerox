@@ -60,6 +60,12 @@ public class MainPresenter {
                 ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
             }
         }
+        
+        for (Component c : view.getPnEncomenda().getComponents() ){
+            if (c instanceof JTextField || c instanceof JFormattedTextField){
+                ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
+            }
+        }
 
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
             view.getTxtNumero(), view.getTxtBairro(), view.getTxtTelefone(), view.getTxtCep(), view.getTxtNomeCidade(),
