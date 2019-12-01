@@ -9,7 +9,10 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.border.MatteBorder;
@@ -761,6 +764,24 @@ public class MainView extends javax.swing.JFrame {
             }
         });
     }
+
+    public JRadioButton getJrbTiragemAvulsa() {
+        return jrbTiragemAvulsa;
+    }
+
+    public JRadioButton getJrbTiragemEncomendada() {
+        return jrbTiragemEncomendada;
+    }
+
+    public JList getListEncomenda() {
+        return ListEncomenda;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList ListEncomenda;

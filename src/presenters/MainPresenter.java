@@ -46,20 +46,6 @@ public class MainPresenter {
 
     private MainPresenter() {
         view = new MainView();
-        view.getPnProfessor().setVisible(false);
-        view.getPnTiragem().setVisible(false);
-        view.getPnEncomenda().setVisible(false);
-        view.getPnAddFuncionario().setVisible(false);
-        view.getPnInfoEncomenda().setVisible(false);
-        view.getPnProfessor().setName("pnProfessor");
-        view.getPnTiragem().setName("pnTiragem");
-        view.getPnEncomenda().setName("pnEncomenda");
-        view.getPnAddFuncionario().setName("pnAddFuncionario");
-        view.getPnInfoEncomenda().setName("pnInfoEncomenda");
-        view.getBtnProfessor().setName("btnProfessor");
-        view.getBtnTiragem().setName("btnTiragem");
-        view.getBtnEncomenda().setName("btnEncomenda");
-        view.getBtnAddFuncionario().setName("btnAddFuncionario");
         iniciarView();
     }
 
@@ -239,6 +225,38 @@ public class MainPresenter {
                 view.getPnAvisaEncomendaSalva().setVisible(true);
             }
         });
+        
+        view.getJrbTiragemEncomendada().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getjScrollPane1().setVisible(true);
+            }
+        });
+        
+        view.getJrbTiragemAvulsa().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getjScrollPane1().setVisible(false);
+            }
+        });
+        
+        view.getPnProfessor().setVisible(false);
+        view.getPnTiragem().setVisible(false);
+        view.getPnEncomenda().setVisible(false);
+        view.getPnAddFuncionario().setVisible(false);
+        view.getPnInfoEncomenda().setVisible(false);
+        view.getPnProfessor().setName("pnProfessor");
+        view.getPnTiragem().setName("pnTiragem");
+        view.getPnEncomenda().setName("pnEncomenda");
+        view.getPnAddFuncionario().setName("pnAddFuncionario");
+        view.getPnInfoEncomenda().setName("pnInfoEncomenda");
+        view.getBtnProfessor().setName("btnProfessor");
+        view.getBtnTiragem().setName("btnTiragem");
+        view.getBtnEncomenda().setName("btnEncomenda");
+        view.getBtnAddFuncionario().setName("btnAddFuncionario");
+        view.getJrbTiragemEncomendada().setSelected(true);
     }
 
     public static MainPresenter getInstance() {
