@@ -38,14 +38,29 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         pnPrincipal = new javax.swing.JPanel();
+        pnAddTiragemEncomenda = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel9 = new javax.swing.JLabel();
+        btnSalvarTiragemEncomenda = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        pnMaisTiragem = new javax.swing.JPanel();
+        btnCancelarMaisTiragem = new javax.swing.JButton();
+        btnAddMaisTiragemEncomenda = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         pnInfoEncomenda = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        pnAvisaEncomendaSalva = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        btnProximoTiragens = new javax.swing.JButton();
+        lblTituloInfoEncomenda = new javax.swing.JLabel();
         lblNomeEncomenda = new javax.swing.JLabel();
         txtNomeEncomenda = new javax.swing.JTextField();
         btnSalvarEncomenda = new javax.swing.JButton();
         btnCancelarInfoEncomenda = new javax.swing.JButton();
-        txtNomeTiragemEncomenda = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         pnTiragem = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jcbSelecioneFuncionario = new javax.swing.JComboBox();
@@ -128,72 +143,181 @@ public class MainView extends javax.swing.JFrame {
 
         pnPrincipal.setLayout(null);
 
-        pnInfoEncomenda.setPreferredSize(new java.awt.Dimension(359, 359));
+        jLabel7.setText("Titulo da tiragem");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("INFORMAÇÕES DA ENCOMENDA");
+        jLabel8.setText("Quantidade de cópias desta tiragem");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel9.setText("Funcionário");
+
+        btnSalvarTiragemEncomenda.setText("Salvar tiragem");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setText("CADASTRO DE TIRAGENS DA ENCOMENDA");
+
+        javax.swing.GroupLayout pnAddTiragemEncomendaLayout = new javax.swing.GroupLayout(pnAddTiragemEncomenda);
+        pnAddTiragemEncomenda.setLayout(pnAddTiragemEncomendaLayout);
+        pnAddTiragemEncomendaLayout.setHorizontalGroup(
+            pnAddTiragemEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnAddTiragemEncomendaLayout.createSequentialGroup()
+                .addGroup(pnAddTiragemEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnAddTiragemEncomendaLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalvarTiragemEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnAddTiragemEncomendaLayout.createSequentialGroup()
+                        .addGroup(pnAddTiragemEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnAddTiragemEncomendaLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(pnAddTiragemEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(pnAddTiragemEncomendaLayout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(87, 87, 87)
+                                        .addComponent(jLabel9))
+                                    .addGroup(pnAddTiragemEncomendaLayout.createSequentialGroup()
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(165, 165, 165)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(pnAddTiragemEncomendaLayout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(jLabel6)))
+                        .addGap(0, 14, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pnAddTiragemEncomendaLayout.setVerticalGroup(
+            pnAddTiragemEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnAddTiragemEncomendaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel7)
+                .addGap(6, 6, 6)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(pnAddTiragemEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addGap(6, 6, 6)
+                .addGroup(pnAddTiragemEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addComponent(btnSalvarTiragemEncomenda)
+                .addContainerGap())
+        );
+
+        pnPrincipal.add(pnAddTiragemEncomenda);
+        pnAddTiragemEncomenda.setBounds(10, 10, 470, 440);
+
+        btnCancelarMaisTiragem.setText("Cancelar");
+
+        btnAddMaisTiragemEncomenda.setText("Adicionar mais tiragens");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setText("Tiragem salva com sucesso!");
+
+        javax.swing.GroupLayout pnMaisTiragemLayout = new javax.swing.GroupLayout(pnMaisTiragem);
+        pnMaisTiragem.setLayout(pnMaisTiragemLayout);
+        pnMaisTiragemLayout.setHorizontalGroup(
+            pnMaisTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnMaisTiragemLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addContainerGap(290, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnMaisTiragemLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCancelarMaisTiragem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAddMaisTiragemEncomenda)
+                .addGap(24, 24, 24))
+        );
+        pnMaisTiragemLayout.setVerticalGroup(
+            pnMaisTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnMaisTiragemLayout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addGroup(pnMaisTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelarMaisTiragem)
+                    .addComponent(btnAddMaisTiragemEncomenda))
+                .addGap(22, 22, 22))
+        );
+
+        pnPrincipal.add(pnMaisTiragem);
+        pnMaisTiragem.setBounds(10, 10, 470, 440);
+
+        pnInfoEncomenda.setPreferredSize(new java.awt.Dimension(359, 359));
+        pnInfoEncomenda.setLayout(null);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setText("Pronto! A encomenda foi salva,");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("Para cadastrar tiragens relacionadas a esta encomenda clique em próximo.");
+
+        btnProximoTiragens.setText("Próximo");
+
+        javax.swing.GroupLayout pnAvisaEncomendaSalvaLayout = new javax.swing.GroupLayout(pnAvisaEncomendaSalva);
+        pnAvisaEncomendaSalva.setLayout(pnAvisaEncomendaSalvaLayout);
+        pnAvisaEncomendaSalvaLayout.setHorizontalGroup(
+            pnAvisaEncomendaSalvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnAvisaEncomendaSalvaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnAvisaEncomendaSalvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnAvisaEncomendaSalvaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnProximoTiragens, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pnAvisaEncomendaSalvaLayout.setVerticalGroup(
+            pnAvisaEncomendaSalvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnAvisaEncomendaSalvaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addComponent(btnProximoTiragens)
+                .addContainerGap())
+        );
+
+        pnInfoEncomenda.add(pnAvisaEncomendaSalva);
+        pnAvisaEncomendaSalva.setBounds(20, 140, 450, 240);
+
+        lblTituloInfoEncomenda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTituloInfoEncomenda.setText("INFORMAÇÕES DA ENCOMENDA");
+        pnInfoEncomenda.add(lblTituloInfoEncomenda);
+        lblTituloInfoEncomenda.setBounds(140, 23, 229, 17);
 
         lblNomeEncomenda.setText("Nome da encomenda");
+        pnInfoEncomenda.add(lblNomeEncomenda);
+        lblNomeEncomenda.setBounds(26, 46, 100, 14);
 
         txtNomeEncomenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeEncomendaActionPerformed(evt);
             }
         });
+        pnInfoEncomenda.add(txtNomeEncomenda);
+        txtNomeEncomenda.setBounds(26, 66, 447, 20);
 
         btnSalvarEncomenda.setText("Salvar encomenda");
+        pnInfoEncomenda.add(btnSalvarEncomenda);
+        btnSalvarEncomenda.setBounds(331, 420, 130, 23);
 
         btnCancelarInfoEncomenda.setText("Cancelar");
-
-        jLabel3.setText("Nome da tiragem");
-
-        javax.swing.GroupLayout pnInfoEncomendaLayout = new javax.swing.GroupLayout(pnInfoEncomenda);
-        pnInfoEncomenda.setLayout(pnInfoEncomendaLayout);
-        pnInfoEncomendaLayout.setHorizontalGroup(
-            pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnInfoEncomendaLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(121, 121, 121))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnInfoEncomendaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancelarInfoEncomenda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSalvarEncomenda)
-                .addContainerGap())
-            .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
-                .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNomeEncomenda)
-                            .addComponent(txtNomeEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(txtNomeTiragemEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-        pnInfoEncomendaLayout.setVerticalGroup(
-            pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnInfoEncomendaLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNomeEncomenda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeTiragemEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
-                .addGroup(pnInfoEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvarEncomenda)
-                    .addComponent(btnCancelarInfoEncomenda))
-                .addContainerGap())
-        );
+        btnCancelarInfoEncomenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarInfoEncomendaActionPerformed(evt);
+            }
+        });
+        pnInfoEncomenda.add(btnCancelarInfoEncomenda);
+        btnCancelarInfoEncomenda.setBounds(215, 420, 90, 23);
 
         pnPrincipal.add(pnInfoEncomenda);
         pnInfoEncomenda.setBounds(-18, -15, 490, 460);
@@ -629,6 +753,10 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalvarActionPerformed
 
+    private void btnCancelarInfoEncomendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarInfoEncomendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarInfoEncomendaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -669,22 +797,27 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddFuncionario;
+    private javax.swing.JButton btnAddMaisTiragemEncomenda;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnCancelarInfoEncomenda;
+    private javax.swing.JButton btnCancelarMaisTiragem;
     private javax.swing.JButton btnCancelarTiragem;
     private javax.swing.JButton btnEncomenda;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnLimparCliente;
     private javax.swing.JButton btnProfessor;
     private javax.swing.JButton btnProximoPanelCliente;
+    private javax.swing.JButton btnProximoTiragens;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JButton btnSalvarEncomenda;
     private javax.swing.JButton btnSalvarTiragem;
+    private javax.swing.JButton btnSalvarTiragemEncomenda;
     private javax.swing.JButton btnTiragem;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel36;
@@ -692,6 +825,13 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JComboBox jcbSelecioneFuncionario;
     private javax.swing.JLabel lblBairroCliente;
     private javax.swing.JLabel lblBairroFuncionario;
@@ -716,11 +856,15 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel lblRuaFuncionario;
     private javax.swing.JLabel lblTelefoneCliente;
     private javax.swing.JLabel lblTelefoneFuncionario;
+    private javax.swing.JLabel lblTituloInfoEncomenda;
     private javax.swing.JLabel lblUfCliente;
     private javax.swing.JLabel lblUfFuncionario;
     private javax.swing.JPanel pnAddFuncionario;
+    private javax.swing.JPanel pnAddTiragemEncomenda;
+    private javax.swing.JPanel pnAvisaEncomendaSalva;
     private javax.swing.JPanel pnEncomenda;
     private javax.swing.JPanel pnInfoEncomenda;
+    private javax.swing.JPanel pnMaisTiragem;
     private javax.swing.JPanel pnMenu;
     private javax.swing.JPanel pnPrincipal;
     private javax.swing.JPanel pnProfessor;
@@ -740,7 +884,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomeEstado;
     private javax.swing.JTextField txtNomeEstadoCliente;
     private javax.swing.JTextField txtNomeTiragem;
-    private javax.swing.JTextField txtNomeTiragemEncomenda;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtNumeroCliente;
     private javax.swing.JTextField txtPais;
@@ -1120,6 +1263,52 @@ public class MainView extends javax.swing.JFrame {
 
     public JLabel getLblNomeEncomenda() {
         return lblNomeEncomenda;
+    }
+
+    public JButton getBtnCancelarInfoEncomenda() {
+        return btnCancelarInfoEncomenda;
+    }
+
+    public JButton getBtnProximoTiragens() {
+        return btnProximoTiragens;
+    }
+
+    public JPanel getPnAvisaEncomendaSalva() {
+        return pnAvisaEncomendaSalva;
+    }
+
+    public JPanel getPnAddTiragemEncomenda() {
+        return pnAddTiragemEncomenda;
+    }
+
+    public JPanel getPnMaisTiragem() {
+        return pnMaisTiragem;
+    }
+
+    
+
+    public JTextField getTxtNomeTiragem() {
+        return txtNomeTiragem;
+    }
+
+    public JTextField getTxtQtdTiragem() {
+        return txtQtdTiragem;
+    }
+
+    public JButton getBtnSalvarTiragemEncomenda() {
+        return btnSalvarTiragemEncomenda;
+    }
+
+    public JLabel getLblTituloInfoEncomenda() {
+        return lblTituloInfoEncomenda;
+    }
+
+    public JButton getBtnAddMaisTiragemEncomenda() {
+        return btnAddMaisTiragemEncomenda;
+    }
+
+    public JButton getBtnCancelarMaisTiragem() {
+        return btnCancelarMaisTiragem;
     }
     
     

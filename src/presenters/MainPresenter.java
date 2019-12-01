@@ -51,11 +51,17 @@ public class MainPresenter {
         view.getPnEncomenda().setVisible(false);
         view.getPnAddFuncionario().setVisible(false);
         view.getPnInfoEncomenda().setVisible(false);
+        view.getPnAvisaEncomendaSalva().setVisible(false);
+        view.getPnAddTiragemEncomenda().setVisible(false);
+        view.getPnMaisTiragem().setVisible(false);
         view.getPnProfessor().setName("pnProfessor");
         view.getPnTiragem().setName("pnTiragem");
         view.getPnEncomenda().setName("pnEncomenda");
         view.getPnAddFuncionario().setName("pnAddFuncionario");
         view.getPnInfoEncomenda().setName("pnInfoEncomenda");
+        view.getPnAddTiragemEncomenda().setName("pnAddTiragemEncomenda");
+        view.getPnAvisaEncomendaSalva().setName("pnAvisaEncomendaSalva");
+        view.getPnMaisTiragem().setName("pnMaisTiragem");
         view.getBtnProfessor().setName("btnProfessor");
         view.getBtnTiragem().setName("btnTiragem");
         view.getBtnEncomenda().setName("btnEncomenda");
@@ -148,19 +154,57 @@ public class MainPresenter {
             }
         });
         
-        //Botão salvar cliente
+        //Botão salva encomenda e cliente
         view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                boolean isValid = true;
-                if(view.getTxtNomeEncomenda().getText().equals("")){
-                    isValid = false;
-                }
-                LineBorder border = (LineBorder)((JTextField)view.getTxtNomeEncomenda()).getBorder();
-                if(border.getLineColor().getRGB() == -65536){
-                    isValid = false;
-                }
+                view.getPnAvisaEncomendaSalva().setVisible(true);
+                view.getBtnCancelarInfoEncomenda().setVisible(false);
+                view.getBtnSalvarEncomenda().setVisible(false);
+            }
+        });
+        
+        //Botão próximo para tiragens
+        view.getBtnProximoTiragens().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnAddTiragemEncomenda().setVisible(true);
+                view.getLblTituloInfoEncomenda().setVisible(false);
+                view.getPnAvisaEncomendaSalva().setVisible(false);
+                view.getTxtNomeEncomenda().setVisible(false);
+                view.getLblNomeEncomenda().setVisible(false);
+            }
+        });
+        
+        //Botão adiciona tiragem a encomenda
+        view.getBtnSalvarTiragemEncomenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnAddTiragemEncomenda().setVisible(false);
+                view.getPnMaisTiragem().setVisible(true);
+            }
+        });
+        
+        //Botão adiciona mais tiragem a encomenda
+        view.getBtnAddMaisTiragemEncomenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnMaisTiragem().setVisible(false);
+                view.getPnAddTiragemEncomenda().setVisible(true);
+            }
+        });
+        
+        //Botão cancela mais tiragem
+        view.getBtnCancelarMaisTiragem().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnMaisTiragem().setVisible(false);
+                view.getBtnEncomenda().setEnabled(true);
             }
         });
 
@@ -241,6 +285,7 @@ public class MainPresenter {
             }
         });
 
+        //Botão próximo para cadastrar encomenda
         view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
 
             @Override
@@ -249,7 +294,7 @@ public class MainPresenter {
                 view.getPnInfoEncomenda().setVisible(true);
             }
         });
-
+        
        
     }
 
