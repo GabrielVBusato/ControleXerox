@@ -630,6 +630,30 @@ public class JFrameUtils {
                 }
             }
         });
+        
+        view.getTxtNomeEncomenda().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtNomeEncomenda().setBorder(new LineBorder(Color.black, 1));
+                view.getLblNomeEncomenda().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtNomeEncomenda().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtNomeEncomenda().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtNomeEncomenda().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblNomeEncomenda().setForeground(Color.red);
+                }
+            }
+        });
     }
 
     public static void visibilidade(MainView view, String painel, String botao) {

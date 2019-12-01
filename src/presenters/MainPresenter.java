@@ -62,7 +62,7 @@ public class MainPresenter {
                 ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
             }
         }
-        
+
         view.getBtnProximoPanelCliente().setEnabled(false);
 
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
@@ -123,11 +123,30 @@ public class MainPresenter {
             }
         });
 
-        //Botão salvar cliente
-        view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
+        //Botão cancelar cliente
+        view.getBtnCancelarCliente().addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
+                view.getPnEncomenda().setVisible(false);
+                view.getBtnEncomenda().setEnabled(true);
+            }
+        });
+
+        //Botão salvar cliente
+        view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                boolean isValid = true;
+                if (view.getTxtNomeEncomenda().getText().equals("")) {
+                    isValid = false;
+                }
+                LineBorder border = (LineBorder) ((JTextField) view.getTxtNomeEncomenda()).getBorder();
+                if (border.getLineColor().getRGB() == -65536) {
+                    isValid = false;
+                }
             }
         });
 
@@ -158,45 +177,44 @@ public class MainPresenter {
                     Endereco endereco = new Endereco();
                     Pessoa pessoa = new Pessoa();
                     Funcionario funcionario = new Funcionario();
-                    
+
                     //Setando atributos do form
                     pais.setNome(view.getTxtPais().getText());
-                    
+
                     estado.setNome(view.getTxtNomeEstado().getText());
                     estado.setUf(view.getTxtUf().getText());
-                    
+
                     cidade.setCep(view.getTxtCep().getText());
                     cidade.setNome(view.getTxtNomeCidade().getText());
-                    
+
                     endereco.setBairro(view.getTxtBairro().getText());
                     endereco.setNumero(view.getTxtNumero().getText());
                     endereco.setRua(view.getTxtRua().getText());
-                    
+
                     pessoa.setCpf(view.getTxtCpf().getText());
                     pessoa.setEmail(view.getTxtEmail().getText());
                     pessoa.setNome(view.getTxtNome().getText());
                     pessoa.setTelefone(view.getTxtTelefone().getText());
-                    
-                    
+
                     //Set id
                     try {
                         pais.setIdPais(PaisDao.inserir(pais));
-                        
+
                         estado.setIdPais(pais.getIdPais());
                         estado.setIdEstado(EstadoDao.inserir(estado));
-                        
+
                         cidade.setIdEstado(estado.getIdEstado());
                         cidade.setIdCidade(CidadeDao.inserir(cidade));
-                        
+
                         endereco.setIdCidade(cidade.getIdCidade());
                         endereco.setIdEndereco(EnderecoDao.inserir(endereco));
-                        
+
                         pessoa.setIdEndereco(endereco.getIdEndereco());
                         pessoa.setIdPessoa(PessoaDao.inserir(pessoa));
-                        
+
                         funcionario.setIdPessoa(pessoa.getIdPessoa());
                         FuncionarioDao.inserir(funcionario);
-                        
+
                         JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, "Erro " + ex.getMessage());
@@ -207,41 +225,13 @@ public class MainPresenter {
                 }
             }
         });
-
-        view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                view.getPnEncomenda().setVisible(false);
-                view.getPnInfoEncomenda().setVisible(true);
-                view.getPnAvisaEncomendaSalva().setVisible(false);
-            }
-        });
-
         view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getPnAvisaEncomendaSalva().setVisible(true);
             }
         });
-        
-        view.getJrbTiragemEncomendada().addActionListener(new ActionListener() {
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                view.getjScrollPane1().setVisible(true);
-            }
-        });
-        
-        view.getJrbTiragemAvulsa().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                view.getjScrollPane1().setVisible(false);
-            }
-        });
-        
         view.getPnProfessor().setVisible(false);
         view.getPnTiragem().setVisible(false);
         view.getPnEncomenda().setVisible(false);
@@ -256,7 +246,6 @@ public class MainPresenter {
         view.getBtnTiragem().setName("btnTiragem");
         view.getBtnEncomenda().setName("btnEncomenda");
         view.getBtnAddFuncionario().setName("btnAddFuncionario");
-        view.getJrbTiragemEncomendada().setSelected(true);
     }
 
     public static MainPresenter getInstance() {
