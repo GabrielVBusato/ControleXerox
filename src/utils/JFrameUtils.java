@@ -325,7 +325,7 @@ public class JFrameUtils {
 
     public static boolean checagemCliente() {
         MainView view = MainPresenter.getView();
-        
+
         //Check nome
         view.getTxtNomeCliente().addFocusListener(new FocusListener() {
 
@@ -333,7 +333,6 @@ public class JFrameUtils {
             public void focusGained(FocusEvent e) {
                 view.getTxtNomeCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
                 view.getLblNomeFuncionario().setForeground(Color.black);
-                view.getLblNomeFuncionario().setText("Nome");
             }
 
             @Override
@@ -348,19 +347,15 @@ public class JFrameUtils {
                 } catch (Exception ex) {
                     view.getTxtNomeCliente().setBorder(new LineBorder(Color.red, 1));
                     view.getLblNomeCliente().setForeground(Color.red);
-                    view.getLblNomeCliente().setText("Nome " + "(" + ex.getMessage() + ")");
                 }
             }
         });
-
-        
 
         view.getTxtCpfCliente().addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
                 view.getTxtCpfCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
                 view.getLblCpfCliente().setForeground(Color.black);
-                view.getLblCpfCliente().setText("CPF");
             }
 
             @Override
@@ -378,18 +373,16 @@ public class JFrameUtils {
                         view.getTxtCpfCliente().setValue("");
                     }
                     view.getLblCpfCliente().setForeground(Color.red);
-                    view.getLblCpfCliente().setText("CPF " + "( " + ex.getMessage() + " )");
                 }
             }
         });
-        
+
         view.getTxtEmailCliente().addFocusListener(new FocusListener() {
 
             @Override
             public void focusGained(FocusEvent e) {
                 view.getTxtEmailCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
                 view.getLblEmailCliente().setForeground(Color.black);
-                view.getLblEmailCliente().setText("Email");
             }
 
             @Override
@@ -407,18 +400,16 @@ public class JFrameUtils {
                 } catch (Exception ex) {
                     view.getTxtEmailCliente().setBorder(new LineBorder(Color.red, 1));
                     view.getLblEmailCliente().setForeground(Color.red);
-                    view.getLblEmailCliente().setText("Email " + "( " + ex.getMessage() + " )");
                 }
             }
         });
-        
+
         view.getTxtTelefoneCliente().addFocusListener(new FocusListener() {
 
             @Override
             public void focusGained(FocusEvent e) {
                 view.getTxtTelefoneCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
                 view.getLblTelefoneCliente().setForeground(Color.black);
-                view.getLblTelefoneCliente().setText("Telefone");
             }
 
             @Override
@@ -430,21 +421,19 @@ public class JFrameUtils {
                     if (!view.getTxtTelefoneCliente().getText().matches("^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$")) {
                         throw new Exception("inválido!");
                     }
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     view.getTxtTelefoneCliente().setBorder(new LineBorder(Color.red, 1));
                     view.getLblTelefoneCliente().setForeground(Color.red);
-                    view.getLblTelefoneCliente().setText("Telefone "+ ex.getMessage() );
                 }
             }
         });
-        
+
         view.getTxtRuaCliente().addFocusListener(new FocusListener() {
 
             @Override
             public void focusGained(FocusEvent e) {
                 view.getTxtRuaCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
                 view.getLblRuaFuncionario().setForeground(Color.black);
-                view.getLblRuaFuncionario().setText("Rua");
             }
 
             @Override
@@ -456,21 +445,19 @@ public class JFrameUtils {
                     if (!view.getTxtRuaCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
                         throw new Exception("inválida!");
                     }
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     view.getTxtRuaCliente().setBorder(new LineBorder(Color.red, 1));
                     view.getLblRuaCliente().setForeground(Color.red);
-                    view.getLblRuaCliente().setText("Rua "+ ex.getMessage() );
                 }
             }
         });
-        
+
         view.getTxtBairroCliente().addFocusListener(new FocusListener() {
 
             @Override
             public void focusGained(FocusEvent e) {
                 view.getTxtBairroCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
-                view.getLblRuaFuncionario().setForeground(Color.black);
-                view.getLblRuaFuncionario().setText("Bairro");
+                view.getLblBairroCliente().setForeground(Color.black);
             }
 
             @Override
@@ -482,10 +469,152 @@ public class JFrameUtils {
                     if (!view.getTxtBairroCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
                         throw new Exception("inválido!");
                     }
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     view.getTxtBairroCliente().setBorder(new LineBorder(Color.red, 1));
                     view.getLblBairroCliente().setForeground(Color.red);
-                    view.getLblBairroCliente().setText("Bairro "+ ex.getMessage() );
+                }
+            }
+        });
+
+        view.getTxtNumeroCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtNumeroCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblNumeroCliente().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtNumeroCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtNumeroCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtNumeroCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblNumeroCliente().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtNomeCidadeCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtNomeCidadeCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblCidadeCliente().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtNomeCidadeCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtNomeCidadeCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtNomeCidadeCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblCidadeCliente().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtNomeEstadoCliente().addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtNomeEstadoCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblEstadoCliente().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtNomeEstadoCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtNomeEstadoCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtNomeEstadoCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblEstadoCliente().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtPaisCliente().addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtPaisCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblPaisCliente().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtPaisCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtPaisCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtPaisCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblPaisCliente().setForeground(Color.red);
+                }
+            }
+
+        });
+        
+        view.getTxtCepCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtCepCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblCepCliente().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtCepCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtCepCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtCepCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblCepCliente().setForeground(Color.red);
+                }
+            }
+        });
+        
+        view.getTxtUfCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtUfCliente().setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+                view.getLblUfCliente().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                try {
+                    if (view.getTxtUfCliente().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtUfCliente().getText().matches("^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtUfCliente().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblUfCliente().setForeground(Color.red);
                 }
             }
         });

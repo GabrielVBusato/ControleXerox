@@ -461,44 +461,6 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lblRuaCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="txtRuaCliente" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblNomeCliente" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnLimparCliente" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="lblEmailCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtEmailCliente" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblCpfCliente" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCpfCliente" min="-2" pref="123" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblTelefoneCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtTelefoneCliente" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="txtNomeCliente" alignment="0" min="-2" pref="332" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblBairroCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtBairroCliente" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblNumeroCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNumeroCliente" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="btnProximoPanelCliente" min="-2" max="-2" attributes="0"/>
@@ -507,39 +469,85 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="lblCidadeCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtNomeCidadeCliente" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblCepCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtCepCliente" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
+                                              <Component id="lblCepCliente" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtCepCliente" min="-2" pref="157" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="txtNomeEstadoCliente" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                                               <Component id="lblEstadoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtUfCliente" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                                              <Component id="lblUfCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblUfCliente" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtUfCliente" min="-2" pref="61" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblPaisCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtPaisCliente" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                                              <Component id="lblPaisCliente" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtPaisCliente" min="-2" pref="121" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="txtRuaCliente" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lblNomeCliente" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btnLimparCliente" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="lblEmailCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtEmailCliente" alignment="1" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblCpfCliente" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtCpfCliente" min="-2" pref="123" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="lblTelefoneCliente" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="txtTelefoneCliente" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="txtNomeCliente" alignment="0" min="-2" pref="332" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                      <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="lblRuaCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblBairroCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBairroCliente" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblNumeroCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtNumeroCliente" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="72" max="32767" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -562,7 +570,7 @@
                       <Component id="txtNomeCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="lblEmailCliente" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtEmailCliente" min="-2" max="-2" attributes="0"/>
@@ -573,8 +581,8 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtTelefoneCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtCpfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTelefoneCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -602,10 +610,10 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="txtCepCliente" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="lblCepCliente" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtCepCliente" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -613,7 +621,6 @@
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                               <Component id="txtNomeEstadoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtUfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtPaisCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -621,10 +628,11 @@
                                   <Component id="lblUfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblPaisCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtPaisCliente" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnProximoPanelCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnCancelarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -656,8 +664,6 @@
                 <Property name="text" type="java.lang.String" value="CEP"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtCepCliente">
-            </Component>
             <Component class="javax.swing.JLabel" name="lblEstadoCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estado"/>
@@ -679,11 +685,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeCliente">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtUfCliente">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUfClienteActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="txtEmailCliente">
             </Component>
             <Component class="javax.swing.JLabel" name="lblPaisCliente">
@@ -700,8 +701,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="CPF"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtTelefoneCliente">
             </Component>
             <Component class="javax.swing.JLabel" name="lblTelefoneCliente">
               <Properties>
@@ -756,6 +755,27 @@
               <Properties>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                   <Format format="###.###.###-##" subtype="-1" type="5"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtTelefoneCliente">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                  <Format format="(##) #####-####" subtype="-1" type="5"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtCepCliente">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                  <Format format="#####-###" subtype="-1" type="5"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtUfCliente">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                  <Format format="UU" subtype="-1" type="5"/>
                 </Property>
               </Properties>
             </Component>
@@ -867,10 +887,7 @@
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="lblPaisFuncionario" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="lblPaisFuncionario" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtPais" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
