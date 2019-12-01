@@ -364,23 +364,25 @@ public class JFrameUtils {
             public void focusGained(FocusEvent e) {
                 view.getTxtCpfCliente().setBorder(new LineBorder(Color.black, 1));
                 view.getLblCpfCliente().setForeground(Color.black);
+                view.getLblCpfCliente().setText("CPF*");
             }
 
             @Override
             public void focusLost(FocusEvent e) {
                 try {
                     if (view.getTxtCpfCliente().getText().contains(" ")) {
-                        throw new Exception("Campo Obrigatório!");
+                        throw new Exception("");
                     }
                     if (FuncionarioDao.cpfExists(view.getTxtCpfCliente().getText())) {
-                        throw new Exception("Cpf existente!");
+                        throw new Exception("já existente!");
                     }
                 } catch (Exception ex) {
                     view.getTxtCpfCliente().setBorder(new LineBorder(Color.red, 1));
-                    if (!ex.getMessage().equals("Cpf existente!")) {
+                    if (!ex.getMessage().equals("já existente!")) {
                         view.getTxtCpfCliente().setValue("");
                     }
                     view.getLblCpfCliente().setForeground(Color.red);
+                    view.getLblCpfCliente().setText("CPF* " + ex.getMessage());
                 }
             }
         });
