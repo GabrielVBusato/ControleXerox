@@ -153,7 +153,14 @@ public class MainPresenter {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*if(view.getTxtNomeEncomenda().getText().equals("") || view.getTxtNomeEncomenda().getBorder())*/
+                boolean isValid = true;
+                if(view.getTxtNomeEncomenda().getText().equals("")){
+                    isValid = false;
+                }
+                LineBorder border = (LineBorder)((JTextField)view.getTxtNomeEncomenda()).getBorder();
+                if(border.getLineColor().getRGB() == -65536){
+                    isValid = false;
+                }
             }
         });
 
@@ -238,17 +245,10 @@ public class MainPresenter {
             public void actionPerformed(ActionEvent e) {
                 view.getPnEncomenda().setVisible(false);
                 view.getPnInfoEncomenda().setVisible(true);
-                view.getPnAvisaEncomendaSalva().setVisible(false);
             }
         });
 
-        view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                view.getPnAvisaEncomendaSalva().setVisible(true);
-            }
-        });
+       
     }
 
     public static MainPresenter getInstance() {
