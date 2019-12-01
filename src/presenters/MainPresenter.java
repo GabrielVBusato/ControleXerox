@@ -82,7 +82,7 @@ public class MainPresenter {
                 ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
             }
         }
-        
+
         view.getBtnProximoPanelCliente().setEnabled(false);
 
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
@@ -142,7 +142,7 @@ public class MainPresenter {
                 JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
             }
         });
-        
+
         //Botão cancelar cliente
         view.getBtnCancelarCliente().addActionListener(new ActionListener() {
 
@@ -153,7 +153,7 @@ public class MainPresenter {
                 view.getBtnEncomenda().setEnabled(true);
             }
         });
-        
+   
         //Botão salva encomenda e cliente
         view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
 
@@ -235,45 +235,44 @@ public class MainPresenter {
                     Endereco endereco = new Endereco();
                     Pessoa pessoa = new Pessoa();
                     Funcionario funcionario = new Funcionario();
-                    
+
                     //Setando atributos do form
                     pais.setNome(view.getTxtPais().getText());
-                    
+
                     estado.setNome(view.getTxtNomeEstado().getText());
                     estado.setUf(view.getTxtUf().getText());
-                    
+
                     cidade.setCep(view.getTxtCep().getText());
                     cidade.setNome(view.getTxtNomeCidade().getText());
-                    
+
                     endereco.setBairro(view.getTxtBairro().getText());
                     endereco.setNumero(view.getTxtNumero().getText());
                     endereco.setRua(view.getTxtRua().getText());
-                    
+
                     pessoa.setCpf(view.getTxtCpf().getText());
                     pessoa.setEmail(view.getTxtEmail().getText());
                     pessoa.setNome(view.getTxtNome().getText());
                     pessoa.setTelefone(view.getTxtTelefone().getText());
-                    
-                    
+
                     //Set id
                     try {
                         pais.setIdPais(PaisDao.inserir(pais));
-                        
+
                         estado.setIdPais(pais.getIdPais());
                         estado.setIdEstado(EstadoDao.inserir(estado));
-                        
+
                         cidade.setIdEstado(estado.getIdEstado());
                         cidade.setIdCidade(CidadeDao.inserir(cidade));
-                        
+
                         endereco.setIdCidade(cidade.getIdCidade());
                         endereco.setIdEndereco(EnderecoDao.inserir(endereco));
-                        
+
                         pessoa.setIdEndereco(endereco.getIdEndereco());
                         pessoa.setIdPessoa(PessoaDao.inserir(pessoa));
-                        
+
                         funcionario.setIdPessoa(pessoa.getIdPessoa());
                         FuncionarioDao.inserir(funcionario);
-                        
+
                         JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, "Erro " + ex.getMessage());
@@ -284,18 +283,24 @@ public class MainPresenter {
                 }
             }
         });
-
-        //Botão próximo para cadastrar encomenda
-        view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                view.getPnEncomenda().setVisible(false);
-                view.getPnInfoEncomenda().setVisible(true);
-            }
-        });
         
        
+
+
+        view.getPnProfessor().setVisible(false);
+        view.getPnTiragem().setVisible(false);
+        view.getPnEncomenda().setVisible(false);
+        view.getPnAddFuncionario().setVisible(false);
+        view.getPnInfoEncomenda().setVisible(false);
+        view.getPnProfessor().setName("pnProfessor");
+        view.getPnTiragem().setName("pnTiragem");
+        view.getPnEncomenda().setName("pnEncomenda");
+        view.getPnAddFuncionario().setName("pnAddFuncionario");
+        view.getPnInfoEncomenda().setName("pnInfoEncomenda");
+        view.getBtnProfessor().setName("btnProfessor");
+        view.getBtnTiragem().setName("btnTiragem");
+        view.getBtnEncomenda().setName("btnEncomenda");
+        view.getBtnAddFuncionario().setName("btnAddFuncionario");
     }
 
     public static MainPresenter getInstance() {
