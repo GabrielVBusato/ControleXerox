@@ -229,8 +229,10 @@ public class MainPresenter {
                         
                         funcionario.setIdPessoa(pessoa.getIdPessoa());
                         FuncionarioDao.inserir(funcionario);
+                        
+                        JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
                     } catch (Exception ex) {
-                        Logger.getLogger(MainPresenter.class.getName()).log(Level.SEVERE, null, ex);
+                        JOptionPane.showMessageDialog(null, "Erro " + ex.getMessage());
                     }
                     JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso.");
                 } else {
