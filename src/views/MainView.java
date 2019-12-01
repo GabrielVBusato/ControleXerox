@@ -383,7 +383,7 @@ public class MainView extends javax.swing.JFrame {
 
         lblCpfCliente.setText("CPF*");
         pnEncomenda.add(lblCpfCliente);
-        lblCpfCliente.setBounds(40, 140, 40, 14);
+        lblCpfCliente.setBounds(40, 140, 160, 14);
 
         lblTelefoneCliente.setText("Telefone*");
         pnEncomenda.add(lblTelefoneCliente);
