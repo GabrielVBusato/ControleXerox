@@ -19,7 +19,7 @@ import model.bean.Pessoa;
  */
 public class FuncionarioDao {
 
-    public static int inserir(Pessoa f) throws Exception {
+    public static int inserir(Funcionario f) throws Exception {
         int lastkey = 0;
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
