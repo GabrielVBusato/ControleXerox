@@ -207,6 +207,15 @@ public class MainPresenter {
                 view.getBtnEncomenda().setEnabled(true);
             }
         });
+        
+        view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnEncomenda().setVisible(false);
+                view.getPnInfoEncomenda().setVisible(true);
+            }
+        });
 
         view.getBtnSalvar().addActionListener(new ActionListener() {
             @Override
