@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Maurício/Documents/NetBeansProjects/ControleXerox/src/model/bean/Pais.java</file>
-=======
->>>>>>> 0b7af3230f1dda65282bcf8b0567d94ddd1f7a5a
+            <file>file:/C:/Users/Maurício/Documents/NetBeansProjects/ControleXerox/src/model/dao/TiragemDao.java</file>
+            <file>file:/C:/Users/Maurício/Documents/NetBeansProjects/ControleXerox/src/model/dao/FuncionarioDao.java</file>
+            <file>file:/C:/Users/Maurício/Documents/NetBeansProjects/ControleXerox/src/model/bean/Venda.java</file>
             <file>file:/C:/Users/Maurício/Documents/NetBeansProjects/ControleXerox/src/presenters/MainPresenter.java</file>
-            <file>file:/C:/Users/Maurício/Documents/NetBeansProjects/ControleXerox/src/utils/JFrameUtils.java</file>
+            <file>file:/C:/Users/Maurício/Documents/NetBeansProjects/ControleXerox/src/model/dao/VendaDao.java</file>
+            <file>file:/C:/Users/Maurício/Documents/NetBeansProjects/ControleXerox/src/views/MainView.java</file>
         </group>
     </open-files>
 </project-private>
