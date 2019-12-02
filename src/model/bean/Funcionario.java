@@ -9,16 +9,12 @@ package model.bean;
  *
  * @author Gabriel
  */
-public class Funcionario {
+public class Funcionario extends Pessoa {
     private int idPessoa;
 
-    public int getIdPessoa() {
-        return idPessoa;
+    @Override
+    public String toString(){
+        return this.getNome();
     }
-
-    public void setIdPessoa(int idPessoa) {
-        this.idPessoa = idPessoa;
-    }
-  
     
 }

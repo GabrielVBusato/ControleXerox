@@ -9,7 +9,10 @@ import connection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.bean.Funcionario;
 import model.bean.Pessoa;
 
@@ -61,5 +64,29 @@ public class FuncionarioDao {
             System.out.println(e.getMessage());
         }
         return false;
+    }
+
+    public static ArrayList<Funcionario> buscaTodos() {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs;
+        String sql = "SELECT f.idPessoa, p.nome FROM funcionario f join pessoa p on f.idPessoa = p.idPessoa";
+        ArrayList<Funcionario> list = new ArrayList<>();
+        try {
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Funcionario f = new Funcionario();
+
+                f.setIdPessoa(rs.getInt("idPessoa"));
+                f.setNome(rs.getString("nome"));
+
+                list.add(f);
+
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ops! falha ao inserir dados na tabela de ocorrencia");
+        }
+        return list;
     }
 }

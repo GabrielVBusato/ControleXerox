@@ -7,6 +7,7 @@ package presenters;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -17,21 +18,28 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import model.bean.Cidade;
 import model.bean.Endereco;
 import model.bean.Estado;
 import model.bean.Funcionario;
 import model.bean.Pais;
 import model.bean.Pessoa;
+import model.bean.Tiragem;
+import model.bean.Venda;
 import model.dao.CidadeDao;
 import model.dao.EnderecoDao;
 import model.dao.EstadoDao;
 import model.dao.FuncionarioDao;
 import model.dao.PaisDao;
 import model.dao.PessoaDao;
+import model.dao.TiragemDao;
+import model.dao.VendaDao;
 import utils.JFrameUtils;
 import views.MainView;
 
@@ -43,6 +51,7 @@ public class MainPresenter {
 
     private static MainPresenter instance;
     private static MainView view;
+    private static Venda activeVenda = new Venda();
 
     private MainPresenter() {
         view = new MainView();
@@ -83,6 +92,23 @@ public class MainPresenter {
             }
         }
 
+        view.getLblQtdCopias().setText(Integer.toString(view.getSliderCopias().getValue()));
+
+        view.getSliderCopias().addChangeListener(new ChangeListener() {
+
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                view.getLblQtdCopias().setText(Integer.toString(view.getSliderCopias().getValue()));
+            }
+        });
+
+        view.getJcbSelecioneFuncionario().removeAllItems();
+        view.getjComboTiragensAtuais().removeAllItems();
+
+        for (Funcionario f : FuncionarioDao.buscaTodos()) {
+            view.getJcbSelecioneFuncionario().addItem(f);
+        }
+
         view.getBtnProximoPanelCliente().setEnabled(false);
 
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
@@ -106,6 +132,86 @@ public class MainPresenter {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.visibilidade(view, "pnTiragem", "btnTiragem");
+                JFrameUtils.cleanTextField(view.getPnTiragem().getComponents());
+                view.getLblVendaTitulo().setText("Realizar Venda");
+                view.getJcbSelecioneFuncionario().setVisible(true);
+                view.getLblSelecioneFuncionario().setVisible(true);
+                view.getjComboTiragensAtuais().removeAllItems();
+            }
+        });
+
+        //Botão adicionar nova tiragem
+        view.getBtnNovaTiragem().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (view.getTxtNomeTiragem().getText().equals("") || view.getTxtPreço().getText().equals("R$ .  ")) {
+                    JOptionPane.showMessageDialog(null, "Preencha todos os campos corretamente!");
+                } else {
+                    Tiragem t = new Tiragem();
+                    t.setCopias(view.getSliderCopias().getValue());
+                    t.setPreço(Double.valueOf(view.getTxtPreço().getText().replace("R$", "")));
+                    t.setTitulo(view.getTxtNomeTiragem().getText());
+                    activeVenda.setIdPessoa(((Funcionario) view.getJcbSelecioneFuncionario().getSelectedItem()).getIdPessoa());
+                    activeVenda.setTiragens(t);
+                    JFrameUtils.cleanTextField(view.getPnTiragem().getComponents());
+                    view.getLblVendaTitulo().setText("Venda em andamento");
+                    view.getJcbSelecioneFuncionario().setVisible(false);
+                    view.getLblSelecioneFuncionario().setVisible(false);
+                    view.getjComboTiragensAtuais().addItem(t);
+                }
+            }
+        });
+
+        //Botao cancelar venda
+        view.getBtnCancelarTiragem().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrameUtils.cleanTextField(view.getPnTiragem().getComponents());
+                view.getLblVendaTitulo().setText("Realizar Venda");
+                view.getJcbSelecioneFuncionario().setVisible(true);
+                view.getLblSelecioneFuncionario().setVisible(true);
+                view.getjComboTiragensAtuais().removeAllItems();
+                activeVenda = new Venda();
+            }
+        });
+
+        //Botão realizar venda
+        view.getBtnFinalizarVenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!(view.getTxtNomeTiragem().getText().equals("") || view.getTxtPreço().getText().equals("R$ .  "))) {
+                    Tiragem t = new Tiragem();
+                    t.setCopias(view.getSliderCopias().getValue());
+                    t.setPreço(Double.valueOf(view.getTxtPreço().getText().replace("R$", "")));
+                    t.setTitulo(view.getTxtNomeTiragem().getText());
+                    activeVenda.setIdPessoa(((Funcionario) view.getJcbSelecioneFuncionario().getSelectedItem()).getIdPessoa());
+                    activeVenda.setTiragens(t);
+                }
+                double valorTotal = 0;
+                for (Tiragem t : activeVenda.getTiragens()) {
+                    valorTotal += t.getPreço() * t.getCopias();
+                }
+                activeVenda.setValorTotal(valorTotal);
+                try {
+                    int idVenda = VendaDao.inserir(activeVenda);
+                    for (Tiragem t : activeVenda.getTiragens()) {
+                        t.setIdVenda(idVenda);
+                        TiragemDao.inserir(t);
+                    }
+                    JFrameUtils.cleanTextField(view.getPnTiragem().getComponents());
+                    view.getLblVendaTitulo().setText("Realizar Venda");
+                    view.getJcbSelecioneFuncionario().setVisible(true);
+                    view.getLblSelecioneFuncionario().setVisible(true);
+                    view.getjComboTiragensAtuais().removeAllItems();
+                    activeVenda = new Venda();
+                    JOptionPane.showMessageDialog(null, "Venda realizada com sucesso!");
+
+                } catch (Exception ex) {
+                    Logger.getLogger(MainPresenter.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
         });
 
@@ -153,7 +259,7 @@ public class MainPresenter {
                 view.getBtnEncomenda().setEnabled(true);
             }
         });
-   
+
         //Botão salva encomenda e cliente
         view.getBtnSalvarEncomenda().addActionListener(new ActionListener() {
 
@@ -164,7 +270,7 @@ public class MainPresenter {
                 view.getBtnSalvarEncomenda().setVisible(false);
             }
         });
-        
+
         //Botão próximo para tiragens
         view.getBtnProximoTiragens().addActionListener(new ActionListener() {
 
@@ -177,17 +283,16 @@ public class MainPresenter {
                 view.getLblNomeEncomenda().setVisible(false);
             }
         });
-        
+
         //Botão adiciona tiragem a encomenda
         view.getBtnSalvarTiragemEncomenda().addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 view.getPnAddTiragemEncomenda().setVisible(false);
                 view.getPnMaisTiragem().setVisible(true);
             }
         });
-        
+
         //Botão adiciona mais tiragem a encomenda
         view.getBtnAddMaisTiragemEncomenda().addActionListener(new ActionListener() {
 
@@ -197,7 +302,7 @@ public class MainPresenter {
                 view.getPnAddTiragemEncomenda().setVisible(true);
             }
         });
-        
+
         //Botão cancela mais tiragem
         view.getBtnCancelarMaisTiragem().addActionListener(new ActionListener() {
 
@@ -207,7 +312,7 @@ public class MainPresenter {
                 view.getBtnEncomenda().setEnabled(true);
             }
         });
-        
+
         view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
 
             @Override
@@ -292,9 +397,6 @@ public class MainPresenter {
                 }
             }
         });
-        
-       
-
 
         view.getPnProfessor().setVisible(false);
         view.getPnTiragem().setVisible(false);

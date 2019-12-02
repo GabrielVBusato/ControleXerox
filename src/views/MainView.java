@@ -7,12 +7,14 @@ package views;
 
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.border.MatteBorder;
@@ -65,15 +67,21 @@ public class MainView extends javax.swing.JFrame {
         btnSalvarEncomenda = new javax.swing.JButton();
         btnCancelarInfoEncomenda = new javax.swing.JButton();
         pnTiragem = new javax.swing.JPanel();
-        jLabel36 = new javax.swing.JLabel();
+        lblVendaTitulo = new javax.swing.JLabel();
         jcbSelecioneFuncionario = new javax.swing.JComboBox();
-        jLabel37 = new javax.swing.JLabel();
+        lblSelecioneFuncionario = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         txtNomeTiragem = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
-        txtQtdTiragem = new javax.swing.JTextField();
-        btnSalvarTiragem = new javax.swing.JButton();
+        btnFinalizarVenda = new javax.swing.JButton();
         btnCancelarTiragem = new javax.swing.JButton();
+        txtPreço = new javax.swing.JFormattedTextField();
+        sliderCopias = new javax.swing.JSlider();
+        jLabel2 = new javax.swing.JLabel();
+        lblQtdCopias = new javax.swing.JLabel();
+        btnNovaTiragem = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jComboTiragensAtuais = new javax.swing.JComboBox();
         pnEncomenda = new javax.swing.JPanel();
         txtBairroCliente = new javax.swing.JTextField();
         lblNumeroCliente = new javax.swing.JLabel();
@@ -328,18 +336,19 @@ public class MainView extends javax.swing.JFrame {
         pnTiragem.setPreferredSize(new java.awt.Dimension(359, 359));
         pnTiragem.setLayout(null);
 
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel36.setText("REALIZAR TIRAGEM");
-        pnTiragem.add(jLabel36);
-        jLabel36.setBounds(169, 11, 144, 17);
+        lblVendaTitulo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblVendaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVendaTitulo.setText("REALIZAR VENDA");
+        pnTiragem.add(lblVendaTitulo);
+        lblVendaTitulo.setBounds(6, 11, 480, 17);
 
         jcbSelecioneFuncionario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         pnTiragem.add(jcbSelecioneFuncionario);
-        jcbSelecioneFuncionario.setBounds(360, 90, 110, 20);
+        jcbSelecioneFuncionario.setBounds(330, 140, 110, 20);
 
-        jLabel37.setText("Selecione o funcionario");
-        pnTiragem.add(jLabel37);
-        jLabel37.setBounds(360, 70, 110, 14);
+        lblSelecioneFuncionario.setText("Selecione o funcionario");
+        pnTiragem.add(lblSelecioneFuncionario);
+        lblSelecioneFuncionario.setBounds(330, 120, 160, 14);
 
         jLabel38.setText("Nome da tiragem");
         pnTiragem.add(jLabel38);
@@ -347,19 +356,48 @@ public class MainView extends javax.swing.JFrame {
         pnTiragem.add(txtNomeTiragem);
         txtNomeTiragem.setBounds(20, 90, 200, 20);
 
-        jLabel39.setText("Quantidade de tiragens");
+        jLabel39.setText("Preço");
         pnTiragem.add(jLabel39);
-        jLabel39.setBounds(20, 130, 140, 14);
-        pnTiragem.add(txtQtdTiragem);
-        txtQtdTiragem.setBounds(20, 150, 60, 20);
+        jLabel39.setBounds(20, 200, 140, 14);
 
-        btnSalvarTiragem.setText("Salvar tiragem");
-        pnTiragem.add(btnSalvarTiragem);
-        btnSalvarTiragem.setBounds(360, 190, 110, 23);
+        btnFinalizarVenda.setText("Realizar venda");
+        pnTiragem.add(btnFinalizarVenda);
+        btnFinalizarVenda.setBounds(330, 280, 150, 23);
 
         btnCancelarTiragem.setText("Cancelar");
         pnTiragem.add(btnCancelarTiragem);
-        btnCancelarTiragem.setBounds(270, 190, 80, 23);
+        btnCancelarTiragem.setBounds(50, 280, 120, 23);
+
+        try {
+            txtPreço.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$#.##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnTiragem.add(txtPreço);
+        txtPreço.setBounds(20, 220, 60, 20);
+        pnTiragem.add(sliderCopias);
+        sliderCopias.setBounds(20, 170, 200, 26);
+
+        jLabel2.setText("Quantidade de copias");
+        pnTiragem.add(jLabel2);
+        jLabel2.setBounds(20, 120, 200, 14);
+
+        lblQtdCopias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblQtdCopias.setText("asda");
+        pnTiragem.add(lblQtdCopias);
+        lblQtdCopias.setBounds(20, 150, 200, 14);
+
+        btnNovaTiragem.setText("Nova tiragem");
+        pnTiragem.add(btnNovaTiragem);
+        btnNovaTiragem.setBounds(180, 280, 140, 23);
+
+        jLabel10.setText("Tiragens dessa venda");
+        pnTiragem.add(jLabel10);
+        jLabel10.setBounds(330, 60, 160, 20);
+
+        jComboTiragensAtuais.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pnTiragem.add(jComboTiragensAtuais);
+        jComboTiragensAtuais.setBounds(330, 90, 110, 20);
 
         pnPrincipal.add(pnTiragem);
         pnTiragem.setBounds(-18, -15, 490, 460);
@@ -808,24 +846,26 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarMaisTiragem;
     private javax.swing.JButton btnCancelarTiragem;
     private javax.swing.JButton btnEncomenda;
+    private javax.swing.JButton btnFinalizarVenda;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnLimparCliente;
+    private javax.swing.JButton btnNovaTiragem;
     private javax.swing.JButton btnProfessor;
     private javax.swing.JButton btnProximoPanelCliente;
     private javax.swing.JButton btnProximoTiragens;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JButton btnSalvarEncomenda;
-    private javax.swing.JButton btnSalvarTiragem;
     private javax.swing.JButton btnSalvarTiragemEncomenda;
     private javax.swing.JButton btnTiragem;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboTiragensAtuais;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
@@ -856,13 +896,16 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel lblNumeroFuncionario;
     private javax.swing.JLabel lblPaisCliente;
     private javax.swing.JLabel lblPaisFuncionario;
+    private javax.swing.JLabel lblQtdCopias;
     private javax.swing.JLabel lblRuaCliente;
     private javax.swing.JLabel lblRuaFuncionario;
+    private javax.swing.JLabel lblSelecioneFuncionario;
     private javax.swing.JLabel lblTelefoneCliente;
     private javax.swing.JLabel lblTelefoneFuncionario;
     private javax.swing.JLabel lblTituloInfoEncomenda;
     private javax.swing.JLabel lblUfCliente;
     private javax.swing.JLabel lblUfFuncionario;
+    private javax.swing.JLabel lblVendaTitulo;
     private javax.swing.JPanel pnAddFuncionario;
     private javax.swing.JPanel pnAddTiragemEncomenda;
     private javax.swing.JPanel pnAvisaEncomendaSalva;
@@ -873,6 +916,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel pnPrincipal;
     private javax.swing.JPanel pnProfessor;
     private javax.swing.JPanel pnTiragem;
+    private javax.swing.JSlider sliderCopias;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtBairroCliente;
     private javax.swing.JFormattedTextField txtCepCliente;
@@ -892,7 +936,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField txtNumeroCliente;
     private javax.swing.JTextField txtPais;
     private javax.swing.JTextField txtPaisCliente;
-    private javax.swing.JTextField txtQtdTiragem;
+    private javax.swing.JFormattedTextField txtPreço;
     private javax.swing.JTextField txtRua;
     private javax.swing.JTextField txtRuaCliente;
     private javax.swing.JFormattedTextField txtTelefone;
@@ -968,6 +1012,16 @@ public class MainView extends javax.swing.JFrame {
     public JTextField getTxtNumero() {
         return txtNumero;
     }
+
+    public JComboBox getjComboTiragensAtuais() {
+        return jComboTiragensAtuais;
+    }
+
+    public JLabel getLblVendaTitulo() {
+        return lblVendaTitulo;
+    }
+    
+    
 
     public JTextField getTxtPais() {
         return txtPais;
@@ -1165,6 +1219,12 @@ public class MainView extends javax.swing.JFrame {
         return lblUfFuncionario;
     }
 
+    public JComboBox getJcbSelecioneFuncionario() {
+        return jcbSelecioneFuncionario;
+    }
+    
+    
+
     public void setLblUfFuncionario(JLabel lblUfFuncionario) {
         this.lblUfFuncionario = lblUfFuncionario;
     }
@@ -1289,15 +1349,41 @@ public class MainView extends javax.swing.JFrame {
         return pnMaisTiragem;
     }
 
+    public JLabel getLblQtdCopias() {
+        return lblQtdCopias;
+    }
+
     
 
     public JTextField getTxtNomeTiragem() {
         return txtNomeTiragem;
     }
 
-    public JTextField getTxtQtdTiragem() {
-        return txtQtdTiragem;
+    public JButton getBtnCancelarTiragem() {
+        return btnCancelarTiragem;
     }
+
+    public JButton getBtnFinalizarVenda() {
+        return btnFinalizarVenda;
+    }
+
+    public JSlider getSliderCopias() {
+        return sliderCopias;
+    }
+
+    public JFormattedTextField getTxtPreço() {
+        return txtPreço;
+    }
+
+    public JLabel getLblSelecioneFuncionario() {
+        return lblSelecioneFuncionario;
+    }
+
+    public void setPnTiragem(JPanel pnTiragem) {
+        this.pnTiragem = pnTiragem;
+    }
+
+    
 
     public JButton getBtnSalvarTiragemEncomenda() {
         return btnSalvarTiragemEncomenda;
@@ -1313,6 +1399,10 @@ public class MainView extends javax.swing.JFrame {
 
     public JButton getBtnCancelarMaisTiragem() {
         return btnCancelarMaisTiragem;
+    }
+
+    public JButton getBtnNovaTiragem() {
+        return btnNovaTiragem;
     }
     
     

@@ -6,6 +6,7 @@
 package model.bean;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,10 +17,20 @@ public class Venda {
     private Date dataVenda;
     private double valorTotal;
     private int idPessoa;
+    private ArrayList<Tiragem> tiragens = new ArrayList<>();
 
     public int getIdVenda() {
         return idVenda;
     }
+
+    public ArrayList<Tiragem> getTiragens() {
+        return tiragens;
+    }
+
+    public void setTiragens(Tiragem t) {
+        tiragens.add(t);
+    }
+    
 
     public void setIdVenda(int idVenda) {
         this.idVenda = idVenda;

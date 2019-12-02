@@ -30,7 +30,9 @@ public class JFrameUtils {
         for (Component c : components) {
             if (c instanceof JTextField) {
                 ((JTextField) c).setText("");
-                ((JTextField) c).setBorder(UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border"));
+            }
+            if (c instanceof JFormattedTextField){
+                ((JFormattedTextField) c).setValue("");
             }
             if (c instanceof JLabel) {
                 ((JLabel) c).setForeground(Color.black);

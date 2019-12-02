@@ -18,6 +18,10 @@ public class Tiragem {
     private double preço;
     private int idMaterial;
 
+    public String toString(){
+        return this.titulo;
+    }
+    
     public int getIdTiragem() {
         return idTiragem;
     }
