@@ -316,6 +316,16 @@ public class MainPresenter {
                 view.getBtnEncomenda().setEnabled(true);
             }
         });
+        
+        //Onchange qtd tiragens
+        view.getLblQtdTiragensEncomenda().setText(Integer.toString(view.getSpnQtdTiragens().getValue()));
+        view.getSpnQtdTiragens().addChangeListener(new ChangeListener() {
+
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                view.getLblQtdTiragensEncomenda().setText(Integer.toString(view.getSpnQtdTiragens().getValue()));
+            }
+        });
 
         view.getBtnProximoPanelCliente().addActionListener(new ActionListener() {
 
