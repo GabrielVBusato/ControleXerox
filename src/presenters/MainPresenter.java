@@ -209,15 +209,15 @@ public class MainPresenter {
             public void actionPerformed(ActionEvent e) {
 
                 try {
-                    if ((view.getTxtNomeTiragem().getText().equals("") && view.getTxtPreço().getText().equals("R$ .  "))) {
+                    if (view.getTxtNomeTiragem().getText().equals("") || view.getTxtPreço().getText().equals("R$ .  ")) {
+                        throw new Exception("Preencha corretamente os campos!");
+                    } else {
                         Tiragem t = new Tiragem();
                         t.setCopias(view.getSliderCopias().getValue());
                         t.setPreço(Double.valueOf(view.getTxtPreço().getText().replace("R$", "")));
                         t.setTitulo(view.getTxtNomeTiragem().getText());
                         activeVenda.setIdPessoa(((Funcionario) view.getJcbSelecioneFuncionario().getSelectedItem()).getIdPessoa());
                         activeVenda.setTiragens(t);
-                    } else if (activeVenda.getTiragens().isEmpty()) {
-                        throw new Exception("Preencha corretamente os campos!");
                     }
                     double valorTotal = 0;
                     for (Tiragem t : activeVenda.getTiragens()) {
