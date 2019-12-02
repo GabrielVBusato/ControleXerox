@@ -125,7 +125,34 @@ public class MainView extends javax.swing.JFrame {
         txtCepCliente = new javax.swing.JFormattedTextField();
         txtUfCliente = new javax.swing.JFormattedTextField();
         pnProfessor = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        lblNomeFuncionario1 = new javax.swing.JLabel();
+        txtNome1 = new javax.swing.JTextField();
+        txtEmail1 = new javax.swing.JTextField();
+        lblEmailFuncionario1 = new javax.swing.JLabel();
+        lblCpfFuncionario1 = new javax.swing.JLabel();
+        lblTelefoneFuncionario1 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        lblRuaFuncionario1 = new javax.swing.JLabel();
+        txtRua1 = new javax.swing.JTextField();
+        lblBairroFuncionario1 = new javax.swing.JLabel();
+        txtBairro1 = new javax.swing.JTextField();
+        lblNumeroFuncionario1 = new javax.swing.JLabel();
+        txtNumero1 = new javax.swing.JTextField();
+        lblCidadeFuncionario1 = new javax.swing.JLabel();
+        txtNomeCidade1 = new javax.swing.JTextField();
+        lblCepFuncionario1 = new javax.swing.JLabel();
+        lblEstadoFuncionario1 = new javax.swing.JLabel();
+        txtNomeEstado1 = new javax.swing.JTextField();
+        lblUfFuncionario1 = new javax.swing.JLabel();
+        txtPais1 = new javax.swing.JTextField();
+        lblPaisFuncionario1 = new javax.swing.JLabel();
+        btnSalvar1 = new javax.swing.JButton();
+        btnLimpar1 = new javax.swing.JButton();
+        btnCancelar1 = new javax.swing.JButton();
+        txtCpf1 = new javax.swing.JFormattedTextField();
+        txtTelefone1 = new javax.swing.JFormattedTextField();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        txtUf1 = new javax.swing.JFormattedTextField();
         pnAddFuncionario = new javax.swing.JPanel();
         lblNomeFuncionario = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -576,25 +603,138 @@ public class MainView extends javax.swing.JFrame {
         pnEncomenda.setBounds(-18, -15, 490, 460);
 
         pnProfessor.setPreferredSize(new java.awt.Dimension(472, 435));
+        pnProfessor.setLayout(null);
 
-        jLabel4.setText("painel de professor");
+        lblNomeFuncionario1.setText("Nome*");
+        pnProfessor.add(lblNomeFuncionario1);
+        lblNomeFuncionario1.setBounds(50, 40, 60, 14);
+        pnProfessor.add(txtNome1);
+        txtNome1.setBounds(50, 60, 390, 20);
+        pnProfessor.add(txtEmail1);
+        txtEmail1.setBounds(50, 110, 390, 20);
 
-        javax.swing.GroupLayout pnProfessorLayout = new javax.swing.GroupLayout(pnProfessor);
-        pnProfessor.setLayout(pnProfessorLayout);
-        pnProfessorLayout.setHorizontalGroup(
-            pnProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnProfessorLayout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel4)
-                .addContainerGap(178, Short.MAX_VALUE))
-        );
-        pnProfessorLayout.setVerticalGroup(
-            pnProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnProfessorLayout.createSequentialGroup()
-                .addGap(232, 232, 232)
-                .addComponent(jLabel4)
-                .addContainerGap(214, Short.MAX_VALUE))
-        );
+        lblEmailFuncionario1.setText("Email*");
+        pnProfessor.add(lblEmailFuncionario1);
+        lblEmailFuncionario1.setBounds(50, 90, 50, 14);
+
+        lblCpfFuncionario1.setText("CPF*");
+        pnProfessor.add(lblCpfFuncionario1);
+        lblCpfFuncionario1.setBounds(50, 140, 40, 14);
+
+        lblTelefoneFuncionario1.setText("Telefone*");
+        pnProfessor.add(lblTelefoneFuncionario1);
+        lblTelefoneFuncionario1.setBounds(280, 140, 60, 14);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("CADASTRAR NOVO FUNCIONÁRIO");
+        pnProfessor.add(jLabel12);
+        jLabel12.setBounds(114, 11, 245, 17);
+
+        lblRuaFuncionario1.setText("Rua*");
+        pnProfessor.add(lblRuaFuncionario1);
+        lblRuaFuncionario1.setBounds(50, 190, 50, 14);
+        pnProfessor.add(txtRua1);
+        txtRua1.setBounds(50, 210, 390, 20);
+
+        lblBairroFuncionario1.setText("Bairro*");
+        pnProfessor.add(lblBairroFuncionario1);
+        lblBairroFuncionario1.setBounds(50, 240, 40, 14);
+        pnProfessor.add(txtBairro1);
+        txtBairro1.setBounds(50, 260, 204, 20);
+
+        lblNumeroFuncionario1.setText("Número*");
+        pnProfessor.add(lblNumeroFuncionario1);
+        lblNumeroFuncionario1.setBounds(270, 240, 60, 14);
+        pnProfessor.add(txtNumero1);
+        txtNumero1.setBounds(270, 260, 172, 20);
+
+        lblCidadeFuncionario1.setText("Cidade*");
+        pnProfessor.add(lblCidadeFuncionario1);
+        lblCidadeFuncionario1.setBounds(50, 290, 60, 14);
+        pnProfessor.add(txtNomeCidade1);
+        txtNomeCidade1.setBounds(50, 310, 204, 20);
+
+        lblCepFuncionario1.setText("CEP*");
+        pnProfessor.add(lblCepFuncionario1);
+        lblCepFuncionario1.setBounds(270, 290, 40, 14);
+
+        lblEstadoFuncionario1.setText("Estado*");
+        pnProfessor.add(lblEstadoFuncionario1);
+        lblEstadoFuncionario1.setBounds(50, 340, 50, 14);
+        pnProfessor.add(txtNomeEstado1);
+        txtNomeEstado1.setBounds(50, 360, 89, 20);
+
+        lblUfFuncionario1.setText("UF*");
+        pnProfessor.add(lblUfFuncionario1);
+        lblUfFuncionario1.setBounds(160, 340, 50, 14);
+        pnProfessor.add(txtPais1);
+        txtPais1.setBounds(270, 360, 172, 20);
+
+        lblPaisFuncionario1.setText("Pais*");
+        pnProfessor.add(lblPaisFuncionario1);
+        lblPaisFuncionario1.setBounds(270, 340, 40, 14);
+
+        btnSalvar1.setText("Salvar");
+        btnSalvar1.setFocusPainted(false);
+        btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvar1ActionPerformed(evt);
+            }
+        });
+        pnProfessor.add(btnSalvar1);
+        btnSalvar1.setBounds(270, 400, 70, 22);
+
+        btnLimpar1.setText("Limpar");
+        btnLimpar1.setFocusPainted(false);
+        btnLimpar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpar1ActionPerformed(evt);
+            }
+        });
+        pnProfessor.add(btnLimpar1);
+        btnLimpar1.setBounds(350, 30, 90, 22);
+
+        btnCancelar1.setText("Cancelar");
+        btnCancelar1.setFocusPainted(false);
+        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelar1ActionPerformed(evt);
+            }
+        });
+        pnProfessor.add(btnCancelar1);
+        btnCancelar1.setBounds(350, 400, 90, 22);
+
+        try {
+            txtCpf1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnProfessor.add(txtCpf1);
+        txtCpf1.setBounds(50, 160, 206, 20);
+
+        try {
+            txtTelefone1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnProfessor.add(txtTelefone1);
+        txtTelefone1.setBounds(280, 160, 160, 20);
+
+        try {
+            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnProfessor.add(jFormattedTextField2);
+        jFormattedTextField2.setBounds(270, 310, 172, 20);
+
+        try {
+            txtUf1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnProfessor.add(txtUf1);
+        txtUf1.setBounds(160, 360, 97, 20);
 
         pnPrincipal.add(pnProfessor);
         pnProfessor.setBounds(-18, -15, 490, 460);
@@ -856,6 +996,18 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastroApenasEncomendaActionPerformed
 
+    private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalvar1ActionPerformed
+
+    private void btnLimpar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpar1ActionPerformed
+
+    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelar1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -902,6 +1054,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastroApenasEncomenda;
     private javax.swing.JButton btnCadastroNovoCliente;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCancelar1;
     private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnCancelarClienteBuscado;
     private javax.swing.JButton btnCancelarInfoEncomenda;
@@ -909,6 +1062,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnEncomenda;
     private javax.swing.JButton btnFinalizarVenda;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnLimpar1;
     private javax.swing.JButton btnLimparCliente;
     private javax.swing.JButton btnNovaTiragem;
     private javax.swing.JButton btnProfessor;
@@ -917,14 +1071,17 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnProximoTiragens;
     private javax.swing.JButton btnRealizarVendaEncomenda;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnSalvar1;
     private javax.swing.JButton btnSalvarEncomenda;
     private javax.swing.JButton btnSalvarTiragemEncomenda;
     private javax.swing.JButton btnTiragem;
     private javax.swing.JComboBox jComboTiragensAtuais;
     private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
@@ -932,7 +1089,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -944,35 +1100,47 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel lblApareceNomeClienteBuscado;
     private javax.swing.JLabel lblBairroCliente;
     private javax.swing.JLabel lblBairroFuncionario;
+    private javax.swing.JLabel lblBairroFuncionario1;
     private javax.swing.JLabel lblCepCliente;
     private javax.swing.JLabel lblCepFuncionario;
+    private javax.swing.JLabel lblCepFuncionario1;
     private javax.swing.JLabel lblCidadeCliente;
     private javax.swing.JLabel lblCidadeFuncionario;
+    private javax.swing.JLabel lblCidadeFuncionario1;
     private javax.swing.JLabel lblCpfCliente;
     private javax.swing.JLabel lblCpfFuncionario;
+    private javax.swing.JLabel lblCpfFuncionario1;
     private javax.swing.JLabel lblDesteCliente;
     private javax.swing.JLabel lblEmailCliente;
     private javax.swing.JLabel lblEmailFuncionario;
+    private javax.swing.JLabel lblEmailFuncionario1;
     private javax.swing.JLabel lblEstadoCliente;
     private javax.swing.JLabel lblEstadoFuncionario;
+    private javax.swing.JLabel lblEstadoFuncionario1;
     private javax.swing.JLabel lblNomeCliente;
     private javax.swing.JLabel lblNomeEncomenda;
     private javax.swing.JLabel lblNomeFuncionario;
+    private javax.swing.JLabel lblNomeFuncionario1;
     private javax.swing.JLabel lblNumeroCliente;
     private javax.swing.JLabel lblNumeroFuncionario;
+    private javax.swing.JLabel lblNumeroFuncionario1;
     private javax.swing.JLabel lblPaisCliente;
     private javax.swing.JLabel lblPaisFuncionario;
+    private javax.swing.JLabel lblPaisFuncionario1;
     private javax.swing.JLabel lblParaCadastrar;
     private javax.swing.JLabel lblQtdCopias;
     private javax.swing.JLabel lblQtdTiragensEncomenda;
     private javax.swing.JLabel lblRuaCliente;
     private javax.swing.JLabel lblRuaFuncionario;
+    private javax.swing.JLabel lblRuaFuncionario1;
     private javax.swing.JLabel lblSelecioneFuncionario;
     private javax.swing.JLabel lblTelefoneCliente;
     private javax.swing.JLabel lblTelefoneFuncionario;
+    private javax.swing.JLabel lblTelefoneFuncionario1;
     private javax.swing.JLabel lblTituloInfoEncomenda;
     private javax.swing.JLabel lblUfCliente;
     private javax.swing.JLabel lblUfFuncionario;
+    private javax.swing.JLabel lblUfFuncionario1;
     private javax.swing.JLabel lblVendaTitulo;
     private javax.swing.JPanel pnAddFuncionario;
     private javax.swing.JPanel pnAddTiragemEncomenda;
@@ -988,33 +1156,44 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JSlider sliderCopias;
     private javax.swing.JSlider spnQtdTiragens;
     private javax.swing.JTextField txtBairro;
+    private javax.swing.JTextField txtBairro1;
     private javax.swing.JTextField txtBairroCliente;
     private javax.swing.JFormattedTextField txtCepCliente;
     private javax.swing.JFormattedTextField txtCpf;
+    private javax.swing.JFormattedTextField txtCpf1;
     private javax.swing.JFormattedTextField txtCpfCliente;
     private javax.swing.JFormattedTextField txtCpfClienteBuscado;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtEmailCliente;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNome1;
     private javax.swing.JTextField txtNomeCidade;
+    private javax.swing.JTextField txtNomeCidade1;
     private javax.swing.JTextField txtNomeCidadeCliente;
     private javax.swing.JTextField txtNomeCliente;
     private javax.swing.JTextField txtNomeEncomenda;
     private javax.swing.JTextField txtNomeEstado;
+    private javax.swing.JTextField txtNomeEstado1;
     private javax.swing.JTextField txtNomeEstadoCliente;
     private javax.swing.JTextField txtNomeTiragem;
     private javax.swing.JTextField txtNomeTiragemEncomenda;
     private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtNumero1;
     private javax.swing.JTextField txtNumeroCliente;
     private javax.swing.JTextField txtPais;
+    private javax.swing.JTextField txtPais1;
     private javax.swing.JTextField txtPaisCliente;
     private javax.swing.JFormattedTextField txtPreço;
     private javax.swing.JFormattedTextField txtPreçoTiragemEncomenda;
     private javax.swing.JTextField txtRua;
+    private javax.swing.JTextField txtRua1;
     private javax.swing.JTextField txtRuaCliente;
     private javax.swing.JFormattedTextField txtTelefone;
+    private javax.swing.JFormattedTextField txtTelefone1;
     private javax.swing.JFormattedTextField txtTelefoneCliente;
     private javax.swing.JFormattedTextField txtUf;
+    private javax.swing.JFormattedTextField txtUf1;
     private javax.swing.JFormattedTextField txtUfCliente;
     // End of variables declaration//GEN-END:variables
 
