@@ -358,6 +358,7 @@ public class MainPresenter {
                 view.getPnInfoEncomenda().setVisible(false);
                 view.getTxtNomeEncomenda().setText("");
                 view.getBtnCadastroApenasEncomenda().setEnabled(true);
+                view.getBtnCadastroNovoCliente().setEnabled(true);
             }
         });
 
@@ -443,6 +444,9 @@ public class MainPresenter {
                     }
                     view.getTxtNomeTiragemEncomenda().setText("");
                     view.getTxtPreçoTiragemEncomenda().setValue("");
+                    view.getBtnCadastroNovoCliente().setEnabled(true);
+                    view.getBtnCadastroApenasEncomenda().setEnabled(true);
+                    JOptionPane.showMessageDialog(view, "Venda da encomenda realizada com sucesso");
                 } catch (Exception ex) {
                     Logger.getLogger(MainPresenter.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -459,6 +463,10 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(false);
                 view.getPnProfessor().setVisible(false);
                 view.getPnAddFuncionario().setVisible(false);
+                view.getPnAddTiragemEncomenda().setVisible(false);
+                view.getPnMaisTiragem().setVisible(false);
+                view.getPnInfoEncomenda().setVisible(false);
+                view.getPnAvisaEncomendaSalva().setVisible(false);
                 view.getBtnCadastroApenasEncomenda().setEnabled(true);
                 view.getBtnCadastroNovoCliente().setEnabled(false);
                 JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
@@ -475,6 +483,10 @@ public class MainPresenter {
                 view.getPnTiragem().setVisible(false);
                 view.getPnProfessor().setVisible(false);
                 view.getPnAddFuncionario().setVisible(false);
+                view.getPnAddTiragemEncomenda().setVisible(false);
+                view.getPnMaisTiragem().setVisible(false);
+                view.getPnInfoEncomenda().setVisible(false);
+                view.getPnAvisaEncomendaSalva().setVisible(false);
                 view.getBtnCadastroApenasEncomenda().setEnabled(false);
                 view.getBtnCadastroNovoCliente().setEnabled(true);
                 view.getTxtCpfClienteBuscado().setValue("");
@@ -496,6 +508,7 @@ public class MainPresenter {
                     if (pessoaBuscada.getNome().equals("")) {
                         view.getLblApareceNomeClienteBuscado().setText("Não foi possível encotrar o cliente buscado");
                         view.getLblParaCadastrar().setVisible(false);
+                        view.getLblDesteCliente().setVisible(false);
                         view.getBtnCancelarClienteBuscado().setVisible(false);
                         view.getBtnProximoClienteBuscado().setVisible(false);
                     } else {
@@ -518,6 +531,9 @@ public class MainPresenter {
             public void actionPerformed(ActionEvent e) {
                 view.getPnProcuraCliente().setVisible(false);
                 view.getPnInfoEncomenda().setVisible(true);
+                view.getTxtNomeEncomenda().setText("");
+                view.getBtnSalvarEncomenda().setVisible(true);
+                view.getBtnCancelarInfoEncomenda().setVisible(true);
                 view.getPnProcuraCliente().setVisible(false);
                 view.getTxtCpfClienteBuscado().setValue("");
                 view.getBtnCancelarClienteBuscado().setVisible(false);
@@ -534,6 +550,7 @@ public class MainPresenter {
                 view.getTxtCpfClienteBuscado().setValue("");
                 view.getBtnCancelarClienteBuscado().setVisible(false);
                 view.getBtnProximoClienteBuscado().setVisible(false);
+                view.getBtnCadastroApenasEncomenda().setEnabled(true);
             }
         });
 

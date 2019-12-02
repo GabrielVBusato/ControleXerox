@@ -63,7 +63,14 @@ public class PessoaDao {
             rs = stmt.executeQuery();
             if (rs.next()) {
                 p.setNome(rs.getString("nome"));
-                p.setIdPessoa(rs.getInt("idPessoa"));
+                sql = "SELECT * FROM cliente WHERE idPessoa = " + "'" + rs.getInt("idPessoa") + "'";
+                stmt = con.prepareCall(sql);
+                rs = stmt.executeQuery();
+                if (rs.next()) {
+                    p.setIdPessoa(rs.getInt("idPessoa"));
+                } else {
+                    p.setNome("");
+                }
             } else {
                 p.setNome("");
             }
