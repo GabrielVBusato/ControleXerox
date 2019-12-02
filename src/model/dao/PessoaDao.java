@@ -9,7 +9,11 @@ import connection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import model.bean.Funcionario;
 import model.bean.Pessoa;
 
 /**
@@ -17,6 +21,7 @@ import model.bean.Pessoa;
  * @author Gabriel
  */
 public class PessoaDao {
+
     public static int inserir(Pessoa pe) throws Exception {
         int lastkey = 0;
         Connection con = ConnectionFactory.getConnection();
@@ -45,5 +50,27 @@ public class PessoaDao {
 
         ConnectionFactory.closeConnection(con, stmt);
         return lastkey;
+    }
+
+    public static Pessoa buscaCpfExistente(String cpf) {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs;
+        String sql = "SELECT * FROM pessoa WHERE cpf = " + "'" + cpf + "'";
+        Pessoa p = new Pessoa();
+        try {
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                p.setNome(rs.getString("nome"));
+                p.setIdPessoa(rs.getInt("idPessoa"));
+            } else {
+                p.setNome("");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ops! falha: " + ex);
+        }
+        return p;
     }
 }

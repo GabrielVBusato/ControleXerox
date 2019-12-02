@@ -5,13 +5,15 @@
  */
 package model.bean;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Gabriel
  */
 public class Encomenda {
     private int idEncomenda;
-    private int idCopia;
+    private ArrayList<Tiragem> tiragens = new ArrayList<>();
     private int idPessoa;
 
     public int getIdEncomenda() {
@@ -22,14 +24,6 @@ public class Encomenda {
         this.idEncomenda = idEncomenda;
     }
 
-    public int getIdCopia() {
-        return idCopia;
-    }
-
-    public void setIdCopia(int idCopia) {
-        this.idCopia = idCopia;
-    }
-
     public int getIdPessoa() {
         return idPessoa;
     }
@@ -37,6 +31,15 @@ public class Encomenda {
     public void setIdPessoa(int idPessoa) {
         this.idPessoa = idPessoa;
     }
+
+    public ArrayList<Tiragem> getTiragens() {
+        return tiragens;
+    }
+
+    public void setTiragens(Tiragem t) {
+        this.tiragens.add(t);
+    }
+    
     
     
 }
