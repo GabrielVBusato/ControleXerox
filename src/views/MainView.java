@@ -43,6 +43,16 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         pnPrincipal = new javax.swing.JPanel();
+        pnProcuraCliente = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txtCpfClienteBuscado = new javax.swing.JFormattedTextField();
+        btnBuscaCliente = new javax.swing.JButton();
+        lblApareceNomeClienteBuscado = new javax.swing.JLabel();
+        lblParaCadastrar = new javax.swing.JLabel();
+        btnProximoClienteBuscado = new javax.swing.JButton();
+        btnCancelarClienteBuscado = new javax.swing.JButton();
+        lblDesteCliente = new javax.swing.JLabel();
         pnAddTiragemEncomenda = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         txtNomeTiragemEncomenda = new javax.swing.JTextField();
@@ -150,12 +160,60 @@ public class MainView extends javax.swing.JFrame {
         btnProfessor = new javax.swing.JButton();
         btnTiragem = new javax.swing.JButton();
         btnEncomenda = new javax.swing.JButton();
+        btnCadastroNovoCliente = new javax.swing.JButton();
+        btnCadastroApenasEncomenda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(null);
 
         pnPrincipal.setLayout(null);
+
+        pnProcuraCliente.setLayout(null);
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setText("PROCURAR POR CLIENTE CADASTRADO");
+        pnProcuraCliente.add(jLabel15);
+        jLabel15.setBounds(80, 11, 284, 17);
+
+        jLabel16.setText("Informe o cpf do cliente");
+        pnProcuraCliente.add(jLabel16);
+        jLabel16.setBounds(20, 50, 160, 14);
+
+        try {
+            txtCpfClienteBuscado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        pnProcuraCliente.add(txtCpfClienteBuscado);
+        txtCpfClienteBuscado.setBounds(20, 70, 140, 20);
+
+        btnBuscaCliente.setText("Buscar");
+        pnProcuraCliente.add(btnBuscaCliente);
+        btnBuscaCliente.setBounds(20, 110, 90, 23);
+
+        lblApareceNomeClienteBuscado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        pnProcuraCliente.add(lblApareceNomeClienteBuscado);
+        lblApareceNomeClienteBuscado.setBounds(20, 160, 430, 30);
+
+        lblParaCadastrar.setText("Para cadastrar uma nova encomenda no nome");
+        pnProcuraCliente.add(lblParaCadastrar);
+        lblParaCadastrar.setBounds(20, 260, 440, 14);
+
+        btnProximoClienteBuscado.setText("Próximo");
+        pnProcuraCliente.add(btnProximoClienteBuscado);
+        btnProximoClienteBuscado.setBounds(351, 400, 90, 23);
+
+        btnCancelarClienteBuscado.setText("Cancelar");
+        pnProcuraCliente.add(btnCancelarClienteBuscado);
+        btnCancelarClienteBuscado.setBounds(243, 400, 100, 23);
+
+        lblDesteCliente.setText("deste cliente basta clicar em próximo");
+        pnProcuraCliente.add(lblDesteCliente);
+        lblDesteCliente.setBounds(20, 280, 290, 14);
+
+        pnPrincipal.add(pnProcuraCliente);
+        pnProcuraCliente.setBounds(10, 10, 470, 440);
 
         pnAddTiragemEncomenda.setLayout(null);
 
@@ -174,7 +232,7 @@ public class MainView extends javax.swing.JFrame {
 
         jLabel9.setText("Funcionário");
         pnAddTiragemEncomenda.add(jLabel9);
-        jLabel9.setBounds(290, 130, 55, 14);
+        jLabel9.setBounds(290, 130, 80, 14);
 
         btnSalvarTiragemEncomenda.setText("Salvar tiragem");
         pnAddTiragemEncomenda.add(btnSalvarTiragemEncomenda);
@@ -731,6 +789,19 @@ public class MainView extends javax.swing.JFrame {
         pnMenu.add(btnEncomenda);
         btnEncomenda.setBounds(10, 200, 170, 60);
 
+        btnCadastroNovoCliente.setText("Cad. novo cliente");
+        pnMenu.add(btnCadastroNovoCliente);
+        btnCadastroNovoCliente.setBounds(20, 270, 160, 30);
+
+        btnCadastroApenasEncomenda.setText("Cad. apenas encomenda");
+        btnCadastroApenasEncomenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroApenasEncomendaActionPerformed(evt);
+            }
+        });
+        pnMenu.add(btnCadastroApenasEncomenda);
+        btnCadastroApenasEncomenda.setBounds(20, 310, 160, 30);
+
         getContentPane().add(pnMenu);
         pnMenu.setBounds(0, 0, 192, 560);
 
@@ -782,6 +853,10 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarInfoEncomendaActionPerformed
 
+    private void btnCadastroApenasEncomendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroApenasEncomendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastroApenasEncomendaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -824,8 +899,12 @@ public class MainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddFuncionario;
     private javax.swing.JButton btnAddMaisTiragemEncomenda;
+    private javax.swing.JButton btnBuscaCliente;
+    private javax.swing.JButton btnCadastroApenasEncomenda;
+    private javax.swing.JButton btnCadastroNovoCliente;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCancelarCliente;
+    private javax.swing.JButton btnCancelarClienteBuscado;
     private javax.swing.JButton btnCancelarInfoEncomenda;
     private javax.swing.JButton btnCancelarTiragem;
     private javax.swing.JButton btnEncomenda;
@@ -834,6 +913,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnLimparCliente;
     private javax.swing.JButton btnNovaTiragem;
     private javax.swing.JButton btnProfessor;
+    private javax.swing.JButton btnProximoClienteBuscado;
     private javax.swing.JButton btnProximoPanelCliente;
     private javax.swing.JButton btnProximoTiragens;
     private javax.swing.JButton btnRealizarVendaEncomenda;
@@ -846,6 +926,8 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
@@ -860,6 +942,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JComboBox jcbFuncionarioEncomenda;
     private javax.swing.JComboBox jcbSelecioneFuncionario;
+    private javax.swing.JLabel lblApareceNomeClienteBuscado;
     private javax.swing.JLabel lblBairroCliente;
     private javax.swing.JLabel lblBairroFuncionario;
     private javax.swing.JLabel lblCepCliente;
@@ -868,6 +951,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel lblCidadeFuncionario;
     private javax.swing.JLabel lblCpfCliente;
     private javax.swing.JLabel lblCpfFuncionario;
+    private javax.swing.JLabel lblDesteCliente;
     private javax.swing.JLabel lblEmailCliente;
     private javax.swing.JLabel lblEmailFuncionario;
     private javax.swing.JLabel lblEstadoCliente;
@@ -879,6 +963,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel lblNumeroFuncionario;
     private javax.swing.JLabel lblPaisCliente;
     private javax.swing.JLabel lblPaisFuncionario;
+    private javax.swing.JLabel lblParaCadastrar;
     private javax.swing.JLabel lblQtdCopias;
     private javax.swing.JLabel lblQtdTiragensEncomenda;
     private javax.swing.JLabel lblRuaCliente;
@@ -898,6 +983,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel pnMaisTiragem;
     private javax.swing.JPanel pnMenu;
     private javax.swing.JPanel pnPrincipal;
+    private javax.swing.JPanel pnProcuraCliente;
     private javax.swing.JPanel pnProfessor;
     private javax.swing.JPanel pnTiragem;
     private javax.swing.JSlider sliderCopias;
@@ -907,6 +993,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCepCliente;
     private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JFormattedTextField txtCpfCliente;
+    private javax.swing.JFormattedTextField txtCpfClienteBuscado;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmailCliente;
     private javax.swing.JTextField txtNome;
@@ -1418,6 +1505,50 @@ public class MainView extends javax.swing.JFrame {
 
     public JFormattedTextField getTxtPreçoTiragemEncomenda() {
         return txtPreçoTiragemEncomenda;
+    }
+
+    public JButton getBtnCadastroApenasEncomenda() {
+        return btnCadastroApenasEncomenda;
+    }
+
+    public JButton getBtnCadastroNovoCliente() {
+        return btnCadastroNovoCliente;
+    }
+
+    public JButton getBtnBuscaCliente() {
+        return btnBuscaCliente;
+    }
+
+    public JPanel getPnProcuraCliente() {
+        return pnProcuraCliente;
+    }
+
+    public JFormattedTextField getTxtCpfClienteBuscado() {
+        return txtCpfClienteBuscado;
+    }
+
+    public JLabel getLblApareceNomeClienteBuscado() {
+        return lblApareceNomeClienteBuscado;
+    }
+
+    public void setLblApareceNomeClienteBuscado(JLabel lblApareceNomeClienteBuscado) {
+        this.lblApareceNomeClienteBuscado = lblApareceNomeClienteBuscado;
+    }
+
+    public JButton getBtnCancelarClienteBuscado() {
+        return btnCancelarClienteBuscado;
+    }
+
+    public JButton getBtnProximoClienteBuscado() {
+        return btnProximoClienteBuscado;
+    }
+
+    public JLabel getLblParaCadastrar() {
+        return lblParaCadastrar;
+    }
+
+    public JLabel getLblDesteCliente() {
+        return lblDesteCliente;
     }
     
     

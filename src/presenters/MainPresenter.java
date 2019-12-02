@@ -25,6 +25,8 @@ import javax.swing.border.MatteBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import model.bean.Cidade;
+import model.bean.Cliente;
+import model.bean.Encomenda;
 import model.bean.Endereco;
 import model.bean.Estado;
 import model.bean.Funcionario;
@@ -33,6 +35,8 @@ import model.bean.Pessoa;
 import model.bean.Tiragem;
 import model.bean.Venda;
 import model.dao.CidadeDao;
+import model.dao.ClienteDao;
+import model.dao.EncomendaDao;
 import model.dao.EnderecoDao;
 import model.dao.EstadoDao;
 import model.dao.FuncionarioDao;
@@ -52,6 +56,8 @@ public class MainPresenter {
     private static MainPresenter instance;
     private static MainView view;
     private static Venda activeVenda = new Venda();
+    private static Encomenda activeEncomenda = new Encomenda();
+    private static Pessoa pessoaBuscada = new Pessoa();
 
     private MainPresenter() {
         view = new MainView();
@@ -62,7 +68,14 @@ public class MainPresenter {
         view.getPnInfoEncomenda().setVisible(false);
         view.getPnAvisaEncomendaSalva().setVisible(false);
         view.getPnAddTiragemEncomenda().setVisible(false);
+        view.getPnProcuraCliente().setVisible(false);
         view.getPnMaisTiragem().setVisible(false);
+        view.getBtnCadastroApenasEncomenda().setVisible(false);
+        view.getBtnCadastroNovoCliente().setVisible(false);
+        view.getLblParaCadastrar().setVisible(false);
+        view.getBtnCancelarClienteBuscado().setVisible(false);
+        view.getBtnProximoClienteBuscado().setVisible(false);
+        view.getLblDesteCliente().setVisible(false);
         view.getPnProfessor().setName("pnProfessor");
         view.getPnTiragem().setName("pnTiragem");
         view.getPnEncomenda().setName("pnEncomenda");
@@ -70,11 +83,14 @@ public class MainPresenter {
         view.getPnInfoEncomenda().setName("pnInfoEncomenda");
         view.getPnAddTiragemEncomenda().setName("pnAddTiragemEncomenda");
         view.getPnAvisaEncomendaSalva().setName("pnAvisaEncomendaSalva");
+        view.getPnProcuraCliente().setName("pnProcurarCliente");
         view.getPnMaisTiragem().setName("pnMaisTiragem");
         view.getBtnProfessor().setName("btnProfessor");
         view.getBtnTiragem().setName("btnTiragem");
         view.getBtnEncomenda().setName("btnEncomenda");
         view.getBtnAddFuncionario().setName("btnAddFuncionario");
+        view.getBtnCadastroApenasEncomenda().setName("btnCadastroApenasEncomenda");
+        view.getBtnCadastroNovoCliente().setName("btnCadastroNovoCliente");
         iniciarView();
     }
 
@@ -109,6 +125,10 @@ public class MainPresenter {
             view.getJcbSelecioneFuncionario().addItem(f);
         }
 
+        for (Funcionario f : FuncionarioDao.buscaTodos()) {
+            view.getJcbFuncionarioEncomenda().addItem(f);
+        }
+
         view.getBtnProximoPanelCliente().setEnabled(false);
 
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
@@ -123,6 +143,9 @@ public class MainPresenter {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.visibilidade(view, "pnProfessor", "btnProfessor");
+                view.getBtnEncomenda().setEnabled(true);
+                view.getBtnCadastroApenasEncomenda().setVisible(false);
+                view.getBtnCadastroNovoCliente().setVisible(false);
             }
         });
 
@@ -137,6 +160,9 @@ public class MainPresenter {
                 view.getJcbSelecioneFuncionario().setVisible(true);
                 view.getLblSelecioneFuncionario().setVisible(true);
                 view.getjComboTiragensAtuais().removeAllItems();
+                view.getBtnEncomenda().setEnabled(true);
+                view.getBtnCadastroApenasEncomenda().setVisible(false);
+                view.getBtnCadastroNovoCliente().setVisible(false);
             }
         });
 
@@ -183,7 +209,7 @@ public class MainPresenter {
             public void actionPerformed(ActionEvent e) {
 
                 try {
-                    if (!(view.getTxtNomeTiragem().getText().equals("") && view.getTxtPreço().getText().equals("R$ .  "))) {
+                    if ((view.getTxtNomeTiragem().getText().equals("") && view.getTxtPreço().getText().equals("R$ .  "))) {
                         Tiragem t = new Tiragem();
                         t.setCopias(view.getSliderCopias().getValue());
                         t.setPreço(Double.valueOf(view.getTxtPreço().getText().replace("R$", "")));
@@ -212,8 +238,8 @@ public class MainPresenter {
                     JOptionPane.showMessageDialog(null, "Venda realizada com sucesso!");
 
                 } catch (Exception ex) {
-                     JOptionPane.showMessageDialog(null, ex.getMessage());
-                    
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+
                 }
 
             }
@@ -224,7 +250,14 @@ public class MainPresenter {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrameUtils.visibilidade(view, "pnEncomenda", "btnEncomenda");
+
+                view.getBtnCadastroNovoCliente().setVisible(true);
+                view.getBtnCadastroApenasEncomenda().setVisible(true);
+                view.getBtnEncomenda().setEnabled(false);
+                view.getBtnProfessor().setEnabled(true);
+                view.getBtnTiragem().setEnabled(true);
+                view.getBtnAddFuncionario().setEnabled(true);
+
             }
         });
 
@@ -234,6 +267,9 @@ public class MainPresenter {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.visibilidade(view, "pnAddFuncionario", "btnAddFuncionario");
+                view.getBtnEncomenda().setEnabled(true);
+                view.getBtnCadastroApenasEncomenda().setVisible(false);
+                view.getBtnCadastroNovoCliente().setVisible(false);
             }
         });
 
@@ -269,9 +305,13 @@ public class MainPresenter {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getPnAvisaEncomendaSalva().setVisible(true);
-                view.getBtnCancelarInfoEncomenda().setVisible(false);
-                view.getBtnSalvarEncomenda().setVisible(false);
+                if (view.getTxtNomeEncomenda().getText().equals("")) {
+                    JOptionPane.showMessageDialog(view, "Preencha o nome da encomenda");
+                } else {
+                    view.getPnAvisaEncomendaSalva().setVisible(true);
+                    view.getBtnCancelarInfoEncomenda().setVisible(false);
+                    view.getBtnSalvarEncomenda().setVisible(false);
+                }
             }
         });
 
@@ -292,8 +332,208 @@ public class MainPresenter {
         view.getBtnSalvarTiragemEncomenda().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.getPnAddTiragemEncomenda().setVisible(false);
-                view.getPnMaisTiragem().setVisible(true);
+
+                if (view.getTxtNomeTiragemEncomenda().getText().equals("") || view.getTxtPreçoTiragemEncomenda().getText().equals("R$ .  ")) {
+                    JOptionPane.showMessageDialog(null, "Preencha todos os campos corretamente!");
+                } else {
+                    Tiragem t = new Tiragem();
+                    t.setCopias(view.getSpnQtdTiragens().getValue());
+                    t.setPreço(Double.parseDouble(view.getTxtPreçoTiragemEncomenda().getText().replace("R$", "")));
+                    t.setTitulo(view.getTxtNomeTiragemEncomenda().getText());
+                    activeEncomenda.setIdPessoa(((Funcionario) view.getJcbFuncionarioEncomenda().getSelectedItem()).getIdPessoa());
+                    activeEncomenda.setTiragens(t);
+                    view.getPnAddTiragemEncomenda().setVisible(false);
+                    view.getPnMaisTiragem().setVisible(true);
+                    view.getTxtNomeTiragemEncomenda().setText("");
+                    view.getTxtPreçoTiragemEncomenda().setValue("");
+                }
+            }
+        });
+
+        //Botao cancelar info encomenda
+        view.getBtnCancelarInfoEncomenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnInfoEncomenda().setVisible(false);
+                view.getTxtNomeEncomenda().setText("");
+                view.getBtnCadastroApenasEncomenda().setEnabled(true);
+            }
+        });
+
+        //Botão realiza venda encomenda
+        view.getBtnRealizarVendaEncomenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (pessoaBuscada.getIdPessoa() != 0) { //Inserindo se cliente ja existe
+                        //Inserindo encomenda
+                        activeEncomenda.setIdPessoa(pessoaBuscada.getIdPessoa());
+                        int lastIdEncomenda = EncomendaDao.inserir(activeEncomenda);
+
+                        //Inserindo venda
+                        Venda v = new Venda();
+                        v.setIdPessoa(pessoaBuscada.getIdPessoa());
+                        double valorVenda = 0;
+                        for (Tiragem t : activeEncomenda.getTiragens()) {
+                            valorVenda += t.getPreço() * t.getCopias();
+                        }
+                        v.setValorTotal(valorVenda);
+                        int lastIdVenda = VendaDao.inserir(v);
+
+                        //Inserindo tiragem
+                        for (Tiragem t : activeEncomenda.getTiragens()) {
+                            t.setIdVenda(lastIdVenda);
+                            t.setIdEncomenda(lastIdEncomenda);
+                            TiragemDao.inserir(t);
+                        }
+                    } else { //Inserindo se cliente não existe
+                        //Inserindo cliente
+                        Pais p = new Pais();
+                        p.setNome(view.getTxtPaisCliente().getText());
+                        int lastId = PaisDao.inserir(p);
+                        Estado es = new Estado();
+                        es.setNome(view.getTxtNomeEstadoCliente().getText());
+                        es.setIdPais(lastId);
+                        es.setUf(view.getTxtUfCliente().getText());
+                        lastId = EstadoDao.inserir(es);
+                        Cidade cid = new Cidade();
+                        cid.setIdEstado(lastId);
+                        cid.setNome(view.getTxtNomeCidadeCliente().getText());
+                        cid.setCep(view.getTxtCepCliente().getText());
+                        lastId = CidadeDao.inserir(cid);
+                        Endereco en = new Endereco();
+                        en.setIdCidade(lastId);
+                        en.setBairro(view.getTxtBairroCliente().getText());
+                        en.setRua(view.getTxtRuaCliente().getText());
+                        en.setNumero(view.getTxtRuaCliente().getText());
+                        lastId = EnderecoDao.inserir(en);
+
+                        pessoaBuscada.setIdEndereco(lastId);
+                        pessoaBuscada.setNome(view.getTxtNomeCliente().getText());
+                        pessoaBuscada.setEmail(view.getTxtEmailCliente().getText());
+                        pessoaBuscada.setCpf(view.getTxtCpfCliente().getText());
+                        pessoaBuscada.setTelefone(view.getTxtTelefoneCliente().getText());
+                        lastId = PessoaDao.inserir(pessoaBuscada);
+                        Cliente cl = new Cliente();
+                        cl.setIdPessoa(lastId);
+                        ClienteDao.inserir(cl);
+
+                        //Inserindo encomenda
+                        activeEncomenda.setIdPessoa(lastId);
+                        int lastIdEncomenda = EncomendaDao.inserir(activeEncomenda);
+
+                        //Inserindo venda
+                        Venda v = new Venda();
+                        v.setIdPessoa(lastId);
+                        double valorVenda = 0;
+                        for (Tiragem t : activeEncomenda.getTiragens()) {
+                            valorVenda += t.getPreço() * t.getCopias();
+                        }
+                        v.setValorTotal(valorVenda);
+                        int lastIdVenda = VendaDao.inserir(v);
+
+                        //Inserindo tiragem
+                        for (Tiragem t : activeEncomenda.getTiragens()) {
+                            t.setIdVenda(lastIdVenda);
+                            t.setIdEncomenda(lastIdEncomenda);
+                            TiragemDao.inserir(t);
+                        }
+                    }
+                    view.getTxtNomeTiragemEncomenda().setText("");
+                    view.getTxtPreçoTiragemEncomenda().setValue("");
+                } catch (Exception ex) {
+                    Logger.getLogger(MainPresenter.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+
+        //Botão cadastro novo cliente
+        view.getBtnCadastroNovoCliente().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnEncomenda().setVisible(true);
+                view.getPnProcuraCliente().setVisible(false);
+                view.getPnTiragem().setVisible(false);
+                view.getPnProfessor().setVisible(false);
+                view.getPnAddFuncionario().setVisible(false);
+                view.getBtnCadastroApenasEncomenda().setEnabled(true);
+                view.getBtnCadastroNovoCliente().setEnabled(false);
+                JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
+            }
+        });
+
+        //Botão de cadastro apenas encomenda
+        view.getBtnCadastroApenasEncomenda().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnProcuraCliente().setVisible(true);
+                view.getPnEncomenda().setVisible(false);
+                view.getPnTiragem().setVisible(false);
+                view.getPnProfessor().setVisible(false);
+                view.getPnAddFuncionario().setVisible(false);
+                view.getBtnCadastroApenasEncomenda().setEnabled(false);
+                view.getBtnCadastroNovoCliente().setEnabled(true);
+                view.getTxtCpfClienteBuscado().setValue("");
+                view.getLblApareceNomeClienteBuscado().setVisible(false);
+                view.getLblDesteCliente().setVisible(false);
+                view.getLblParaCadastrar().setVisible(false);
+            }
+        });
+
+        //Botão de buscar cliente
+        view.getBtnBuscaCliente().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (view.getTxtCpfClienteBuscado().getText().equals("   .   .   -  ")) {
+                    JOptionPane.showMessageDialog(view, "Preencha o campo de cpf para ser buscado");
+                } else {
+                    pessoaBuscada = PessoaDao.buscaCpfExistente(view.getTxtCpfClienteBuscado().getText());
+                    if (pessoaBuscada.getNome().equals("")) {
+                        view.getLblApareceNomeClienteBuscado().setText("Não foi possível encotrar o cliente buscado");
+                        view.getLblParaCadastrar().setVisible(false);
+                        view.getBtnCancelarClienteBuscado().setVisible(false);
+                        view.getBtnProximoClienteBuscado().setVisible(false);
+                    } else {
+                        view.getLblApareceNomeClienteBuscado().setText("Foi encontrado o cliente " + pessoaBuscada.getNome());
+                        view.getLblApareceNomeClienteBuscado().setVisible(true);
+                        view.getBtnCancelarClienteBuscado().setVisible(true);
+                        view.getBtnProximoClienteBuscado().setVisible(true);
+                        view.getLblParaCadastrar().setVisible(true);
+                        view.getLblDesteCliente().setVisible(true);
+                    }
+                }
+
+            }
+        });
+
+        //Botão de próximo para tela de cadastrar encomenda e tiragem
+        view.getBtnProximoClienteBuscado().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnProcuraCliente().setVisible(false);
+                view.getPnInfoEncomenda().setVisible(true);
+                view.getPnProcuraCliente().setVisible(false);
+                view.getTxtCpfClienteBuscado().setValue("");
+                view.getBtnCancelarClienteBuscado().setVisible(false);
+                view.getBtnProximoClienteBuscado().setVisible(false);
+            }
+        });
+
+        //Botão de cancelar busca
+        view.getBtnCancelarClienteBuscado().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnProcuraCliente().setVisible(false);
+                view.getTxtCpfClienteBuscado().setValue("");
+                view.getBtnCancelarClienteBuscado().setVisible(false);
+                view.getBtnProximoClienteBuscado().setVisible(false);
             }
         });
 
@@ -316,7 +556,7 @@ public class MainPresenter {
                 view.getBtnEncomenda().setEnabled(true);
             }
         });
-        
+
         //Onchange qtd tiragens
         view.getLblQtdTiragensEncomenda().setText(Integer.toString(view.getSpnQtdTiragens().getValue()));
         view.getSpnQtdTiragens().addChangeListener(new ChangeListener() {
