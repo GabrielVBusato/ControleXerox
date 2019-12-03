@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import model.dao.FuncionarioDao;
+import model.dao.ProfessorDao;
 import presenters.MainPresenter;
 import views.MainView;
 
@@ -30,8 +31,9 @@ public class JFrameUtils {
         for (Component c : components) {
             if (c instanceof JTextField) {
                 ((JTextField) c).setText("");
+                ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
             }
-            if (c instanceof JFormattedTextField){
+            if (c instanceof JFormattedTextField) {
                 ((JFormattedTextField) c).setValue("");
             }
             if (c instanceof JLabel) {
@@ -333,6 +335,308 @@ public class JFrameUtils {
         return true;
     }
 
+    public static void checagemProfessor(MainView view) {
+
+        //Check nome
+        view.getTxtNomeProfessor().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtNomeProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblNomeProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtNomeProfessor().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo obrigatório!");
+                    }
+                    if (!view.getTxtNomeProfessor().getText().toLowerCase().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
+                        throw new Exception("O nome inserido está incorreto!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtNomeProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblNomeProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtCpfProfessor().addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtCpfProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblCpfProfessor().setForeground(Color.black);
+                view.getLblCpfProfessor().setText("CPF*");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtCpfProfessor().getText().contains(" ")) {
+                        throw new Exception("");
+                    }
+                    if (FuncionarioDao.cpfExists(view.getTxtCpfProfessor().getText())) {
+                        throw new Exception("já existente!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtCpfProfessor().setBorder(new LineBorder(Color.red, 1));
+                    if (!ex.getMessage().equals("já existente!")) {
+                        view.getTxtCpfProfessor().setValue("");
+                    }
+                    view.getLblCpfProfessor().setForeground(Color.red);
+                    view.getLblCpfProfessor().setText("CPF* " + ex.getMessage());
+                }
+            }
+        });
+
+        view.getTxtEmailProfessor().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtEmailProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblEmailProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+                    Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+                    Matcher matcher = pattern.matcher(view.getTxtEmailProfessor().getText());
+                    if (view.getTxtEmailProfessor().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo obrigatório!");
+                    }
+                    if (!(matcher.matches())) {
+                        throw new Exception("O Email inserido está incorreto!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtEmailProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblEmailProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtTelefoneProfessor().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtTelefoneProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblTelefoneProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtTelefoneProfessor().getText().equals("(  )      -    ")) {
+                        throw new Exception("Obrigatório!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtTelefoneProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblTelefoneProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtRuaProfessor().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtRuaProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblRuaProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtRuaProfessor().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtRuaProfessor().getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
+                        throw new Exception("inválida!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtRuaProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblRuaProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtBairroCliente().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtBairroProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblBairroProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtBairroProfessor().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtBairroProfessor().getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtBairroProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblBairroProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtNumeroProfessor().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtNumeroProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblNumeroProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtNumeroProfessor().getText().toLowerCase().equals("")) {
+                        throw new Exception("");
+                    }
+                    if (!view.getTxtNumeroProfessor().getText().matches("^[0-9]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtNumeroProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblNumeroProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtCidadeProfessor().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtCidadeProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblCidadeProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtCidadeProfessor().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtCidadeProfessor().getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtCidadeProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblCidadeProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtEstadoProfessor().addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtEstadoProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblEstadoProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtEstadoProfessor().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtEstadoProfessor().getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtEstadoProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblEstadoProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtPaiProfessor().addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtPaiProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblPaisProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtPaiProfessor().getText().toLowerCase().equals("")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                    if (!view.getTxtPaiProfessor().getText().matches("^^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
+                        throw new Exception("inválido!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtPaiProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblPaisProfessor().setForeground(Color.red);
+                }
+            }
+
+        });
+
+        view.getTxtCepProfessor().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtCepProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblCepProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtCepProfessor().getText().toLowerCase().equals("     -   ")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtCepProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblCepProfessor().setForeground(Color.red);
+                }
+            }
+        });
+
+        view.getTxtUfProfessor().addFocusListener(new FocusListener() {
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                view.getTxtUfProfessor().setBorder(new LineBorder(Color.black, 1));
+                view.getLblUfProfessor().setForeground(Color.black);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                liberaBotao(view);
+                try {
+                    if (view.getTxtUfProfessor().getText().toLowerCase().equals("  ")) {
+                        throw new Exception("Campo Obrigatório!");
+                    }
+                } catch (Exception ex) {
+                    view.getTxtUfProfessor().setBorder(new LineBorder(Color.red, 1));
+                    view.getLblUfProfessor().setForeground(Color.red);
+                    view.getTxtUfProfessor().setValue("");
+                }
+            }
+        });
+    }
+
     public static void checagemCliente(MainView view) {
 
         //Check nome
@@ -632,7 +936,7 @@ public class JFrameUtils {
                 }
             }
         });
-        
+
         view.getTxtNomeEncomenda().addFocusListener(new FocusListener() {
 
             @Override

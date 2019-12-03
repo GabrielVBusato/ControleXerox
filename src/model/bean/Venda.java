@@ -18,6 +18,25 @@ public class Venda {
     private double valorTotal;
     private int idPessoa;
     private ArrayList<Tiragem> tiragens = new ArrayList<>();
+    private Pasta pasta;
+    private ArrayList<Material> materiais = new ArrayList<>();
+
+    public Pasta getPasta() {
+        return pasta;
+    }
+
+    public void setPasta(Pasta pasta) {
+        this.pasta = pasta;
+    }
+
+    public ArrayList<Material> getMateriais() {
+        return materiais;
+    }
+
+   public void setMateriais(Material m) {
+        materiais.add(m);
+    }
+    
 
     public int getIdVenda() {
         return idVenda;

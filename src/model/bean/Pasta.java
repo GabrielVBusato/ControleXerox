@@ -14,6 +14,11 @@ public class Pasta {
     private int idPasta;
     private String nome;
     private int idPessoa;
+    
+    @Override
+    public String toString(){
+        return this.nome;
+    }
 
     public int getIdPasta() {
         return idPasta;

@@ -11,8 +11,37 @@ package model.bean;
  */
 public class Material {
     private int idMaterial;
+    private String titulo;
+    private int copias;
+    private double preço;
     private int idPasta;
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getCopias() {
+        return copias;
+    }
+
+    public void setCopias(int copias) {
+        this.copias = copias;
+    }
+
+    public double getPreço() {
+        return preço;
+    }
+
+    public void setPreço(double preço) {
+        this.preço = preço;
+    }
+
+    
+    
     public int getIdMaterial() {
         return idMaterial;
     }

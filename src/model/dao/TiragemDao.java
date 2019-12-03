@@ -24,7 +24,7 @@ public class TiragemDao {
         String sql = "INSERT INTO tiragem(titulo, idVenda, idEncomenda, copias, preço, idMaterial) values (?, ?, ?, ?, ?, ?)";
         //Preparando statement e retornando a ultima chave primaria inserida
         stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
+        System.out.println(t.getIdMaterial());
         //Setando os valores
         stmt.setString(1, t.getTitulo());
         stmt.setInt(2, t.getIdVenda());

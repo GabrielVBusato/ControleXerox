@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
@@ -30,8 +31,11 @@ import model.bean.Encomenda;
 import model.bean.Endereco;
 import model.bean.Estado;
 import model.bean.Funcionario;
+import model.bean.Material;
 import model.bean.Pais;
+import model.bean.Pasta;
 import model.bean.Pessoa;
+import model.bean.Professor;
 import model.bean.Tiragem;
 import model.bean.Venda;
 import model.dao.CidadeDao;
@@ -40,8 +44,11 @@ import model.dao.EncomendaDao;
 import model.dao.EnderecoDao;
 import model.dao.EstadoDao;
 import model.dao.FuncionarioDao;
+import model.dao.MaterialDao;
 import model.dao.PaisDao;
+import model.dao.PastaDao;
 import model.dao.PessoaDao;
+import model.dao.ProfessorDao;
 import model.dao.TiragemDao;
 import model.dao.VendaDao;
 import utils.JFrameUtils;
@@ -76,6 +83,7 @@ public class MainPresenter {
         view.getBtnCancelarClienteBuscado().setVisible(false);
         view.getBtnProximoClienteBuscado().setVisible(false);
         view.getLblDesteCliente().setVisible(false);
+        view.getPnProfessor().setVisible(false);
         view.getPnProfessor().setName("pnProfessor");
         view.getPnTiragem().setName("pnTiragem");
         view.getPnEncomenda().setName("pnEncomenda");
@@ -91,6 +99,15 @@ public class MainPresenter {
         view.getBtnAddFuncionario().setName("btnAddFuncionario");
         view.getBtnCadastroApenasEncomenda().setName("btnCadastroApenasEncomenda");
         view.getBtnCadastroNovoCliente().setName("btnCadastroNovoCliente");
+        view.getPnProfessor().setName("pnProfessor");
+        view.getPnProcurarProfessor().setName("pnProcuraProfessor");
+        view.getPnProcurarProfessor().setVisible(false);
+        view.getBtnNovoMaterial().setName("btnNovoMaterial");
+        view.getBtnNovoMaterial().setVisible(false);
+        view.getBtnNovoProfessor().setName("btnNovoProfessor");
+        view.getBtnNovoProfessor().setVisible(false);
+        view.getPnPastaProfessor().setName("pnPastaProfessor");
+        view.getPnPastaProfessor().setVisible(false);
         iniciarView();
     }
 
@@ -103,6 +120,11 @@ public class MainPresenter {
         }
 
         for (Component c : view.getPnEncomenda().getComponents()) {
+            if (c instanceof JTextField || c instanceof JFormattedTextField) {
+                ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
+            }
+        }
+        for (Component c : view.getPnProfessor().getComponents()) {
             if (c instanceof JTextField || c instanceof JFormattedTextField) {
                 ((JTextField) c).setBorder(new LineBorder(Color.black, 1));
             }
@@ -125,10 +147,6 @@ public class MainPresenter {
             view.getJcbSelecioneFuncionario().addItem(f);
         }
 
-        for (Funcionario f : FuncionarioDao.buscaTodos()) {
-            view.getJcbFuncionarioEncomenda().addItem(f);
-        }
-
         view.getBtnProximoPanelCliente().setEnabled(false);
 
         JFrameUtils.checagemFuncionario(new JTextField[]{view.getTxtNome(), view.getTxtEmail(),
@@ -138,17 +156,70 @@ public class MainPresenter {
         //Checagem de campos de cliente
         JFrameUtils.checagemCliente(view);
 
+        //Checagem de campos de professor
+        JFrameUtils.checagemProfessor(view);
+
         //Botão professor
         view.getBtnProfessor().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrameUtils.visibilidade(view, "pnProfessor", "btnProfessor");
+                view.getBtnNovoProfessor().setVisible(true);
+                view.getBtnNovoMaterial().setVisible(true);
+                view.getBtnProfessor().setEnabled(false);
+                view.getBtnTiragem().setEnabled(true);
+                view.getBtnAddFuncionario().setEnabled(true);
                 view.getBtnEncomenda().setEnabled(true);
                 view.getBtnCadastroApenasEncomenda().setVisible(false);
                 view.getBtnCadastroNovoCliente().setVisible(false);
+                view.getPnTiragem().setVisible(false);
+                view.getPnProcuraCliente().setVisible(false);
+                view.getPnEncomenda().setVisible(false);
             }
         });
 
+        //botão novo material
+        view.getBtnNovoMaterial().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnProcurarProfessor().setVisible(true);
+                view.getPnProfessor().setVisible(false);
+                view.getLblProfessorEncontrado().setVisible(false);
+                view.getTxtProfessorEncontrado().setVisible(false);
+                view.getBtnNovoMaterial().setEnabled(false);
+                view.getBtnNovoProfessor().setEnabled(true);
+                activeVenda = new Venda();
+                view.getPnPastaProfessor().setVisible(false);
+            }
+        });
+
+        //botão cancelar venda dos materiais da pasta
+        view.getBtnCancelarPasta().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnPastaProfessor().setVisible(false);
+                view.getBtnProfessor().setEnabled(true);
+                view.getBtnNovoProfessor().setVisible(false);
+                view.getBtnNovoMaterial().setEnabled(true);
+                view.getBtnNovoMaterial().setVisible(false);
+                JFrameUtils.cleanTextField(view.getPnPastaProfessor().getComponents());
+                view.getTxtNomePasta().setText("");
+                activeVenda = new Venda();
+            }
+        });
+
+        //botão novo professor
+        view.getBtnNovoProfessor().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.getPnProcurarProfessor().setVisible(false);
+                view.getPnProfessor().setVisible(true);
+                view.getBtnNovoProfessor().setEnabled(false);
+                view.getBtnNovoMaterial().setEnabled(true);
+                JFrameUtils.cleanTextField(view.getPnProfessor().getComponents());
+            }
+        });
+
+        //botão 
         //Botão tiragem
         view.getBtnTiragem().addActionListener(new ActionListener() {
 
@@ -163,6 +234,13 @@ public class MainPresenter {
                 view.getBtnEncomenda().setEnabled(true);
                 view.getBtnCadastroApenasEncomenda().setVisible(false);
                 view.getBtnCadastroNovoCliente().setVisible(false);
+
+                view.getBtnNovoProfessor().setVisible(false);
+                view.getBtnNovoMaterial().setVisible(false);
+
+                view.getBtnNovoMaterial().setEnabled(true);
+
+                view.getBtnNovoProfessor().setEnabled(true);
             }
         });
 
@@ -257,6 +335,15 @@ public class MainPresenter {
                 view.getBtnProfessor().setEnabled(true);
                 view.getBtnTiragem().setEnabled(true);
                 view.getBtnAddFuncionario().setEnabled(true);
+                view.getPnTiragem().setVisible(false);
+                view.getBtnNovoProfessor().setVisible(false);
+                view.getBtnNovoMaterial().setVisible(false);
+                view.getPnProcurarProfessor().setVisible(false);
+                view.getPnProfessor().setVisible(false);
+
+                view.getBtnNovoMaterial().setEnabled(true);
+
+                view.getBtnNovoProfessor().setEnabled(true);
 
             }
         });
@@ -273,10 +360,137 @@ public class MainPresenter {
             }
         });
 
+        //Btn Cancelar funcionario
+        view.getBtnCancelar().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrameUtils.cleanTextField(view.getPnAddFuncionario().getComponents());
+            }
+        });
+
+        //Limpar Funcionario
         view.getBtnLimpar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrameUtils.cleanTextField(view.getPnAddFuncionario().getComponents());
+            }
+        });
+
+        //Painel pasta professor
+        view.getBtnProximoProfessor().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (activeVenda.getIdPessoa() != 0) {
+                    view.getPnProcurarProfessor().setVisible(false);
+                    view.getPnPastaProfessor().setVisible(true);
+                    view.getLblProfessorTitulo().setText("Pasta do professor");
+                    view.getjComboPastaProfessor().removeAllItems();
+                    view.getjComboFuncionárioPasta().removeAllItems();
+                    for (Pasta p : PastaDao.buscaPastasProfessor(activeVenda.getIdPessoa())) {
+                        System.out.println(p.getIdPasta());
+                        view.getjComboPastaProfessor().addItem(p);
+                    }
+                    for (Funcionario f : FuncionarioDao.buscaTodos()) {
+                        view.getjComboFuncionárioPasta().addItem(f);
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Busque por um cpf válido");
+                }
+
+            }
+        });
+
+        //adicionar material na pasta
+        view.getBtnAdicionaTiragemPasta().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!view.getTxtQtdTiragemPasta().getText().matches("^[0-9]+$") || view.getTxtQtdTiragemPasta().getText().trim().isEmpty() || view.getTxtPrecoTiragemPasta().getText().equals("R$ .  ") || view.getTxtNomeTiragemPasta().getText().trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Preencha corretamente os campos.");
+                } else {
+                    Material mat = new Material();
+                    mat.setCopias(Integer.parseInt(view.getTxtQtdTiragemPasta().getText()));
+                    mat.setPreço(Double.valueOf(view.getTxtPrecoTiragemPasta().getText().replace("R$", "")));
+                    mat.setTitulo(view.getTxtNomeTiragemPasta().getText());
+                    activeVenda.setMateriais(mat);
+                    JFrameUtils.cleanTextField(view.getPnAdicionarTiragem().getComponents());
+                    view.getTxtNomePasta().setText("");
+                    JOptionPane.showMessageDialog(null, "Tiragem inserida com sucesso.");
+                }
+            }
+        });
+
+        //Adicionar pasta
+        view.getBtnAdicionarPasta().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (view.getTxtNomePasta().getText().trim().isEmpty() || activeVenda.getMateriais().isEmpty() || !view.getTxtNomePasta().getText().trim().toLowerCase().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
+                    JOptionPane.showMessageDialog(null, "A pasta está vazia ou possui um nome impróprio.");
+                } else {
+                    try {
+                        Pasta pasta = new Pasta();
+                        pasta.setNome(view.getTxtNomePasta().getText());
+                        pasta.setIdPessoa(activeVenda.getIdPessoa());
+                        pasta.setIdPasta(PastaDao.inserir(pasta));
+                        activeVenda.setPasta(pasta);
+                        for (Material m : activeVenda.getMateriais()) {
+                            m.setIdPasta(activeVenda.getPasta().getIdPasta());
+                            MaterialDao.inserir(m);
+                        }
+                        view.getPnPastaProfessor().setVisible(false);
+                        view.getBtnProfessor().setEnabled(true);
+                        view.getBtnProcurarProfessor().setEnabled(true);
+                        view.getBtnProcurarProfessor().setVisible(false);
+                        view.getBtnNovoProfessor().setVisible(false);
+                        view.getBtnNovoMaterial().setEnabled(true);
+                        view.getBtnNovoMaterial().setVisible(false);
+                        JFrameUtils.cleanTextField(view.getPnPastaProfessor().getComponents());
+                        activeVenda = new Venda();
+                    } catch (Exception ex) {
+                        Logger.getLogger(MainPresenter.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                }
+            }
+        });
+
+        //procurar professor
+        view.getBtnProcurarProfessor().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (ProfessorDao.buscaCpfExistente(view.getTxtCpfProfessorBuscado().getText()) == null) {
+                    view.getTxtProfessorEncontrado().setVisible(true);
+                    view.getLblProfessorEncontrado().setVisible(false);
+                    view.getTxtProfessorEncontrado().setText("Professor não existente.");
+                    activeVenda = new Venda();
+                } else {
+                    view.getTxtProfessorEncontrado().setVisible(true);
+                    view.getLblProfessorEncontrado().setVisible(true);
+                    view.getTxtProfessorEncontrado().setText(ProfessorDao.buscaCpfExistente(view.getTxtCpfProfessorBuscado().getText()).getNome());
+                    activeVenda.setIdPessoa(ProfessorDao.buscaCpfExistente(view.getTxtCpfProfessorBuscado().getText()).getIdPessoa());
+                    view.getTxtCpfProfessorBuscado().setValue("");
+                }
+            }
+        });
+
+        //Limpar Professor
+        view.getBtnLimparProfessor().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrameUtils.cleanTextField(view.getPnProfessor().getComponents());
+            }
+        });
+
+        //Cancelar professor
+        view.getBtnCancelarProfessor().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrameUtils.cleanTextField(view.getPnProfessor().getComponents());
             }
         });
 
@@ -593,6 +807,121 @@ public class MainPresenter {
             }
         });
 
+        //Salvar professor
+        view.getBtnSalvarProfessor().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                boolean isValid = true;
+                Component[] components = view.getPnProfessor().getComponents();
+                for (Component c : components) {
+                    if (c instanceof JTextField) {
+                        if (((JTextField) c).getText().equals("") || ((JTextField) c).getText().equals("  ")
+                                || ((JTextField) c).getText().equals("(  )      -    ") || ((JTextField) c).getText().equals("  .   -   ")) {
+                            isValid = false;
+                            break;
+                        }
+                        LineBorder border = (LineBorder) ((JTextField) c).getBorder();
+                        if (border.getLineColor().getRGB() == -65536) {
+                            isValid = false;
+                        }
+                    }
+                }
+
+                if (isValid) {
+                    //Declaração de variáveis
+                    Pais pais = new Pais();
+                    Estado estado = new Estado();
+                    Cidade cidade = new Cidade();
+                    Endereco endereco = new Endereco();
+                    Pessoa pessoa = new Pessoa();
+                    Professor professor = new Professor();
+
+                    //Setando atributos do form
+                    pais.setNome(view.getTxtNomeProfessor().getText());
+
+                    estado.setNome(view.getTxtEstadoProfessor().getText());
+                    estado.setUf(view.getTxtUfProfessor().getText());
+
+                    cidade.setCep(view.getTxtCepProfessor().getText());
+                    cidade.setNome(view.getTxtCidadeProfessor().getText());
+
+                    endereco.setBairro(view.getTxtBairroProfessor().getText());
+                    endereco.setNumero(view.getTxtNumeroProfessor().getText());
+                    endereco.setRua(view.getTxtRuaProfessor().getText());
+
+                    pessoa.setCpf(view.getTxtCpfProfessor().getText());
+                    pessoa.setEmail(view.getTxtEmailProfessor().getText());
+                    pessoa.setNome(view.getTxtNomeProfessor().getText());
+                    pessoa.setTelefone(view.getTxtTelefoneProfessor().getText());
+
+                    //Set id
+                    try {
+                        pais.setIdPais(PaisDao.inserir(pais));
+
+                        estado.setIdPais(pais.getIdPais());
+                        estado.setIdEstado(EstadoDao.inserir(estado));
+
+                        cidade.setIdEstado(estado.getIdEstado());
+                        cidade.setIdCidade(CidadeDao.inserir(cidade));
+
+                        endereco.setIdCidade(cidade.getIdCidade());
+                        endereco.setIdEndereco(EnderecoDao.inserir(endereco));
+
+                        pessoa.setIdEndereco(endereco.getIdEndereco());
+                        pessoa.setIdPessoa(PessoaDao.inserir(pessoa));
+
+                        professor.setIdPessoa(pessoa.getIdPessoa());
+                        ProfessorDao.inserir(professor);
+
+                        JFrameUtils.cleanTextField(view.getPnProfessor().getComponents());
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "Erro " + ex.getMessage());
+                    }
+                    JOptionPane.showMessageDialog(null, "Professor cadastrado com sucesso.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios de forma correta.");
+                }
+            }
+        });
+
+        //Botão realizar venda dos materiais
+        view.getBtnVendaProfessor().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ArrayList<Material> materiais = MaterialDao.buscaTodos(((Pasta) view.getjComboPastaProfessor().getSelectedItem()).getIdPasta());
+
+                double valorTotal = 0;
+                for (Material m : materiais) {
+                    valorTotal += m.getCopias() * m.getPreço();
+                }
+                try {
+                    activeVenda.setValorTotal(valorTotal);
+                    activeVenda.setIdPessoa(((Pessoa) view.getjComboFuncionárioPasta().getSelectedItem()).getIdPessoa());
+                    int idVenda = VendaDao.inserir(activeVenda);
+                    for (Material m : materiais) {
+                        Tiragem t = new Tiragem();
+                        t.setIdVenda(idVenda);
+                        t.setIdMaterial(m.getIdMaterial());
+                        TiragemDao.inserir(t);
+                    }
+                    view.getPnPastaProfessor().setVisible(false);
+                    view.getBtnProfessor().setEnabled(true);
+                    view.getBtnNovoProfessor().setVisible(false);
+                    view.getBtnNovoMaterial().setEnabled(true);
+                    view.getBtnNovoMaterial().setVisible(false);
+                    JFrameUtils.cleanTextField(view.getPnPastaProfessor().getComponents());
+                    view.getTxtNomePasta().setText("");
+                    activeVenda = new Venda();
+                    JOptionPane.showMessageDialog(null, "Venda realizada!");
+                } catch (Exception ex) {
+                    Logger.getLogger(MainPresenter.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+        });
+
+        //Salvar funcionario
         view.getBtnSalvar().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -658,7 +987,7 @@ public class MainPresenter {
                         funcionario.setIdPessoa(pessoa.getIdPessoa());
                         FuncionarioDao.inserir(funcionario);
 
-                        JFrameUtils.cleanTextField(view.getPnEncomenda().getComponents());
+                        JFrameUtils.cleanTextField(view.getPnAddFuncionario().getComponents());
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, "Erro " + ex.getMessage());
                     }

@@ -13,25 +13,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import model.bean.Funcionario;
-import model.bean.Pessoa;
+import model.bean.Material;
 
 /**
  *
  * @author Gabriel
  */
-public class FuncionarioDao {
-
-    public static int inserir(Funcionario f) throws Exception {
+public class MaterialDao {
+    public static int inserir(Material f) throws Exception {
         int lastkey = 0;
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
-        String sql = "INSERT INTO funcionario(idPessoa) values (?)";
+        String sql = "INSERT INTO material(titulo, copias, preço, idPasta) values (?, ?, ?, ?)";
         //Preparando statement e retornando a ultima chave primaria inserida
         stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
         //Setando os valores
-        stmt.setInt(1, f.getIdPessoa());
+        stmt.setString(1, f.getTitulo());
+        stmt.setInt(2, f.getCopias());
+        stmt.setDouble(3, f.getPreço());
+        stmt.setInt(4, f.getIdPasta());
 
         //Execuntando comando de inserção no banco
         stmt.executeUpdate();
@@ -48,44 +49,28 @@ public class FuncionarioDao {
 
         return lastkey;
     }
-
-    public static boolean cpfExists(String cpf) {
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        String sql = "SELECT * FROM pessoa WHERE cpf = " + "'" + cpf + "'";
-        try {
-            stmt = con.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                return true;
-            }
-            ConnectionFactory.closeConnection(con, stmt);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return false;
-    }
-
-    public static ArrayList<Funcionario> buscaTodos() {
+    
+    public static ArrayList<Material> buscaTodos(int idPasta) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs;
-        String sql = "SELECT f.idPessoa, p.nome FROM funcionario f join pessoa p on f.idPessoa = p.idPessoa";
-        ArrayList<Funcionario> list = new ArrayList<>();
+        String sql = "SELECT * FROM material m join pasta p on m.idPasta = p.idPasta where m.idPasta =" + "'" + idPasta + "'";
+        ArrayList<Material> list = new ArrayList<>();
         try {
             stmt = con.prepareStatement(sql);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                Funcionario f = new Funcionario();
-
-                f.setIdPessoa(rs.getInt("idPessoa"));
-                f.setNome(rs.getString("nome"));
-
+                Material f = new Material();
+                f.setIdMaterial(rs.getInt("idMaterial"));
+                f.setTitulo(rs.getString("titulo"));
+                f.setCopias(rs.getInt("copias"));
+                f.setPreço(rs.getDouble("preço"));
+                f.setIdPasta(rs.getInt("idPasta"));
                 list.add(f);
 
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Teste");
+            JOptionPane.showMessageDialog(null, "Erro sql");
         }
         return list;
     }

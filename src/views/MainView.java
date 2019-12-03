@@ -125,34 +125,34 @@ public class MainView extends javax.swing.JFrame {
         txtCepCliente = new javax.swing.JFormattedTextField();
         txtUfCliente = new javax.swing.JFormattedTextField();
         pnProfessor = new javax.swing.JPanel();
-        lblNomeFuncionario1 = new javax.swing.JLabel();
-        txtNome1 = new javax.swing.JTextField();
-        txtEmail1 = new javax.swing.JTextField();
-        lblEmailFuncionario1 = new javax.swing.JLabel();
-        lblCpfFuncionario1 = new javax.swing.JLabel();
-        lblTelefoneFuncionario1 = new javax.swing.JLabel();
+        lblNomeProfessor = new javax.swing.JLabel();
+        txtNomeProfessor = new javax.swing.JTextField();
+        txtEmailProfessor = new javax.swing.JTextField();
+        lblEmailProfessor = new javax.swing.JLabel();
+        lblCpfProfessor = new javax.swing.JLabel();
+        lblTelefoneProfessor = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        lblRuaFuncionario1 = new javax.swing.JLabel();
-        txtRua1 = new javax.swing.JTextField();
-        lblBairroFuncionario1 = new javax.swing.JLabel();
-        txtBairro1 = new javax.swing.JTextField();
-        lblNumeroFuncionario1 = new javax.swing.JLabel();
-        txtNumero1 = new javax.swing.JTextField();
-        lblCidadeFuncionario1 = new javax.swing.JLabel();
-        txtNomeCidade1 = new javax.swing.JTextField();
-        lblCepFuncionario1 = new javax.swing.JLabel();
-        lblEstadoFuncionario1 = new javax.swing.JLabel();
-        txtNomeEstado1 = new javax.swing.JTextField();
-        lblUfFuncionario1 = new javax.swing.JLabel();
-        txtPais1 = new javax.swing.JTextField();
-        lblPaisFuncionario1 = new javax.swing.JLabel();
-        btnSalvar1 = new javax.swing.JButton();
-        btnLimpar1 = new javax.swing.JButton();
-        btnCancelar1 = new javax.swing.JButton();
-        txtCpf1 = new javax.swing.JFormattedTextField();
-        txtTelefone1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        txtUf1 = new javax.swing.JFormattedTextField();
+        lblRuaProfessor = new javax.swing.JLabel();
+        txtRuaProfessor = new javax.swing.JTextField();
+        lblBairroProfessor = new javax.swing.JLabel();
+        txtBairroProfessor = new javax.swing.JTextField();
+        lblNumeroProfessor = new javax.swing.JLabel();
+        txtNumeroProfessor = new javax.swing.JTextField();
+        lblCidadeProfessor = new javax.swing.JLabel();
+        txtCidadeProfessor = new javax.swing.JTextField();
+        lblCepProfessor = new javax.swing.JLabel();
+        lblEstadoProfessor = new javax.swing.JLabel();
+        txtEstadoProfessor = new javax.swing.JTextField();
+        lblUfProfessor = new javax.swing.JLabel();
+        txtPaiProfessor = new javax.swing.JTextField();
+        lblPaisProfessor = new javax.swing.JLabel();
+        btnSalvarProfessor = new javax.swing.JButton();
+        btnLimparProfessor = new javax.swing.JButton();
+        btnCancelarProfessor = new javax.swing.JButton();
+        txtCpfProfessor = new javax.swing.JFormattedTextField();
+        txtTelefoneProfessor = new javax.swing.JFormattedTextField();
+        txtCepProfessor = new javax.swing.JFormattedTextField();
+        txtUfProfessor = new javax.swing.JFormattedTextField();
         pnAddFuncionario = new javax.swing.JPanel();
         lblNomeFuncionario = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -182,6 +182,36 @@ public class MainView extends javax.swing.JFrame {
         txtTelefone = new javax.swing.JFormattedTextField();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         txtUf = new javax.swing.JFormattedTextField();
+        pnProcurarProfessor = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        txtCpfProfessorBuscado = new javax.swing.JFormattedTextField();
+        btnProcurarProfessor = new javax.swing.JButton();
+        lblProfessorEncontrado = new javax.swing.JLabel();
+        txtProfessorEncontrado = new javax.swing.JLabel();
+        btnProximoProfessor = new javax.swing.JButton();
+        pnPastaProfessor = new javax.swing.JPanel();
+        lblProfessorTitulo = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        btnVendaProfessor = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        btnAdicionarPasta = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        txtNomePasta = new javax.swing.JTextField();
+        pnAdicionarTiragem = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        btnAdicionaTiragemPasta = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txtNomeTiragemPasta = new javax.swing.JTextField();
+        txtQtdTiragemPasta = new javax.swing.JTextField();
+        txtPrecoTiragemPasta = new javax.swing.JFormattedTextField();
+        jComboPastaProfessor = new javax.swing.JComboBox();
+        btnCancelarPasta = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jComboFuncionárioPasta = new javax.swing.JComboBox();
         pnMenu = new javax.swing.JPanel();
         btnAddFuncionario = new javax.swing.JButton();
         btnProfessor = new javax.swing.JButton();
@@ -189,6 +219,8 @@ public class MainView extends javax.swing.JFrame {
         btnEncomenda = new javax.swing.JButton();
         btnCadastroNovoCliente = new javax.swing.JButton();
         btnCadastroApenasEncomenda = new javax.swing.JButton();
+        btnNovoProfessor = new javax.swing.JButton();
+        btnNovoMaterial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -605,136 +637,136 @@ public class MainView extends javax.swing.JFrame {
         pnProfessor.setPreferredSize(new java.awt.Dimension(472, 435));
         pnProfessor.setLayout(null);
 
-        lblNomeFuncionario1.setText("Nome*");
-        pnProfessor.add(lblNomeFuncionario1);
-        lblNomeFuncionario1.setBounds(50, 40, 60, 14);
-        pnProfessor.add(txtNome1);
-        txtNome1.setBounds(50, 60, 390, 20);
-        pnProfessor.add(txtEmail1);
-        txtEmail1.setBounds(50, 110, 390, 20);
+        lblNomeProfessor.setText("Nome*");
+        pnProfessor.add(lblNomeProfessor);
+        lblNomeProfessor.setBounds(50, 40, 60, 14);
+        pnProfessor.add(txtNomeProfessor);
+        txtNomeProfessor.setBounds(50, 60, 390, 20);
+        pnProfessor.add(txtEmailProfessor);
+        txtEmailProfessor.setBounds(50, 110, 390, 20);
 
-        lblEmailFuncionario1.setText("Email*");
-        pnProfessor.add(lblEmailFuncionario1);
-        lblEmailFuncionario1.setBounds(50, 90, 50, 14);
+        lblEmailProfessor.setText("Email*");
+        pnProfessor.add(lblEmailProfessor);
+        lblEmailProfessor.setBounds(50, 90, 50, 14);
 
-        lblCpfFuncionario1.setText("CPF*");
-        pnProfessor.add(lblCpfFuncionario1);
-        lblCpfFuncionario1.setBounds(50, 140, 40, 14);
+        lblCpfProfessor.setText("CPF*");
+        pnProfessor.add(lblCpfProfessor);
+        lblCpfProfessor.setBounds(50, 140, 210, 14);
 
-        lblTelefoneFuncionario1.setText("Telefone*");
-        pnProfessor.add(lblTelefoneFuncionario1);
-        lblTelefoneFuncionario1.setBounds(280, 140, 60, 14);
+        lblTelefoneProfessor.setText("Telefone*");
+        pnProfessor.add(lblTelefoneProfessor);
+        lblTelefoneProfessor.setBounds(280, 140, 60, 14);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("CADASTRAR NOVO FUNCIONÁRIO");
+        jLabel12.setText("CADASTRAR NOVO PROFESSOR");
         pnProfessor.add(jLabel12);
-        jLabel12.setBounds(114, 11, 245, 17);
+        jLabel12.setBounds(114, 11, 225, 17);
 
-        lblRuaFuncionario1.setText("Rua*");
-        pnProfessor.add(lblRuaFuncionario1);
-        lblRuaFuncionario1.setBounds(50, 190, 50, 14);
-        pnProfessor.add(txtRua1);
-        txtRua1.setBounds(50, 210, 390, 20);
+        lblRuaProfessor.setText("Rua*");
+        pnProfessor.add(lblRuaProfessor);
+        lblRuaProfessor.setBounds(50, 190, 50, 14);
+        pnProfessor.add(txtRuaProfessor);
+        txtRuaProfessor.setBounds(50, 210, 390, 20);
 
-        lblBairroFuncionario1.setText("Bairro*");
-        pnProfessor.add(lblBairroFuncionario1);
-        lblBairroFuncionario1.setBounds(50, 240, 40, 14);
-        pnProfessor.add(txtBairro1);
-        txtBairro1.setBounds(50, 260, 204, 20);
+        lblBairroProfessor.setText("Bairro*");
+        pnProfessor.add(lblBairroProfessor);
+        lblBairroProfessor.setBounds(50, 240, 40, 14);
+        pnProfessor.add(txtBairroProfessor);
+        txtBairroProfessor.setBounds(50, 260, 204, 20);
 
-        lblNumeroFuncionario1.setText("Número*");
-        pnProfessor.add(lblNumeroFuncionario1);
-        lblNumeroFuncionario1.setBounds(270, 240, 60, 14);
-        pnProfessor.add(txtNumero1);
-        txtNumero1.setBounds(270, 260, 172, 20);
+        lblNumeroProfessor.setText("Número*");
+        pnProfessor.add(lblNumeroProfessor);
+        lblNumeroProfessor.setBounds(270, 240, 60, 14);
+        pnProfessor.add(txtNumeroProfessor);
+        txtNumeroProfessor.setBounds(270, 260, 172, 20);
 
-        lblCidadeFuncionario1.setText("Cidade*");
-        pnProfessor.add(lblCidadeFuncionario1);
-        lblCidadeFuncionario1.setBounds(50, 290, 60, 14);
-        pnProfessor.add(txtNomeCidade1);
-        txtNomeCidade1.setBounds(50, 310, 204, 20);
+        lblCidadeProfessor.setText("Cidade*");
+        pnProfessor.add(lblCidadeProfessor);
+        lblCidadeProfessor.setBounds(50, 290, 60, 14);
+        pnProfessor.add(txtCidadeProfessor);
+        txtCidadeProfessor.setBounds(50, 310, 204, 20);
 
-        lblCepFuncionario1.setText("CEP*");
-        pnProfessor.add(lblCepFuncionario1);
-        lblCepFuncionario1.setBounds(270, 290, 40, 14);
+        lblCepProfessor.setText("CEP*");
+        pnProfessor.add(lblCepProfessor);
+        lblCepProfessor.setBounds(270, 290, 40, 14);
 
-        lblEstadoFuncionario1.setText("Estado*");
-        pnProfessor.add(lblEstadoFuncionario1);
-        lblEstadoFuncionario1.setBounds(50, 340, 50, 14);
-        pnProfessor.add(txtNomeEstado1);
-        txtNomeEstado1.setBounds(50, 360, 89, 20);
+        lblEstadoProfessor.setText("Estado*");
+        pnProfessor.add(lblEstadoProfessor);
+        lblEstadoProfessor.setBounds(50, 340, 50, 14);
+        pnProfessor.add(txtEstadoProfessor);
+        txtEstadoProfessor.setBounds(50, 360, 89, 20);
 
-        lblUfFuncionario1.setText("UF*");
-        pnProfessor.add(lblUfFuncionario1);
-        lblUfFuncionario1.setBounds(160, 340, 50, 14);
-        pnProfessor.add(txtPais1);
-        txtPais1.setBounds(270, 360, 172, 20);
+        lblUfProfessor.setText("UF*");
+        pnProfessor.add(lblUfProfessor);
+        lblUfProfessor.setBounds(160, 340, 50, 14);
+        pnProfessor.add(txtPaiProfessor);
+        txtPaiProfessor.setBounds(270, 360, 172, 20);
 
-        lblPaisFuncionario1.setText("Pais*");
-        pnProfessor.add(lblPaisFuncionario1);
-        lblPaisFuncionario1.setBounds(270, 340, 40, 14);
+        lblPaisProfessor.setText("Pais*");
+        pnProfessor.add(lblPaisProfessor);
+        lblPaisProfessor.setBounds(270, 340, 40, 14);
 
-        btnSalvar1.setText("Salvar");
-        btnSalvar1.setFocusPainted(false);
-        btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvarProfessor.setText("Salvar");
+        btnSalvarProfessor.setFocusPainted(false);
+        btnSalvarProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvar1ActionPerformed(evt);
+                btnSalvarProfessorActionPerformed(evt);
             }
         });
-        pnProfessor.add(btnSalvar1);
-        btnSalvar1.setBounds(270, 400, 70, 22);
+        pnProfessor.add(btnSalvarProfessor);
+        btnSalvarProfessor.setBounds(270, 400, 70, 22);
 
-        btnLimpar1.setText("Limpar");
-        btnLimpar1.setFocusPainted(false);
-        btnLimpar1.addActionListener(new java.awt.event.ActionListener() {
+        btnLimparProfessor.setText("Limpar");
+        btnLimparProfessor.setFocusPainted(false);
+        btnLimparProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpar1ActionPerformed(evt);
+                btnLimparProfessorActionPerformed(evt);
             }
         });
-        pnProfessor.add(btnLimpar1);
-        btnLimpar1.setBounds(350, 30, 90, 22);
+        pnProfessor.add(btnLimparProfessor);
+        btnLimparProfessor.setBounds(350, 30, 90, 22);
 
-        btnCancelar1.setText("Cancelar");
-        btnCancelar1.setFocusPainted(false);
-        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelarProfessor.setText("Cancelar");
+        btnCancelarProfessor.setFocusPainted(false);
+        btnCancelarProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelar1ActionPerformed(evt);
+                btnCancelarProfessorActionPerformed(evt);
             }
         });
-        pnProfessor.add(btnCancelar1);
-        btnCancelar1.setBounds(350, 400, 90, 22);
+        pnProfessor.add(btnCancelarProfessor);
+        btnCancelarProfessor.setBounds(350, 400, 90, 22);
 
         try {
-            txtCpf1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCpfProfessor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnProfessor.add(txtCpf1);
-        txtCpf1.setBounds(50, 160, 206, 20);
+        pnProfessor.add(txtCpfProfessor);
+        txtCpfProfessor.setBounds(50, 160, 206, 20);
 
         try {
-            txtTelefone1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+            txtTelefoneProfessor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnProfessor.add(txtTelefone1);
-        txtTelefone1.setBounds(280, 160, 160, 20);
+        pnProfessor.add(txtTelefoneProfessor);
+        txtTelefoneProfessor.setBounds(280, 160, 160, 20);
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+            txtCepProfessor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnProfessor.add(jFormattedTextField2);
-        jFormattedTextField2.setBounds(270, 310, 172, 20);
+        pnProfessor.add(txtCepProfessor);
+        txtCepProfessor.setBounds(270, 310, 172, 20);
 
         try {
-            txtUf1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU")));
+            txtUfProfessor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        pnProfessor.add(txtUf1);
-        txtUf1.setBounds(160, 360, 97, 20);
+        pnProfessor.add(txtUfProfessor);
+        txtUfProfessor.setBounds(160, 360, 97, 20);
 
         pnPrincipal.add(pnProfessor);
         pnProfessor.setBounds(-18, -15, 490, 460);
@@ -876,6 +908,241 @@ public class MainView extends javax.swing.JFrame {
         pnPrincipal.add(pnAddFuncionario);
         pnAddFuncionario.setBounds(-14, -12, 490, 460);
 
+        jLabel4.setText("Procurar por professor");
+
+        try {
+            txtCpfProfessorBuscado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        btnProcurarProfessor.setText("procurar");
+
+        lblProfessorEncontrado.setText("Professor encontrado:");
+
+        btnProximoProfessor.setText("próximo");
+
+        javax.swing.GroupLayout pnProcurarProfessorLayout = new javax.swing.GroupLayout(pnProcurarProfessor);
+        pnProcurarProfessor.setLayout(pnProcurarProfessorLayout);
+        pnProcurarProfessorLayout.setHorizontalGroup(
+            pnProcurarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnProcurarProfessorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnProcurarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(pnProcurarProfessorLayout.createSequentialGroup()
+                        .addComponent(txtCpfProfessorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnProcurarProfessor))
+                    .addGroup(pnProcurarProfessorLayout.createSequentialGroup()
+                        .addComponent(lblProfessorEncontrado)
+                        .addGap(2, 2, 2)
+                        .addComponent(txtProfessorEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(131, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnProcurarProfessorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnProximoProfessor)
+                .addContainerGap())
+        );
+        pnProcurarProfessorLayout.setVerticalGroup(
+            pnProcurarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnProcurarProfessorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnProcurarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCpfProfessorBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProcurarProfessor))
+                .addGap(151, 151, 151)
+                .addGroup(pnProcurarProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfessorEncontrado)
+                    .addComponent(txtProfessorEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addComponent(btnProximoProfessor)
+                .addGap(23, 23, 23))
+        );
+
+        pnPrincipal.add(pnProcurarProfessor);
+        pnProcurarProfessor.setBounds(-10, -10, 470, 450);
+
+        lblProfessorTitulo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblProfessorTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setText("Selecione a pasta para realizar a venda");
+
+        btnVendaProfessor.setText("Realizar venda");
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel17.setText("Caso deseje adicionar mais pastas ao professor preencha abaixo.");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel13.setText("Adicionando pasta");
+
+        btnAdicionarPasta.setText("Adicionar pasta");
+
+        jLabel18.setText("Nome da pasta");
+
+        pnAdicionarTiragem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel19.setText("Adicionar material à pasta");
+
+        btnAdicionaTiragemPasta.setText("Adicionar");
+
+        jLabel20.setText("Nome:");
+
+        jLabel21.setText("Quantidade:");
+
+        jLabel22.setText("preço:");
+
+        try {
+            txtPrecoTiragemPasta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("R$#.##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        javax.swing.GroupLayout pnAdicionarTiragemLayout = new javax.swing.GroupLayout(pnAdicionarTiragem);
+        pnAdicionarTiragem.setLayout(pnAdicionarTiragemLayout);
+        pnAdicionarTiragemLayout.setHorizontalGroup(
+            pnAdicionarTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnAdicionarTiragemLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnAdicionarTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAdicionaTiragemPasta)
+                    .addGroup(pnAdicionarTiragemLayout.createSequentialGroup()
+                        .addGroup(pnAdicionarTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAdicionarTiragemLayout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPrecoTiragemPasta, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAdicionarTiragemLayout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtQtdTiragemPasta))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnAdicionarTiragemLayout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNomeTiragemPasta))
+                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(23, 23, 23)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnAdicionarTiragemLayout.setVerticalGroup(
+            pnAdicionarTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnAdicionarTiragemLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnAdicionarTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(txtNomeTiragemPasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnAdicionarTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(txtQtdTiragemPasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnAdicionarTiragemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(txtPrecoTiragemPasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addComponent(btnAdicionaTiragemPasta)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                    .addComponent(jLabel18)
+                    .addComponent(btnAdicionarPasta)
+                    .addComponent(txtNomePasta))
+                .addGap(18, 18, 18)
+                .addComponent(pnAdicionarTiragem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnAdicionarTiragem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNomePasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAdicionarPasta)))
+                .addContainerGap())
+        );
+
+        jComboPastaProfessor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnCancelarPasta.setText("Cancelar");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel23.setText("Selecione o funcionário que irá realizar venda");
+
+        jComboFuncionárioPasta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout pnPastaProfessorLayout = new javax.swing.GroupLayout(pnPastaProfessor);
+        pnPastaProfessor.setLayout(pnPastaProfessorLayout);
+        pnPastaProfessorLayout.setHorizontalGroup(
+            pnPastaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblProfessorTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnPastaProfessorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnPastaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnPastaProfessorLayout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(pnPastaProfessorLayout.createSequentialGroup()
+                        .addGroup(pnPastaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboPastaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel23)
+                            .addComponent(jComboFuncionárioPasta, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 42, Short.MAX_VALUE))))
+            .addGroup(pnPastaProfessorLayout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addComponent(btnCancelarPasta, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVendaProfessor)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnPastaProfessorLayout.setVerticalGroup(
+            pnPastaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnPastaProfessorLayout.createSequentialGroup()
+                .addComponent(lblProfessorTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboPastaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel23)
+                .addGap(4, 4, 4)
+                .addComponent(jComboFuncionárioPasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnPastaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelarPasta)
+                    .addComponent(btnVendaProfessor))
+                .addGap(35, 35, 35))
+        );
+
+        pnPrincipal.add(pnPastaProfessor);
+        pnPastaProfessor.setBounds(0, 0, 470, 450);
+
         getContentPane().add(pnPrincipal);
         pnPrincipal.setBounds(208, 11, 470, 448);
 
@@ -902,7 +1169,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
         pnMenu.add(btnProfessor);
-        btnProfessor.setBounds(10, 40, 170, 60);
+        btnProfessor.setBounds(10, 70, 170, 60);
 
         btnTiragem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnTiragem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-impressora-de-porta-aberta-40.png"))); // NOI18N
@@ -914,7 +1181,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
         pnMenu.add(btnTiragem);
-        btnTiragem.setBounds(10, 120, 170, 60);
+        btnTiragem.setBounds(10, 0, 170, 60);
 
         btnEncomenda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnEncomenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-histórico-de-encomendas-40.png"))); // NOI18N
@@ -926,11 +1193,11 @@ public class MainView extends javax.swing.JFrame {
             }
         });
         pnMenu.add(btnEncomenda);
-        btnEncomenda.setBounds(10, 200, 170, 60);
+        btnEncomenda.setBounds(10, 220, 170, 60);
 
         btnCadastroNovoCliente.setText("Cad. novo cliente");
         pnMenu.add(btnCadastroNovoCliente);
-        btnCadastroNovoCliente.setBounds(20, 270, 160, 30);
+        btnCadastroNovoCliente.setBounds(10, 290, 170, 30);
 
         btnCadastroApenasEncomenda.setText("Cad. apenas encomenda");
         btnCadastroApenasEncomenda.addActionListener(new java.awt.event.ActionListener() {
@@ -939,7 +1206,20 @@ public class MainView extends javax.swing.JFrame {
             }
         });
         pnMenu.add(btnCadastroApenasEncomenda);
-        btnCadastroApenasEncomenda.setBounds(20, 310, 160, 30);
+        btnCadastroApenasEncomenda.setBounds(10, 330, 170, 30);
+
+        btnNovoProfessor.setText("Cad. novo professor");
+        btnNovoProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoProfessorActionPerformed(evt);
+            }
+        });
+        pnMenu.add(btnNovoProfessor);
+        btnNovoProfessor.setBounds(10, 140, 170, 30);
+
+        btnNovoMaterial.setText("Cad. novo material");
+        pnMenu.add(btnNovoMaterial);
+        btnNovoMaterial.setBounds(10, 180, 170, 30);
 
         getContentPane().add(pnMenu);
         pnMenu.setBounds(0, 0, 192, 560);
@@ -996,17 +1276,21 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastroApenasEncomendaActionPerformed
 
-    private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
+    private void btnSalvarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalvar1ActionPerformed
+    }//GEN-LAST:event_btnSalvarProfessorActionPerformed
 
-    private void btnLimpar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpar1ActionPerformed
+    private void btnLimparProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLimpar1ActionPerformed
+    }//GEN-LAST:event_btnLimparProfessorActionPerformed
 
-    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
+    private void btnCancelarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCancelar1ActionPerformed
+    }//GEN-LAST:event_btnCancelarProfessorActionPerformed
+
+    private void btnNovoProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoProfessorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNovoProfessorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1050,151 +1334,183 @@ public class MainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddFuncionario;
     private javax.swing.JButton btnAddMaisTiragemEncomenda;
+    private javax.swing.JButton btnAdicionaTiragemPasta;
+    private javax.swing.JButton btnAdicionarPasta;
     private javax.swing.JButton btnBuscaCliente;
     private javax.swing.JButton btnCadastroApenasEncomenda;
     private javax.swing.JButton btnCadastroNovoCliente;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnCancelar1;
     private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnCancelarClienteBuscado;
     private javax.swing.JButton btnCancelarInfoEncomenda;
+    private javax.swing.JButton btnCancelarPasta;
+    private javax.swing.JButton btnCancelarProfessor;
     private javax.swing.JButton btnCancelarTiragem;
     private javax.swing.JButton btnEncomenda;
     private javax.swing.JButton btnFinalizarVenda;
     private javax.swing.JButton btnLimpar;
-    private javax.swing.JButton btnLimpar1;
     private javax.swing.JButton btnLimparCliente;
+    private javax.swing.JButton btnLimparProfessor;
     private javax.swing.JButton btnNovaTiragem;
+    private javax.swing.JButton btnNovoMaterial;
+    private javax.swing.JButton btnNovoProfessor;
+    private javax.swing.JButton btnProcurarProfessor;
     private javax.swing.JButton btnProfessor;
     private javax.swing.JButton btnProximoClienteBuscado;
     private javax.swing.JButton btnProximoPanelCliente;
+    private javax.swing.JButton btnProximoProfessor;
     private javax.swing.JButton btnProximoTiragens;
     private javax.swing.JButton btnRealizarVendaEncomenda;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton btnSalvar1;
     private javax.swing.JButton btnSalvarEncomenda;
+    private javax.swing.JButton btnSalvarProfessor;
     private javax.swing.JButton btnSalvarTiragemEncomenda;
     private javax.swing.JButton btnTiragem;
+    private javax.swing.JButton btnVendaProfessor;
+    private javax.swing.JComboBox jComboFuncionárioPasta;
+    private javax.swing.JComboBox jComboPastaProfessor;
     private javax.swing.JComboBox jComboTiragensAtuais;
     private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox jcbFuncionarioEncomenda;
     private javax.swing.JComboBox jcbSelecioneFuncionario;
     private javax.swing.JLabel lblApareceNomeClienteBuscado;
     private javax.swing.JLabel lblBairroCliente;
     private javax.swing.JLabel lblBairroFuncionario;
-    private javax.swing.JLabel lblBairroFuncionario1;
+    private javax.swing.JLabel lblBairroProfessor;
     private javax.swing.JLabel lblCepCliente;
     private javax.swing.JLabel lblCepFuncionario;
-    private javax.swing.JLabel lblCepFuncionario1;
+    private javax.swing.JLabel lblCepProfessor;
     private javax.swing.JLabel lblCidadeCliente;
     private javax.swing.JLabel lblCidadeFuncionario;
-    private javax.swing.JLabel lblCidadeFuncionario1;
+    private javax.swing.JLabel lblCidadeProfessor;
     private javax.swing.JLabel lblCpfCliente;
     private javax.swing.JLabel lblCpfFuncionario;
-    private javax.swing.JLabel lblCpfFuncionario1;
+    private javax.swing.JLabel lblCpfProfessor;
     private javax.swing.JLabel lblDesteCliente;
     private javax.swing.JLabel lblEmailCliente;
     private javax.swing.JLabel lblEmailFuncionario;
-    private javax.swing.JLabel lblEmailFuncionario1;
+    private javax.swing.JLabel lblEmailProfessor;
     private javax.swing.JLabel lblEstadoCliente;
     private javax.swing.JLabel lblEstadoFuncionario;
-    private javax.swing.JLabel lblEstadoFuncionario1;
+    private javax.swing.JLabel lblEstadoProfessor;
     private javax.swing.JLabel lblNomeCliente;
     private javax.swing.JLabel lblNomeEncomenda;
     private javax.swing.JLabel lblNomeFuncionario;
-    private javax.swing.JLabel lblNomeFuncionario1;
+    private javax.swing.JLabel lblNomeProfessor;
     private javax.swing.JLabel lblNumeroCliente;
     private javax.swing.JLabel lblNumeroFuncionario;
-    private javax.swing.JLabel lblNumeroFuncionario1;
+    private javax.swing.JLabel lblNumeroProfessor;
     private javax.swing.JLabel lblPaisCliente;
     private javax.swing.JLabel lblPaisFuncionario;
-    private javax.swing.JLabel lblPaisFuncionario1;
+    private javax.swing.JLabel lblPaisProfessor;
     private javax.swing.JLabel lblParaCadastrar;
+    private javax.swing.JLabel lblProfessorEncontrado;
+    private javax.swing.JLabel lblProfessorTitulo;
     private javax.swing.JLabel lblQtdCopias;
     private javax.swing.JLabel lblQtdTiragensEncomenda;
     private javax.swing.JLabel lblRuaCliente;
     private javax.swing.JLabel lblRuaFuncionario;
-    private javax.swing.JLabel lblRuaFuncionario1;
+    private javax.swing.JLabel lblRuaProfessor;
     private javax.swing.JLabel lblSelecioneFuncionario;
     private javax.swing.JLabel lblTelefoneCliente;
     private javax.swing.JLabel lblTelefoneFuncionario;
-    private javax.swing.JLabel lblTelefoneFuncionario1;
+    private javax.swing.JLabel lblTelefoneProfessor;
     private javax.swing.JLabel lblTituloInfoEncomenda;
     private javax.swing.JLabel lblUfCliente;
     private javax.swing.JLabel lblUfFuncionario;
-    private javax.swing.JLabel lblUfFuncionario1;
+    private javax.swing.JLabel lblUfProfessor;
     private javax.swing.JLabel lblVendaTitulo;
     private javax.swing.JPanel pnAddFuncionario;
     private javax.swing.JPanel pnAddTiragemEncomenda;
+    private javax.swing.JPanel pnAdicionarTiragem;
     private javax.swing.JPanel pnAvisaEncomendaSalva;
     private javax.swing.JPanel pnEncomenda;
     private javax.swing.JPanel pnInfoEncomenda;
     private javax.swing.JPanel pnMaisTiragem;
     private javax.swing.JPanel pnMenu;
+    private javax.swing.JPanel pnPastaProfessor;
     private javax.swing.JPanel pnPrincipal;
     private javax.swing.JPanel pnProcuraCliente;
+    private javax.swing.JPanel pnProcurarProfessor;
     private javax.swing.JPanel pnProfessor;
     private javax.swing.JPanel pnTiragem;
     private javax.swing.JSlider sliderCopias;
     private javax.swing.JSlider spnQtdTiragens;
     private javax.swing.JTextField txtBairro;
-    private javax.swing.JTextField txtBairro1;
     private javax.swing.JTextField txtBairroCliente;
+    private javax.swing.JTextField txtBairroProfessor;
     private javax.swing.JFormattedTextField txtCepCliente;
+    private javax.swing.JFormattedTextField txtCepProfessor;
+    private javax.swing.JTextField txtCidadeProfessor;
     private javax.swing.JFormattedTextField txtCpf;
-    private javax.swing.JFormattedTextField txtCpf1;
     private javax.swing.JFormattedTextField txtCpfCliente;
     private javax.swing.JFormattedTextField txtCpfClienteBuscado;
+    private javax.swing.JFormattedTextField txtCpfProfessor;
+    private javax.swing.JFormattedTextField txtCpfProfessorBuscado;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtEmailCliente;
+    private javax.swing.JTextField txtEmailProfessor;
+    private javax.swing.JTextField txtEstadoProfessor;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNome1;
     private javax.swing.JTextField txtNomeCidade;
-    private javax.swing.JTextField txtNomeCidade1;
     private javax.swing.JTextField txtNomeCidadeCliente;
     private javax.swing.JTextField txtNomeCliente;
     private javax.swing.JTextField txtNomeEncomenda;
     private javax.swing.JTextField txtNomeEstado;
-    private javax.swing.JTextField txtNomeEstado1;
     private javax.swing.JTextField txtNomeEstadoCliente;
+    private javax.swing.JTextField txtNomePasta;
+    private javax.swing.JTextField txtNomeProfessor;
     private javax.swing.JTextField txtNomeTiragem;
     private javax.swing.JTextField txtNomeTiragemEncomenda;
+    private javax.swing.JTextField txtNomeTiragemPasta;
     private javax.swing.JTextField txtNumero;
-    private javax.swing.JTextField txtNumero1;
     private javax.swing.JTextField txtNumeroCliente;
+    private javax.swing.JTextField txtNumeroProfessor;
+    private javax.swing.JTextField txtPaiProfessor;
     private javax.swing.JTextField txtPais;
-    private javax.swing.JTextField txtPais1;
     private javax.swing.JTextField txtPaisCliente;
+    private javax.swing.JFormattedTextField txtPrecoTiragemPasta;
     private javax.swing.JFormattedTextField txtPreço;
     private javax.swing.JFormattedTextField txtPreçoTiragemEncomenda;
+    private javax.swing.JLabel txtProfessorEncontrado;
+    private javax.swing.JTextField txtQtdTiragemPasta;
     private javax.swing.JTextField txtRua;
-    private javax.swing.JTextField txtRua1;
     private javax.swing.JTextField txtRuaCliente;
+    private javax.swing.JTextField txtRuaProfessor;
     private javax.swing.JFormattedTextField txtTelefone;
-    private javax.swing.JFormattedTextField txtTelefone1;
     private javax.swing.JFormattedTextField txtTelefoneCliente;
+    private javax.swing.JFormattedTextField txtTelefoneProfessor;
     private javax.swing.JFormattedTextField txtUf;
-    private javax.swing.JFormattedTextField txtUf1;
     private javax.swing.JFormattedTextField txtUfCliente;
+    private javax.swing.JFormattedTextField txtUfProfessor;
     // End of variables declaration//GEN-END:variables
 
     public JButton getBtnAddFuncionario() {
@@ -1725,9 +2041,211 @@ public class MainView extends javax.swing.JFrame {
         return lblParaCadastrar;
     }
 
+    public JButton getBtnAdicionarPasta() {
+        return btnAdicionarPasta;
+    }
+
+    public JButton getBtnVendaProfessor() {
+        return btnVendaProfessor;
+    }
+
+   
+
+    public JPanel getPnPastaProfessor() {
+        return pnPastaProfessor;
+    }
+
+    
+    
+    
     public JLabel getLblDesteCliente() {
         return lblDesteCliente;
     }
+
+    public JButton getBtnCancelarProfessor() {
+        return btnCancelarProfessor;
+    }
+
+    public JButton getBtnLimparProfessor() {
+        return btnLimparProfessor;
+    }
+
+    public JButton getBtnNovoMaterial() {
+        return btnNovoMaterial;
+    }
+
+    public JButton getBtnNovoProfessor() {
+        return btnNovoProfessor;
+    }
+
+    public JButton getBtnSalvarProfessor() {
+        return btnSalvarProfessor;
+    }
+
+    public JTextField getTxtBairroProfessor() {
+        return txtBairroProfessor;
+    }
+
+    public JFormattedTextField getTxtCepProfessor() {
+        return txtCepProfessor;
+    }
+
+    public JTextField getTxtCidadeProfessor() {
+        return txtCidadeProfessor;
+    }
+
+    public JFormattedTextField getTxtCpfProfessor() {
+        return txtCpfProfessor;
+    }
+
+    public JTextField getTxtEmailProfessor() {
+        return txtEmailProfessor;
+    }
+
+    public JTextField getTxtEstadoProfessor() {
+        return txtEstadoProfessor;
+    }
+
+    public JTextField getTxtNomeProfessor() {
+        return txtNomeProfessor;
+    }
+
+    public JTextField getTxtNumeroProfessor() {
+        return txtNumeroProfessor;
+    }
+
+    public JTextField getTxtPaiProfessor() {
+        return txtPaiProfessor;
+    }
+
+    public JTextField getTxtRuaProfessor() {
+        return txtRuaProfessor;
+    }
+
+    public JFormattedTextField getTxtTelefoneProfessor() {
+        return txtTelefoneProfessor;
+    }
+
+    public JFormattedTextField getTxtUfProfessor() {
+        return txtUfProfessor;
+    }
+
+    public JComboBox getjComboFuncionárioPasta() {
+        return jComboFuncionárioPasta;
+    }
+
+  
+
+    public JButton getBtnProcurarProfessor() {
+        return btnProcurarProfessor;
+    }
+
+    public JButton getBtnProximoProfessor() {
+        return btnProximoProfessor;
+    }
+
+    public JPanel getPnProcurarProfessor() {
+        return pnProcurarProfessor;
+    }
+
+    public JLabel getTxtProfessorEncontrado() {
+        return txtProfessorEncontrado;
+    }
+
+    public JLabel getLblProfessorEncontrado() {
+        return lblProfessorEncontrado;
+    }
+
+    public JFormattedTextField getTxtCpfProfessorBuscado() {
+        return txtCpfProfessorBuscado;
+    }
+
+    public JLabel getLblBairroProfessor() {
+        return lblBairroProfessor;
+    }
+
+    public JLabel getLblCepProfessor() {
+        return lblCepProfessor;
+    }
+
+    public JLabel getLblCidadeProfessor() {
+        return lblCidadeProfessor;
+    }
+
+    public JLabel getLblCpfProfessor() {
+        return lblCpfProfessor;
+    }
+
+    public JLabel getLblEmailProfessor() {
+        return lblEmailProfessor;
+    }
+
+    public JLabel getLblEstadoProfessor() {
+        return lblEstadoProfessor;
+    }
+
+    public JLabel getLblNomeProfessor() {
+        return lblNomeProfessor;
+    }
+
+    public JLabel getLblNumeroProfessor() {
+        return lblNumeroProfessor;
+    }
+
+    public JLabel getLblPaisProfessor() {
+        return lblPaisProfessor;
+    }
+
+    public JLabel getLblRuaProfessor() {
+        return lblRuaProfessor;
+    }
+
+    public JLabel getLblTelefoneProfessor() {
+        return lblTelefoneProfessor;
+    }
+
+    public JLabel getLblUfProfessor() {
+        return lblUfProfessor;
+    }
+
+    public JLabel getLblProfessorTitulo() {
+        return lblProfessorTitulo;
+    }
+
+    public JButton getBtnAdicionaTiragemPasta() {
+        return btnAdicionaTiragemPasta;
+    }
+
+    public JButton getBtnCancelarPasta() {
+        return btnCancelarPasta;
+    }
+
+ 
+
+    public JComboBox getjComboPastaProfessor() {
+        return jComboPastaProfessor;
+    }
+
+    public JPanel getPnAdicionarTiragem() {
+        return pnAdicionarTiragem;
+    }
+
+    public JTextField getTxtNomePasta() {
+        return txtNomePasta;
+    }
+
+    public JTextField getTxtNomeTiragemPasta() {
+        return txtNomeTiragemPasta;
+    }
+
+    public JFormattedTextField getTxtPrecoTiragemPasta() {
+        return txtPrecoTiragemPasta;
+    }
+
+    public JTextField getTxtQtdTiragemPasta() {
+        return txtQtdTiragemPasta;
+    }
+    
     
     
     
